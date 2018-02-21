@@ -1,3 +1,4 @@
+using UnityEngine;
 
 namespace Maskirovka
 {
@@ -18,9 +19,15 @@ namespace Maskirovka
         News, Country
     }
 
-    struct NewsData
+    public struct NewsData
     {
         public int value;
         public Catagorie catagorie;
+    }
+
+    public struct Neighbour
+    {
+        public Country neighbour;
+        public Vector3 reputation;
     }
 }

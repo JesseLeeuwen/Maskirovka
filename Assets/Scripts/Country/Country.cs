@@ -1,16 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Maskirovka.Selector;
 
-public class Country : MonoBehaviour {
+namespace Maskirovka
+{
+	public class Country : MonoBehaviour, ISelectable {
 
-	// Use this for initialization
-	void Start () {
+        public Neighbour[] Neighbours;
+        public Vector3 wantedReputation;
+
+
+		void Update () {
 		
+		}
+
+        public NewsData GetNews() {
+            return new NewsData();
+        }
+
+        public void UpdateRepu(Neighbour neighbour, Vector3 newReputation) {
+
+        }
+
+
+
+		public SelectableType GetType() {
+			return SelectableType.Country;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
 }
