@@ -2,13 +2,6 @@ using UnityEngine;
 
 namespace Maskirovka
 {
-    public struct Change
-    {
-        public Vector3 reputation;
-        public Country countryA;
-        public Country countryB;
-    }
-
     public enum Catagorie
     {
         A, B, C
@@ -29,5 +22,12 @@ namespace Maskirovka
     {
         public Country neighbour;
         public Vector3 reputation;
+    }
+
+    public struct Change
+    {
+        public Vector3 reputation;
+        public Country countryA;
+        public Country countryB;
     }
 }
