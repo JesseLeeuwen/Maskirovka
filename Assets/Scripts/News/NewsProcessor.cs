@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class NewsProcessor : ScriptableObject 
+namespace Maskirovka.News
 {
-	public virtual void ProccesNews( News news )
-	{
 
+	public abstract class NewsProcessor : ScriptableObject 
+	{
+		public virtual void ProccesNews( News news )
+		{
+
+		}
 	}
-}
 
-
-public class SimpleProcessor : NewsProcessor
-{
-	public override void ProccesNews(News news)
+	public class SimpleProcessor : NewsProcessor
 	{
-		
+		public override void ProccesNews(News news)
+		{
+
+		}
 	}
 }

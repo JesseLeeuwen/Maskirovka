@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
 
-public class News : MonoBehaviour
+
+namespace Maskirovka.News
 {
-    public float value;
-    public Catagorie catagorie;
+    public class News : MonoBehaviour
+    {
+        public float value;
+        public Catagorie catagorie;
 
-
+        
+    }
 }
