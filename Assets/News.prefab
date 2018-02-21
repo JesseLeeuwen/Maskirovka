@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4570263923738844}
   - component: {fileID: 212712998738776534}
   - component: {fileID: 114968887225300870}
-  m_Layer: 0
+  - component: {fileID: 58118456747173692}
+  m_Layer: 8
   m_Name: News
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58118456747173692
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257363317154228}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &114968887225300870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,7 +71,7 @@ MonoBehaviour:
   value: 0
   catagorie: 1
   country: {fileID: 0}
-  chanceOfSucces: 0
+  chanceOfSucces: 80
 --- !u!212 &212712998738776534
 SpriteRenderer:
   m_ObjectHideFlags: 1

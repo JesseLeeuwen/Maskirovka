@@ -27,6 +27,7 @@ namespace Maskirovka.News
         public void Send()
         {
             GameManager.Instance.processor.ProccesNews( this );
+            Destroy( gameObject );
         }
     }
 }

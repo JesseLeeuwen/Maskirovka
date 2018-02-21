@@ -14,10 +14,10 @@ namespace Maskirovka.News
         void Start()
         {
             activeNewsItems = new Queue<News>();
-            IssueNews();
+            CreateNews();
         }
 
-        public void IssueNews()
+        public void CreateNews()
         {
             activeNewsItems.Clear();
 
@@ -34,6 +34,12 @@ namespace Maskirovka.News
                 news.value = Random.value * 100;
                 activeNewsItems.Enqueue( news );
             }
+        }
+
+        public void SendNews()
+        {
+            foreach( News news in activeNewsItems)
+                news.Send();
         }
 
         private bool IsCountryAvailable(Country country)

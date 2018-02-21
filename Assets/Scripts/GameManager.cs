@@ -15,5 +15,10 @@ namespace Maskirovka
         public static GameManager Instance{ // static instance of the gameManager
             get { return instance; }
         }
+
+        void Start()
+        {
+            instance = this;
+        }
     }
 }
