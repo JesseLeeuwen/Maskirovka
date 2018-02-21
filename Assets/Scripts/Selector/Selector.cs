@@ -2,16 +2,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+using Maskirovka.UI;
+
 namespace Maskirovka.Selector
 {
     public class Selector : MonoBehaviour
     {
         [SerializeField]
-        private UIManager manager;
-
+        private UImanager manager;
         [SerializeField]
         private ISelectable selected;
-
 
         public ISelectable GetSelected()
         {
@@ -20,8 +20,12 @@ namespace Maskirovka.Selector
 
         void Update()
         {
-        
-
+            if( Input.GetMouseButtonUp(0) )
+            {
+                RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward, 20, 1 << 8);
+                if( hitInfo.collider != null )
+                    manager.ReceiveSelection( hitInfo.collider.GetComponent<ISelectable>() ) ;
+            }
         }
     }
 
