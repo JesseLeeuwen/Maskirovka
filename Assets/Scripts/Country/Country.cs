@@ -7,7 +7,7 @@ namespace Maskirovka
 {
 	public class Country : MonoBehaviour, ISelectable {
 
-        public Neighbour[] Neighbours;
+        public Neighbour[] neighbours;
         public Vector3 wantedReputation;
 
 
@@ -19,7 +19,7 @@ namespace Maskirovka
             return new NewsData();
         }
 
-        public void UpdateRepu(Neighbour neighbour, Vector3 newReputation) {
+        public void UpdateRepu( Neighbour neighbour, Vector3 newReputation ) {
 
         }
 
