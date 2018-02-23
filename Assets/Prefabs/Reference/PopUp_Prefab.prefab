@@ -133,27 +133,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
---- !u!1 &1325452531427264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 224175860733064168}
-  - component: {fileID: 222752824851630666}
-  - component: {fileID: 114127249207955526}
-  - component: {fileID: 114475567252361702}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
-=======
->>>>>>> Stashed changes
 --- !u!1 &1350146927610062
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,11 +242,7 @@ GameObject:
   - component: {fileID: 222203332087763136}
   - component: {fileID: 114317775319702390}
   m_Layer: 5
-<<<<<<< Updated upstream
-  m_Name: YayButton
-=======
   m_Name: Text
->>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,13 +916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-  m_AnchoredPosition: {x: 0, y: 93}
-  m_SizeDelta: {x: 275, y: 75}
-=======
   m_AnchoredPosition: {x: 0, y: 105}
   m_SizeDelta: {x: 400, y: 50}
->>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224444504246711952
 RectTransform:
