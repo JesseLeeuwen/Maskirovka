@@ -18,6 +18,7 @@ namespace Maskirovka
         public Catagorie catagorie;
     }
 
+    [System.Serializable]
     public struct Neighbour
     {
         public Country neighbour;
