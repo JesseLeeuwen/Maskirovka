@@ -21,14 +21,16 @@ namespace Maskirovka.News
         {
             activeNewsItems.Clear();
 
-            while( activeNewsItems.Count < 1 )
+            while( activeNewsItems.Count < 3 )
             {       
                 Country c;
                 do{         
                     c = countries[ Random.Range(0, countries.Length) ];
                 }while( IsCountryAvailable( c ) == false );
 
-                News news = Instantiate( newsPrefab, c.transform.position, Quaternion.identity).GetComponent<News>();
+                Vector3 position = c.transform.position - Vector3.forward;
+
+                News news = Instantiate( newsPrefab, position, Quaternion.identity).GetComponent<News>();
                 news.country = c;
                 news.catagorie = (Catagorie)Random.Range( 0, 3 );
                 news.value = Random.value * 100;
