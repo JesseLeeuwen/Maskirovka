@@ -3,16 +3,23 @@ using System.Collections.Generic;
 
 namespace Maskirovka
 {
-    public class NewsFeed : MonoBehaviour
+    [CreateAssetMenu(menuName="NewsFeed")]
+    public class NewsFeed : ScriptableObject
     {
+        [SerializeField]
+        private Queue<Change> changes;
+
         public Queue<Change> PullUpdates()
         {
-            return new Queue<Change>();
+            Queue<Change> tempChanges = changes;
+            changes.Clear();
+
+            return tempChanges;
         }
 
         public void PushUpdate(Change change)
         {
-
+            changes.Enqueue( change );
         }
     }
 }
