@@ -13,7 +13,7 @@ namespace Maskirovka.News
 			{				
 				foreach(Neighbour Neighbour in news.country.neighbours)
 				{
-					//Neighbour.neighbour.UpdateRepu( news.country, news.value, news.catagorie );
+					Neighbour.neighbour.UpdateRepu( news.country, news.value, news.catagorie );
 				}
 			}
 		}
