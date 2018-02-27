@@ -18,9 +18,12 @@ namespace Maskirovka
         //The value to give to the NewsManager
         private int valToGive;
         private Catagorie catToGive;
+        private Sprite sprite;
 
         void awake()
         {
+            //sprite = GetComponent<SpriteRenderer>().sprite;
+
             //Generate random wanted reputation withing range of given floats
             float A = Random.Range(randomMin, randomMax);
             float B = Random.Range(randomMin, randomMax);
@@ -38,7 +41,7 @@ namespace Maskirovka
         }
 
 
-        NewsData GetNews()
+        public NewsData GetNews()
         {
             float A = wantedReputation.x - currentReputation.x;
             float B = wantedReputation.y - currentReputation.y;
@@ -111,7 +114,12 @@ namespace Maskirovka
             }
         }
 
-		public SelectableType GetType() {
+        public Sprite GetSprite()
+        {
+            return sprite;
+        }
+
+		new public SelectableType GetType() {
 			return SelectableType.Country;
 		}
 	}

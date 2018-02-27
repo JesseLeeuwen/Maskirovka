@@ -6,19 +6,41 @@ namespace Maskirovka.UI
 {
 	public class NewsFeedUI : MonoBehaviour 
 	{
+		[Header("References")]
 		[SerializeField]
-		private NewsFeed feed;
+		private NewsFeed feed;					// the newsFeed scriptableObject
+		[SerializeField]
+		private GameObject listItemPrefab;		// the prefab of the listItem found in "Prefabs/UI"
 
+		[Header("list settings")]
+		[SerializeField, Range(0, 10)]
+		private int maxListItems;
+
+		[Header("image options")]
+		[SerializeField]
+		private Sprite[] connections; 			// the images diplayed when a new connectino is made or is broken
 		
-
-		void Start () 
-		{
-			
-		}
+		private Queue<Change> newChanges;		// contains the newest changes from the previous turn
+		private Change tempChange;				// used for spawning newsfeedlist items
+		private GameObject tempObject;			// the gameObject of the spawned listItem 
+		private NewsFeedItem tempItem;			// the NewsFeedItem ref of the newest spawned listItem
 		
 		void Update () 
 		{
-			
+			newChanges = feed.PullUpdates();
+			while(newChanges.Count > 0 )
+			{
+				tempChange = newChanges.Dequeue();
+				tempObject = Instantiate( listItemPrefab, Vector3.zero, Quaternion.identity, transform );
+				tempItem = tempObject.GetComponent<NewsFeedItem>();
+				
+				tempItem.Init(tempChange, connections[ System.Convert.ToInt16( tempChange.madeNewConnection ) ]);
+			}
+
+			while(transform.childCount > maxListItems )
+			{
+				Destroy( transform.GetChild( transform.childCount - 1 ) );
+			}			
 		}
 	}
 }

@@ -17,33 +17,44 @@ namespace Maskirovka.News
             CreateNews();
         }
 
+        // create news message object for player to interact with
         public void CreateNews()
         {
             activeNewsItems.Clear();
 
             while( activeNewsItems.Count < 3 )
             {       
+                // Get Random country that has no news on him
                 Country c;
                 do{         
                     c = countries[ Random.Range(0, countries.Length) ];
                 }while( IsCountryAvailable( c ) == false );
 
+                // position of news message
                 Vector3 position = c.transform.position - Vector3.forward;
 
+                // spawn a news message object
                 News news = Instantiate( newsPrefab, position, Quaternion.identity).GetComponent<News>();
-                news.country = c;
-                news.catagorie = (Catagorie)Random.Range( 0, 3 );
-                news.value = Random.value * 100;
+                news.country = c; // set country of message                
+
+                // get news message from country
+                NewsData newsMessage = c.GetNews();                
+                news.catagorie = newsMessage.catagorie;
+                news.value = newsMessage.value;
+
+                // add news message to list of active news messages
                 activeNewsItems.Enqueue( news );
             }
         }
 
+        // Send all news to neighbours
         public void SendNews()
         {
             foreach( News news in activeNewsItems)
                 news.Send();
         }
 
+        // check if a news message with given country already exists
         private bool IsCountryAvailable(Country country)
         {
             foreach( News news in activeNewsItems)

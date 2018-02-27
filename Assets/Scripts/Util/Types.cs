@@ -29,7 +29,7 @@ namespace Maskirovka
 
     public struct Change
     {
-        public Vector3 reputation;
+        public bool madeNewConnection;
         public Country countryA;
         public Country countryB;
     }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace Maskirovka
 {
-    public class Connection : MonoBehaviour {
-
+    public class Connection : MonoBehaviour 
+    {     
         [Header("Country connections")]
         public Country neighbour;
         public Country country;
@@ -18,6 +18,12 @@ namespace Maskirovka
 
         void Awake()
         {
+            GameManager.Instance.feed.PushUpdate( new Change() { 
+                madeNewConnection = true, 
+                countryA = country,
+                countryB = neighbour 
+            });
+
             connection = GetComponent<LineRenderer>();
             connection.positionCount = 2;
             connection.SetPosition(0, country.transform.position);
@@ -33,6 +39,11 @@ namespace Maskirovka
             {
                 if (temp2 < minRep || temp2 > maxRep)
                 {
+                    GameManager.Instance.feed.PushUpdate( new Change() { 
+                        madeNewConnection = false, 
+                        countryA = country,
+                        countryB = neighbour 
+                    });
                     Destroy(gameObject);
                 }
             }
