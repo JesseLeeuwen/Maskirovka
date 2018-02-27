@@ -15,13 +15,13 @@ namespace Maskirovka.UI
 		private Neighbour neighbour = new Neighbour();
 		private Vector3 reputation;
 
-		public void Init(Neighbour neighbour)
+		public void Init(Neighbour neighbour, Country country)
 		{
-			reputation = new Vector3( Random.value * 100 - 50, Random.value * 100 - 50, Random.value * 100 - 50 );
+			reputation = new Vector3( country.avarageA, country.avarageB, country.avarageC );
 			this.neighbour = neighbour;
 			reputation = reputation - neighbour.reputation;
 		}
-		void Awake() { reputation = new Vector3( 100, 50, 100 ); }
+
 		void Update () 
 		{
 			LerpBar(bars[0], reputation.x);

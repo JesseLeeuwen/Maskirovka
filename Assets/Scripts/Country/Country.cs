@@ -25,7 +25,7 @@ namespace Maskirovka
 
         //The value to give to the NewsManager
         private int valToGive;
-        private Catagorie catToGive;
+        private Catagorie catToGive;        
         private Sprite sprite;
 
         void awake()
