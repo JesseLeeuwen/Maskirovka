@@ -9,7 +9,7 @@ namespace Maskirovka.News
         [SerializeField]
         private GameObject newsPrefab;
         [SerializeField]
-        private Country[] countries;
+        private CountryList countries;
         private Queue<News> activeNewsItems;
 
         void Start()

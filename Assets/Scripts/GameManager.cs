@@ -11,6 +11,11 @@ namespace Maskirovka
         public NewsManager newsManager;
         public NewsFeed feed;
 
+        [SerializeField]
+        private CountryList list;
+        [SerializeField]
+        private Country[] countries;
+
         // properties
         public static GameManager Instance{ // static instance of the gameManager
             get { return instance; }
@@ -19,6 +24,7 @@ namespace Maskirovka
         void Awake()
         {
             instance = this;
+            list.Init(countries);
         }
     }
 }

@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 416044414}
   - component: {fileID: 416044413}
   - component: {fileID: 416044412}
+  - component: {fileID: 416044416}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -594,19 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123899412140faf44b3005f001d72a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countries:
-  - {fileID: 442161923}
-  - {fileID: 589901637}
-  - {fileID: 1593199771}
-  - {fileID: 211974161}
-  - {fileID: 1314841226}
-  - {fileID: 94851746}
-  - {fileID: 56630628}
-  - {fileID: 2112887371}
-  - {fileID: 1889744329}
-  - {fileID: 1775852564}
-  - {fileID: 1336825031}
-  - {fileID: 148589504}
+  countries: {fileID: 11400000, guid: 881b7bdc19926b142974d9b3376cefb4, type: 2}
 --- !u!114 &416044413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,19 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newsPrefab: {fileID: 1257363317154228, guid: e135a874fc335874c9188fbd116e8036, type: 2}
-  countries:
-  - {fileID: 442161923}
-  - {fileID: 589901637}
-  - {fileID: 1593199771}
-  - {fileID: 211974161}
-  - {fileID: 1314841226}
-  - {fileID: 94851746}
-  - {fileID: 56630628}
-  - {fileID: 2112887371}
-  - {fileID: 1889744329}
-  - {fileID: 1775852564}
-  - {fileID: 1336825031}
-  - {fileID: 148589504}
+  countries: {fileID: 11400000, guid: 881b7bdc19926b142974d9b3376cefb4, type: 2}
 --- !u!114 &416044414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +623,20 @@ MonoBehaviour:
   processor: {fileID: 11400000, guid: b235309963b8a7045b8cb51232f93152, type: 2}
   newsManager: {fileID: 416044413}
   feed: {fileID: 11400000, guid: d40aa61659fea6c4bbffd370e735447d, type: 2}
+  list: {fileID: 11400000, guid: 881b7bdc19926b142974d9b3376cefb4, type: 2}
+  countries:
+  - {fileID: 442161923}
+  - {fileID: 589901637}
+  - {fileID: 1593199771}
+  - {fileID: 211974161}
+  - {fileID: 1314841226}
+  - {fileID: 94851746}
+  - {fileID: 56630628}
+  - {fileID: 2112887371}
+  - {fileID: 1889744329}
+  - {fileID: 1775852564}
+  - {fileID: 1336825031}
+  - {fileID: 148589504}
 --- !u!4 &416044415
 Transform:
   m_ObjectHideFlags: 0
@@ -659,6 +650,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &416044416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416044411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b798ec2fdeef52439e46bcfcc7421a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countries: {fileID: 11400000, guid: 881b7bdc19926b142974d9b3376cefb4, type: 2}
+  chaos: 0
 --- !u!114 &442161923 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114251515531809274, guid: 7d53795e152aa0949850bddebe4f443d,

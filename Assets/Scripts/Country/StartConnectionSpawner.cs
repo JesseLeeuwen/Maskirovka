@@ -7,14 +7,15 @@ namespace Maskirovka
 	public class StartConnectionSpawner : MonoBehaviour 
 	{
 		[SerializeField]
-		private Country[] countries;
+		private CountryList countries;
 
 		IEnumerator Start () 
 		{
 			yield return new WaitForSeconds(0.1f);
-			
-			foreach(Country country in countries)
+
+			for(int i = 0; i < countries.Length; ++i)
 			{
+				Country country = countries[i];
 				foreach(Neighbour n in country.neighbours)
 				{
 					n.neighbour.UpdateRepu( country, country.avarageA, Catagorie.A);

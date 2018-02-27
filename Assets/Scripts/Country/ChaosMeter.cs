@@ -7,13 +7,12 @@ namespace Maskirovka
 	public class ChaosMeter : MonoBehaviour 
 	{
 		[SerializeField]
-		private NewsFeed feed;
+		private CountryList countries;
 		
 		[SerializeField, Range(0, 100)]
 		private float chaos;
 
 		private int countConnections;
-		private Queue<Change> changes;
 
 		void Update () 
 		{
