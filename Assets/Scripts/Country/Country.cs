@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using Maskirovka.Selector;
+
 
 namespace Maskirovka
 {
@@ -9,11 +11,17 @@ namespace Maskirovka
 
         public Neighbour[] neighbours;
         public Vector3 wantedReputation;
-        private Vector3 currentReputation;
+
+        public float returnValue;
 
         [Header("Start reputation values")]
         public float randomMin;
         public float randomMax;
+
+        [Header("Avarage reputation in all neighbours")]
+        public float avarageA;
+        public float avarageB;
+        public float avarageC;
 
         //The value to give to the NewsManager
         private int valToGive;
@@ -36,16 +44,21 @@ namespace Maskirovka
             //Fill neigbours with the random generated wanted reputation
             for (int i = 0; i < neighbours.Length; i++)
             {
-                neighbours[i].reputation = wantedReputation;
+                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.x, Catagorie.A);
+                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.y, Catagorie.B);
+                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.z, Catagorie.C);
             }
         }
 
 
         public NewsData GetNews()
         {
-            float A = wantedReputation.x - currentReputation.x;
-            float B = wantedReputation.y - currentReputation.y;
-            float C = wantedReputation.z - currentReputation.z;
+            SearchNeighbours(); //Find the avarage values of A B and C
+
+            float A = wantedReputation.x - avarageA;
+            float B = wantedReputation.y - avarageB;
+            float C = wantedReputation.z - avarageC;
+
             float max = Mathf.Max(A, B, C);
             float min = Mathf.Min(A, B, C);
 
@@ -91,7 +104,7 @@ namespace Maskirovka
 
         public void UpdateRepu( Country country, float newReputation, Catagorie catagorie)
         {  
-            //Find your self in the list of the neighbour.neighbours and change the reputation.
+            //Find the neighbour that wants a new reputation and update his reputation in your own list
             for (int i = 0; i < neighbours.Length; i++)
             {
                 if(neighbours[i].neighbour == country)
@@ -108,9 +121,51 @@ namespace Maskirovka
                     {
                         neighbours[i].reputation.y = newReputation;
                     }
-                    //Update your own current reputation 
-                    currentReputation = neighbours[i].reputation;
                 }
+            }
+        }
+
+        public void SearchNeighbours()
+        {
+            List<float> A = new List<float>();
+            List<float> B = new List<float>();
+            List<float> C = new List<float>();
+
+            for (int i = 0; i < neighbours.Length; i++)
+            {
+                if(neighbours[i].neighbour == gameObject.GetComponent<Country>())
+                {
+                    A.Add(neighbours[i].reputation.x);
+                    B.Add(neighbours[i].reputation.y);
+                    C.Add(neighbours[i].reputation.z);
+                }            
+            }
+            avarageA = A.Average();
+            avarageB = B.Average();
+            avarageC = C.Average();
+        }
+
+        public void ReturnToNormal()
+        {
+            for(int i = 0; i < neighbours.Length; i++)
+            {  
+                //////////X
+                if(neighbours[i].reputation.x > neighbours[i].neighbour.wantedReputation.x)
+                {
+                    neighbours[i].reputation.x -= returnValue;
+                } else { neighbours[i].reputation.x += returnValue; }
+
+                //////////Y
+                if(neighbours[i].reputation.y > neighbours[i].neighbour.wantedReputation.y)
+                {
+                    neighbours[i].reputation.y -= returnValue;
+                } else { neighbours[i].reputation.y += returnValue; }
+
+                //////////Z
+                if (neighbours[i].reputation.z > neighbours[i].neighbour.wantedReputation.z)
+                {
+                    neighbours[i].reputation.z -= returnValue;
+                } else { neighbours[i].reputation.z += returnValue; }
             }
         }
 
@@ -119,7 +174,7 @@ namespace Maskirovka
             return sprite;
         }
 
-		new public SelectableType GetType() {
+        new public SelectableType GetType() {
 			return SelectableType.Country;
 		}
 	}
