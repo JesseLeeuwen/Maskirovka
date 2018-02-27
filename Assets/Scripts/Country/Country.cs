@@ -33,7 +33,7 @@ namespace Maskirovka
         private Catagorie catToGive;
         private Sprite sprite;
 
-        void awake()
+        void Awake()
         {
             //sprite = GetComponent<SpriteRenderer>().sprite;
 
@@ -49,9 +49,9 @@ namespace Maskirovka
             //Fill neigbours with the random generated wanted reputation
             for (int i = 0; i < neighbours.Length; i++)
             {
-                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.x, Catagorie.A);
-                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.y, Catagorie.B);
-                neighbours[i].neighbour.UpdateRepu(gameObject.GetComponent<Country>(), wantedReputation.z, Catagorie.C);
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.x, Catagorie.A);
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.y, Catagorie.B);
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.z, Catagorie.C);
             }
         }
 
@@ -117,7 +117,7 @@ namespace Maskirovka
                     if(catagorie == Catagorie.A)
                     {
                         neighbours[i].reputation.x = newReputation;
-                        if(neighbours[i].reputation.x < gameObject.GetComponent<Country>().wantedReputation.x - minValue && neighbours[i].reputation.x > gameObject.GetComponent<Country>().wantedReputation.x + maxValue)
+                        if(neighbours[i].reputation.x > this.wantedReputation.x + minValue && neighbours[i].reputation.x < this.wantedReputation.x + maxValue)
                         {
                             spawnConnection();
                         }
@@ -125,15 +125,15 @@ namespace Maskirovka
                     else if (catagorie == Catagorie.B)
                     {
                         neighbours[i].reputation.y = newReputation;
-                        if (neighbours[i].reputation.y < gameObject.GetComponent<Country>().wantedReputation.y - minValue && neighbours[i].reputation.y > gameObject.GetComponent<Country>().wantedReputation.y + maxValue)
+                        if (neighbours[i].reputation.y > this.wantedReputation.y + minValue && neighbours[i].reputation.y < this.wantedReputation.y + maxValue)
                         {
                             spawnConnection();
                         }
                     }
                     else if (catagorie == Catagorie.C)
                     {
-                        neighbours[i].reputation.y = newReputation;
-                        if (neighbours[i].reputation.z < gameObject.GetComponent<Country>().wantedReputation.z - minValue && neighbours[i].reputation.z > gameObject.GetComponent<Country>().wantedReputation.z + maxValue)
+                        neighbours[i].reputation.z = newReputation;
+                        if (neighbours[i].reputation.z > this.wantedReputation.z + minValue && neighbours[i].reputation.z < this.wantedReputation.z + maxValue)
                         {
                             spawnConnection();
                         }
@@ -150,12 +150,15 @@ namespace Maskirovka
 
             for (int i = 0; i < neighbours.Length; i++)
             {
-                if(neighbours[i].neighbour == gameObject.GetComponent<Country>())
+                for(int x = 0; x < neighbours[i].neighbour.neighbours.Length; x++)
                 {
-                    A.Add(neighbours[i].reputation.x);
-                    B.Add(neighbours[i].reputation.y);
-                    C.Add(neighbours[i].reputation.z);
-                }            
+                    if (neighbours[i].neighbour.neighbours[x].neighbour == this)
+                    {
+                        A.Add(neighbours[i].neighbour.neighbours[x].reputation.x);
+                        B.Add(neighbours[i].neighbour.neighbours[x].reputation.y);
+                        C.Add(neighbours[i].neighbour.neighbours[x].reputation.z);
+                    }
+                }        
             }
             avarageA = A.Average();
             avarageB = B.Average();
