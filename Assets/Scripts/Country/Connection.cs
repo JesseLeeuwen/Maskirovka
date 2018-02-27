@@ -16,19 +16,6 @@ namespace Maskirovka
         public float minRep;
         public float maxRep;
 
-        void Awake()
-        {
-            GameManager.Instance.feed.PushUpdate( new Change() { 
-                madeNewConnection = true, 
-                countryA = country,
-                countryB = neighbour 
-            });
-
-            connection = GetComponent<LineRenderer>();
-            connection.positionCount = 2;
-            connection.SetPosition(0, country.transform.position);
-            connection.SetPosition(1, neighbour.transform.position);
-        }
 
         void Update()
         {
@@ -71,6 +58,26 @@ namespace Maskirovka
                 }
             }
             return 0;
+        }
+
+        public void Init(Country neighbourGet, Country countryGet)
+        {
+            /*
+             GameManager.Instance.feed.PushUpdate(new Change()
+            {
+                madeNewConnection = true,
+                countryA = country,
+                countryB = neighbour
+            }); 
+            */
+
+            connection = GetComponent<LineRenderer>();
+            connection.positionCount = 2;
+            connection.SetPosition(0, new Vector3(countryGet.transform.position.x, countryGet.transform.position.y, countryGet.transform.position.z -.1f));
+            connection.SetPosition(1, new Vector3(neighbourGet.transform.position.x, neighbourGet.transform.position.y, neighbourGet.transform.position.z -.1f));
+
+            country = countryGet;
+            neighbour = neighbourGet;
         }
     }
 }
