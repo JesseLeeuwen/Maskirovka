@@ -11,6 +11,7 @@ namespace Maskirovka
 
         public Neighbour[] neighbours;
         public Vector3 wantedReputation;
+        public GameObject connectionPrefab;
 
         public float returnValue;
 
@@ -22,6 +23,10 @@ namespace Maskirovka
         public float avarageA;
         public float avarageB;
         public float avarageC;
+
+        [Header("Min and Max to spawn new Connection")]
+        public float minValue;
+        public float maxValue;
 
         //The value to give to the NewsManager
         private int valToGive;
@@ -112,14 +117,26 @@ namespace Maskirovka
                     if(catagorie == Catagorie.A)
                     {
                         neighbours[i].reputation.x = newReputation;
+                        if(neighbours[i].reputation.x < gameObject.GetComponent<Country>().wantedReputation.x - minValue && neighbours[i].reputation.x > gameObject.GetComponent<Country>().wantedReputation.x + maxValue)
+                        {
+                            spawnConnection();
+                        }
                     }
                     else if (catagorie == Catagorie.B)
                     {
                         neighbours[i].reputation.y = newReputation;
+                        if (neighbours[i].reputation.y < gameObject.GetComponent<Country>().wantedReputation.y - minValue && neighbours[i].reputation.y > gameObject.GetComponent<Country>().wantedReputation.y + maxValue)
+                        {
+                            spawnConnection();
+                        }
                     }
                     else if (catagorie == Catagorie.C)
                     {
                         neighbours[i].reputation.y = newReputation;
+                        if (neighbours[i].reputation.z < gameObject.GetComponent<Country>().wantedReputation.z - minValue && neighbours[i].reputation.z > gameObject.GetComponent<Country>().wantedReputation.z + maxValue)
+                        {
+                            spawnConnection();
+                        }
                     }
                 }
             }
@@ -168,6 +185,14 @@ namespace Maskirovka
                 } else { neighbours[i].reputation.z += returnValue; }
             }
         }
+
+        private void spawnConnection()
+        {
+            //spanw new Connection
+            var connection = (GameObject)Instantiate(
+                connectionPrefab);
+        }
+
 
         public Sprite GetSprite()
         {
