@@ -7,7 +7,7 @@ namespace Maskirovka
     public class NewsFeed : ScriptableObject
     {
         [SerializeField]
-        private Queue<Change> changes;
+        private Queue<Change> changes = new Queue<Change>();
 
         public Queue<Change> PullUpdates()
         {
