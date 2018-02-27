@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewsFeedUI : MonoBehaviour {
+namespace Maskirovka.UI
+{
+	public class NewsFeedUI : MonoBehaviour 
+	{
+		[SerializeField]
+		private NewsFeed feed;
 
-	// Use this for initialization
-	void Start () {
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+		void Start () 
+		{
+			
+		}
 		
+		void Update () 
+		{
+			
+		}
 	}
 }
