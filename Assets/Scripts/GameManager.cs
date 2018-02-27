@@ -16,7 +16,7 @@ namespace Maskirovka
             get { return instance; }
         }
 
-        void Start()
+        void Awake()
         {
             instance = this;
         }

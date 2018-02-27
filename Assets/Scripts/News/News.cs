@@ -19,7 +19,7 @@ namespace Maskirovka.News
             this.country = country;
         }
 
-        public SelectableType GetType()
+        public new SelectableType GetType()
         {
             return SelectableType.News;
         }

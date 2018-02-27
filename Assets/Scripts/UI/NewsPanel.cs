@@ -12,6 +12,11 @@ namespace Maskirovka.UI
         private News.News currentNews;
         private float startValue;
 
+        void Awake()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void Init( News.News news)
         {
             gameObject.SetActive( true );

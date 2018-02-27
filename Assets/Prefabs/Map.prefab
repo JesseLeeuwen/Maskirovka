@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212883633409208446}
   - component: {fileID: 114059668067305058}
   - component: {fileID: 60371945559840462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212016667608487994}
   - component: {fileID: 114765610251326348}
   - component: {fileID: 60608178042194138}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 212967200622531210}
   - component: {fileID: 114526177811843830}
   - component: {fileID: 60525092682803680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 212346639936928406}
   - component: {fileID: 114251515531809274}
   - component: {fileID: 60901045200499254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 212779696312003598}
   - component: {fileID: 114847559290237250}
   - component: {fileID: 60108597584055214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587662087054202}
   - component: {fileID: 212008159091612294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 212551084463024066}
   - component: {fileID: 114057025948086726}
   - component: {fileID: 60404993301435960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4158390373736080}
   - component: {fileID: 212670760935095828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 212636523626595040}
   - component: {fileID: 114714774301530648}
   - component: {fileID: 60370385333009458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4938203454771494}
   - component: {fileID: 212929411994503336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 212064637867040938}
   - component: {fileID: 114671825282099100}
   - component: {fileID: 60975851740764280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 212774809121146818}
   - component: {fileID: 114572567816547392}
   - component: {fileID: 60509121542951478}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4526156661098908}
   - component: {fileID: 212490460085042646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4787579634773998}
   - component: {fileID: 212569671676712786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 212519820625699324}
   - component: {fileID: 114417626196135064}
   - component: {fileID: 60602766239242430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4827939833604164}
   - component: {fileID: 212500880510848800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4071400960396916}
   - component: {fileID: 212197176376937166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 212641830488964890}
   - component: {fileID: 114838634986152218}
   - component: {fileID: 60410383568120678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064792058296814}
   - component: {fileID: 212410346616223120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4818064911935248}
   - component: {fileID: 212797017194449886}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 212300771793117816}
   - component: {fileID: 114124495506653712}
   - component: {fileID: 60639540617828882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Country (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4224884846211280}
   - component: {fileID: 212327519396167662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4676529301885354}
   - component: {fileID: 212990307109705850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4820032618894066}
   - component: {fileID: 212932884692341928}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703866114128114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.26, y: 3.65, z: 0}
+  m_LocalPosition: {x: -5.26, y: 3.65, z: -0.3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4832718800175862}
@@ -1547,12 +1547,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114838634986152218}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114059668067305058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1574,12 +1578,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114057025948086726}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114124495506653712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1601,12 +1609,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114847559290237250}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114251515531809274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1624,12 +1636,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114417626196135064}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114417626196135064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1651,12 +1667,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114572567816547392}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114526177811843830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1674,12 +1694,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114714774301530648}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114572567816547392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1699,12 +1723,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114714774301530648}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114671825282099100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1724,12 +1752,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114838634986152218}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114714774301530648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1749,12 +1781,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114526177811843830}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114765610251326348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1772,12 +1808,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114059668067305058}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114838634986152218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1797,12 +1837,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114526177811843830}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!114 &114847559290237250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1828,12 +1872,16 @@ MonoBehaviour:
   - neighbour: {fileID: 114714774301530648}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
   returnValue: 0
   randomMin: 0
-  randomMax: 0
+  randomMax: 100
   avarageA: 0
   avarageB: 0
   avarageC: 0
+  minValue: 0
+  maxValue: 25
 --- !u!212 &212008159091612294
 SpriteRenderer:
   m_ObjectHideFlags: 1

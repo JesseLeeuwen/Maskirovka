@@ -10,7 +10,10 @@ namespace Maskirovka.UI
         private Animator animator;
         [SerializeField]
         private NewsPanel newsPanel; 
-
+        [SerializeField]
+        private ReputationTable countryInfo;
+        [SerializeField]
+        private GameObject countryInfoContainer;
         [SerializeField]
         private float targetFocus;
         [SerializeField]
@@ -28,7 +31,10 @@ namespace Maskirovka.UI
             else if ( type == SelectableType.Country )
             {
                 targetFocus = 1;
+                countryInfo.Init( (Country)selected );
             }
+
+            countryInfoContainer.SetActive( type == SelectableType.Country );
         }
 
         void Update()
