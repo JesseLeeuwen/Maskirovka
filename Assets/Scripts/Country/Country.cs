@@ -119,7 +119,7 @@ namespace Maskirovka
                         neighbours[i].reputation.x = newReputation;
                         if(neighbours[i].reputation.x < gameObject.GetComponent<Country>().wantedReputation.x - minValue && neighbours[i].reputation.x > gameObject.GetComponent<Country>().wantedReputation.x + maxValue)
                         {
-
+                            spawnConnection();
                         }
                     }
                     else if (catagorie == Catagorie.B)
@@ -127,7 +127,7 @@ namespace Maskirovka
                         neighbours[i].reputation.y = newReputation;
                         if (neighbours[i].reputation.y < gameObject.GetComponent<Country>().wantedReputation.y - minValue && neighbours[i].reputation.y > gameObject.GetComponent<Country>().wantedReputation.y + maxValue)
                         {
-
+                            spawnConnection();
                         }
                     }
                     else if (catagorie == Catagorie.C)
@@ -135,7 +135,7 @@ namespace Maskirovka
                         neighbours[i].reputation.y = newReputation;
                         if (neighbours[i].reputation.z < gameObject.GetComponent<Country>().wantedReputation.z - minValue && neighbours[i].reputation.z > gameObject.GetComponent<Country>().wantedReputation.z + maxValue)
                         {
-
+                            spawnConnection();
                         }
                     }
                 }
@@ -188,6 +188,7 @@ namespace Maskirovka
 
         private void spawnConnection()
         {
+            //spanw new Connection
             var connection = (GameObject)Instantiate(
                 connectionPrefab);
         }
