@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114075319341629828}
   - component: {fileID: 222011803204923476}
   - component: {fileID: 114444536662658530}
+  - component: {fileID: 114555347551214362}
   m_Layer: 5
   m_Name: ListItem
   m_TagString: Untagged
@@ -126,6 +127,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114555347551214362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825762360063574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6aa52b60833334290e7fd4bd8d7a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countries:
+  - {fileID: 114978450704472918}
+  - {fileID: 114814167920636482}
+  connection: {fileID: 114917022340858830}
 --- !u!114 &114814167920636482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 125, y: 378}
-  m_SizeDelta: {x: 200, y: 120}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224071975193753436
 RectTransform:

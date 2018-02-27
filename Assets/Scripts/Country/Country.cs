@@ -30,20 +30,25 @@ namespace Maskirovka
 
         //The value to give to the NewsManager
         private int valToGive;
-        private Catagorie catToGive;        
+        private Catagorie catToGive;
+        [SerializeField]        
         private Sprite sprite;
 
+        private List<Connection> connections;
         private Country tempLand;
 
         void Awake()
-        {
-            //sprite = GetComponent<SpriteRenderer>().sprite;
-
+        {      
+            connections = new List<Connection>();     
             //Generate random wanted reputation withing range of given floats
             float A = Random.Range(randomMin, randomMax);
             float B = Random.Range(randomMin, randomMax);
             float C = Random.Range(randomMin, randomMax);
             wantedReputation = new Vector3(A,B,C);
+
+            avarageA = wantedReputation.x;
+            avarageB = wantedReputation.y;
+            avarageC = wantedReputation.z;
         }
 
         void Start()
@@ -51,12 +56,11 @@ namespace Maskirovka
             //Fill neigbours with the random generated wanted reputation
             for (int i = 0; i < neighbours.Length; i++)
             {
-                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.x, Catagorie.A);
-                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.y, Catagorie.B);
-                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.z, Catagorie.C);
-            }
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.x, Catagorie.A, false);
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.y, Catagorie.B, false);
+                neighbours[i].neighbour.UpdateRepu(this, wantedReputation.z, Catagorie.C, false);
+            } 
         }
-
 
         public NewsData GetNews()
         {
@@ -109,7 +113,7 @@ namespace Maskirovka
         }
 
 
-        public void UpdateRepu( Country country, float newReputation, Catagorie catagorie)
+        public void UpdateRepu( Country country, float newReputation, Catagorie catagorie, bool spawn = true)
         {  
             //Find the neighbour that wants a new reputation and update his reputation in your own list
             for (int i = 0; i < neighbours.Length; i++)
@@ -122,7 +126,7 @@ namespace Maskirovka
                         if(neighbours[i].reputation.x > this.wantedReputation.x + minValue && neighbours[i].reputation.x < this.wantedReputation.x + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
-                            spawnConnection();
+                            if( spawn == true) spawnConnection(Catagorie.A);
                         }
                     }
                     else if (catagorie == Catagorie.B)
@@ -131,7 +135,7 @@ namespace Maskirovka
                         if (neighbours[i].reputation.y > this.wantedReputation.y + minValue && neighbours[i].reputation.y < this.wantedReputation.y + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
-                            spawnConnection();
+                            if( spawn == true) spawnConnection(Catagorie.B);
                         }
                     }
                     else if (catagorie == Catagorie.C)
@@ -140,7 +144,7 @@ namespace Maskirovka
                         if (neighbours[i].reputation.z > this.wantedReputation.z + minValue && neighbours[i].reputation.z < this.wantedReputation.z + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
-                            spawnConnection();
+                            if( spawn == true) spawnConnection(Catagorie.C);
                         }
                     }
                 }
@@ -157,6 +161,7 @@ namespace Maskirovka
             {
                 for(int x = 0; x < neighbours[i].neighbour.neighbours.Length; x++)
                 {
+                    print(neighbours[i].neighbour.neighbours[x].neighbour + "|" + this);
                     if (neighbours[i].neighbour.neighbours[x].neighbour == this)
                     {
                         A.Add(neighbours[i].neighbour.neighbours[x].reputation.x);
@@ -194,15 +199,26 @@ namespace Maskirovka
             }
         }
 
-        private void spawnConnection()
+        private void spawnConnection(Catagorie cat)
         {
-            //spanw new Connection
-            var connection = (GameObject)Instantiate(
-                connectionPrefab);
+            foreach( Connection c in connections )
+                if(c.CountryPresent( this, tempLand) )
+                    return;
 
-            connection.GetComponent<Connection>().Init(this, tempLand);
+            //spanw new Connection
+            var connection = (GameObject)Instantiate(connectionPrefab);
+            connection.GetComponent<Connection>().Init(this, tempLand, cat);
         }
 
+        public void NewConnection(Connection connection)
+        {
+            connections.Add(connection);
+        }
+
+        public void RemoveConnection(Connection connection)
+        {
+            connections.Remove(connection);
+        }
 
         public Sprite GetSprite()
         {

@@ -39,6 +39,7 @@ namespace Maskirovka.UI
 				neighbour = Instantiate(neighbourInfoPrefab, Vector3.zero, Quaternion.identity, neighbourContainer );
 				neighbour.GetComponent<NeighbourInfo>().Init( country.neighbours[i], country );
 			}
+			this.country.sprite = country.GetSprite();
 		}
 		
 		void Update () 

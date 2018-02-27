@@ -28,19 +28,22 @@ namespace Maskirovka.UI
 		void Update () 
 		{
 			newChanges = feed.PullUpdates();
-			while(newChanges.Count > 0 )
+			if( newChanges.Count > 0)
 			{
-				tempChange = newChanges.Dequeue();
-				tempObject = Instantiate( listItemPrefab, Vector3.zero, Quaternion.identity, transform );
-				tempItem = tempObject.GetComponent<NewsFeedItem>();
-				
-				tempItem.Init(tempChange, connections[ System.Convert.ToInt16( tempChange.madeNewConnection ) ]);
+				while(newChanges.Count > 0 )
+				{	
+					tempChange = newChanges.Dequeue();
+					tempObject = Instantiate( listItemPrefab, Vector3.zero, Quaternion.identity, transform );
+					tempItem = tempObject.GetComponent<NewsFeedItem>();	
+					
+					int index = System.Convert.ToInt16( tempChange.madeNewConnection );			
+					tempItem.Init(tempChange, connections[ index ]);
+				}
 			}
-
-			while(transform.childCount > maxListItems )
+			for(int i = transform.childCount - 1; i >= maxListItems; --i )
 			{
-				Destroy( transform.GetChild( transform.childCount - 1 ) );
-			}			
+				Destroy( transform.GetChild( i ).gameObject );
+			}						
 		}
 	}
 }

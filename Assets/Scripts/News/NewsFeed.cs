@@ -11,7 +11,7 @@ namespace Maskirovka
 
         public Queue<Change> PullUpdates()
         {
-            Queue<Change> tempChanges = changes;
+            Queue<Change> tempChanges = new Queue<Change>(changes);
             changes.Clear();
 
             return tempChanges;

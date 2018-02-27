@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace Maskirovka.News
         private Queue<News> activeNewsItems;
 
         void Start()
-        {
+        {            
             activeNewsItems = new Queue<News>();
             CreateNews();
         }
@@ -31,7 +32,7 @@ namespace Maskirovka.News
                 }while( IsCountryAvailable( c ) == false );
 
                 // position of news message
-                Vector3 position = c.transform.position - Vector3.forward;
+                Vector3 position = c.transform.GetChild(0).position - Vector3.forward;
 
                 // spawn a news message object
                 News news = Instantiate( newsPrefab, position, Quaternion.identity).GetComponent<News>();
