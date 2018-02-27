@@ -33,6 +33,8 @@ namespace Maskirovka
         private Catagorie catToGive;
         private Sprite sprite;
 
+        private Country tempLand;
+
         void Awake()
         {
             //sprite = GetComponent<SpriteRenderer>().sprite;
@@ -119,6 +121,7 @@ namespace Maskirovka
                         neighbours[i].reputation.x = newReputation;
                         if(neighbours[i].reputation.x > this.wantedReputation.x + minValue && neighbours[i].reputation.x < this.wantedReputation.x + maxValue)
                         {
+                            tempLand = neighbours[i].neighbour;
                             spawnConnection();
                         }
                     }
@@ -127,6 +130,7 @@ namespace Maskirovka
                         neighbours[i].reputation.y = newReputation;
                         if (neighbours[i].reputation.y > this.wantedReputation.y + minValue && neighbours[i].reputation.y < this.wantedReputation.y + maxValue)
                         {
+                            tempLand = neighbours[i].neighbour;
                             spawnConnection();
                         }
                     }
@@ -135,6 +139,7 @@ namespace Maskirovka
                         neighbours[i].reputation.z = newReputation;
                         if (neighbours[i].reputation.z > this.wantedReputation.z + minValue && neighbours[i].reputation.z < this.wantedReputation.z + maxValue)
                         {
+                            tempLand = neighbours[i].neighbour;
                             spawnConnection();
                         }
                     }
@@ -194,6 +199,8 @@ namespace Maskirovka
             //spanw new Connection
             var connection = (GameObject)Instantiate(
                 connectionPrefab);
+
+            connection.GetComponent<Connection>().Init(this, tempLand);
         }
 
 
