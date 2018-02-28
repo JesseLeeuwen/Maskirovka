@@ -14,17 +14,26 @@ namespace Maskirovka.Utility
 		private Vector3 defaultPosition;
 		private float target;
 		private float current;
+		private SpriteRenderer render;
 
 		void Start()
 		{
 			defaultPosition = transform.position;
+			render = GetComponent<SpriteRenderer>();
 		}
 
 		IEnumerator ToPosition(float target)
 		{
+
 			while( current != target )
 			{
+				
 				current = Mathf.MoveTowards( current, target, Time.deltaTime * speed);
+				if (current > 0 && target >= current){
+				render.sortingOrder=2;
+				}else{
+					render.sortingOrder=1;
+				}
 				transform.position = defaultPosition + Vector3.up * current;
 				yield return null;
 			}
@@ -32,10 +41,12 @@ namespace Maskirovka.Utility
 
 		public void Select(object arg)
 		{
+			
 			if(routine != null)
 				StopCoroutine(routine);
 				
-			StartCoroutine(ToPosition( offset * (int)arg ));
-		}		
+			routine = StartCoroutine(ToPosition( offset * (int)arg ));
+		}
+
 	}
 }
