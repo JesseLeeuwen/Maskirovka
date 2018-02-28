@@ -5,7 +5,7 @@ namespace Maskirovka.News
     [CreateAssetMenu(menuName = "simple processor")]
 	public class SimpleProcessor : NewsProcessor
 	{
-		public override void ProccesNews(News news)
+		public override bool ProccesNews(News news)
 		{
 			float value = Random.value * 100;
 			if( value < news.chanceOfSucces )
@@ -18,6 +18,8 @@ namespace Maskirovka.News
 			}else{
 				Debug.Log("FAIL!!");
 			}	
+
+			return value < news.chanceOfSucces;
 		}
 	}
 }

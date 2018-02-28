@@ -7,9 +7,9 @@ namespace Maskirovka.News
 {
 	public abstract class NewsProcessor : ScriptableObject 
 	{
-		public virtual void ProccesNews( News news )
+		public virtual bool ProccesNews( News news )
 		{
-
+			return false;
 		}
 	}
 }

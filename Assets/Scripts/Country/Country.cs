@@ -114,7 +114,7 @@ namespace Maskirovka
             Catagorie[] cats = new Catagorie[] {Catagorie.A,Catagorie.B,Catagorie.C};
             float[] vals = new float[] {A,B,C};
             int r = Random.Range(0,3);
-            catToGive= cats[r];
+            catToGive = cats[r];
             valToGive = Mathf.Abs(Mathf.RoundToInt(vals[r]));
             return new NewsData { value = valToGive, catagorie = catToGive};
         }
@@ -130,7 +130,7 @@ namespace Maskirovka
                     if(catagorie == Catagorie.A)
                     {
                         neighbours[i].reputation.x = newReputation;
-                        if(neighbours[i].reputation.x > this.wantedReputation.x + minValue && neighbours[i].reputation.x < this.wantedReputation.x + maxValue)
+                        if(neighbours[i].reputation.x > avarageA + minValue && neighbours[i].reputation.x < avarageA + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.A);
@@ -139,7 +139,7 @@ namespace Maskirovka
                     else if (catagorie == Catagorie.B)
                     {
                         neighbours[i].reputation.y = newReputation;
-                        if (neighbours[i].reputation.y > this.wantedReputation.y + minValue && neighbours[i].reputation.y < this.wantedReputation.y + maxValue)
+                        if (neighbours[i].reputation.y > avarageB + minValue && neighbours[i].reputation.y < avarageB + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.B);
@@ -148,7 +148,7 @@ namespace Maskirovka
                     else if (catagorie == Catagorie.C)
                     {
                         neighbours[i].reputation.z = newReputation;
-                        if (neighbours[i].reputation.z > this.wantedReputation.z + minValue && neighbours[i].reputation.z < this.wantedReputation.z + maxValue)
+                        if (neighbours[i].reputation.z > avarageC + minValue && neighbours[i].reputation.z < avarageC + maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.C);
