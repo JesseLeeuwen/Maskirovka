@@ -11,6 +11,7 @@ namespace Maskirovka.News
         public Catagorie catagorie;
         public Country country;
         public int chanceOfSucces;
+        public bool playerChanged;
  
         public void Init( float value, Catagorie catagorie, Country country )
         {

@@ -11,7 +11,9 @@ namespace Maskirovka.UI
         [SerializeField]
         private Slider slider;
         private News.News currentNews;
-        private float startValue;
+        private int chanceOfSucces;
+        private float startValue, currentValue;
+
 
         public GameObject[] backgrounds;
         public GameObject[] texts;
@@ -25,7 +27,8 @@ namespace Maskirovka.UI
             gameObject.SetActive( true );
             
             currentNews = news;
-            startValue = news.value;
+            chanceOfSucces = news.chanceOfSucces;
+            startValue = currentValue = news.value;
             slider.value = startValue;
 
             
@@ -88,8 +91,15 @@ namespace Maskirovka.UI
 
         public void OnChangeSlider( float value )
         {
-            currentNews.value = value;
-            currentNews.chanceOfSucces = Mathf.RoundToInt(80 - ( Mathf.Abs( value - startValue ) * 1.5f ) );
+            currentValue = value;
+            chanceOfSucces = Mathf.RoundToInt(80 - ( Mathf.Abs( value - startValue ) * 1.5f ) );
+        }
+
+        public void OnSend()        
+        {
+            currentNews.playerChanged = true;
+            currentNews.value = currentValue;
+            currentNews.chanceOfSucces = chanceOfSucces;
         }
     }
 }

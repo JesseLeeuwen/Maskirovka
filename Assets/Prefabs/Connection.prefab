@@ -57,7 +57,7 @@ MonoBehaviour:
   connection: {fileID: 0}
   catagorie: 0
   minRep: 0
-  maxRep: 25
+  maxRep: 10
 --- !u!120 &120208802766878116
 LineRenderer:
   m_ObjectHideFlags: 1

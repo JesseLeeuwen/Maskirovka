@@ -83,6 +83,7 @@ namespace Maskirovka
 
         public void UpdateRepu( Country country, float newReputation, Catagorie catagorie, bool spawn = true)
         {  
+            float diff = 0;
             //Find the neighbour that wants a new reputation and update his reputation in your own list
             for (int i = 0; i < neighbours.Length; i++)
             {
@@ -91,7 +92,8 @@ namespace Maskirovka
                     if(catagorie == Catagorie.A)
                     {
                         neighbours[i].reputation.x = newReputation;
-                        if(neighbours[i].reputation.x > avarageA + minValue && neighbours[i].reputation.x < avarageA + maxValue)
+                        diff = Mathf.Abs(neighbours[i].reputation.x - avarageA);
+                        if ( diff > minValue && diff < maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.A);
@@ -100,7 +102,8 @@ namespace Maskirovka
                     else if (catagorie == Catagorie.B)
                     {
                         neighbours[i].reputation.y = newReputation;
-                        if (neighbours[i].reputation.y > avarageB + minValue && neighbours[i].reputation.y < avarageB + maxValue)
+                        diff = Mathf.Abs(neighbours[i].reputation.y - avarageB);
+                        if ( diff > minValue && diff < maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.B);
@@ -109,7 +112,8 @@ namespace Maskirovka
                     else if (catagorie == Catagorie.C)
                     {
                         neighbours[i].reputation.z = newReputation;
-                        if (neighbours[i].reputation.z > avarageC + minValue && neighbours[i].reputation.z < avarageC + maxValue)
+                        diff = Mathf.Abs(neighbours[i].reputation.z - avarageC);
+                        if (diff > minValue && diff < maxValue)
                         {
                             tempLand = neighbours[i].neighbour;
                             if( spawn == true) spawnConnection(Catagorie.C);

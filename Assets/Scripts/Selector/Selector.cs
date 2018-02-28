@@ -40,7 +40,6 @@ namespace Maskirovka.Selector
                 {
                     if( data.pointerPressRaycast.gameObject.layer != 8 )
                         return;
-
                     selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                    
                     manager.ReceiveSelection( selected );
                     ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
