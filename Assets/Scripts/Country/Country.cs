@@ -70,7 +70,7 @@ namespace Maskirovka
             float A = wantedReputation.x =- avarageA;
             float B = wantedReputation.y =- avarageB;
             float C = wantedReputation.z =- avarageC;
-
+            /*
             float max = Mathf.Max(A, B, C);
             float min = Mathf.Min(A, B, C);
 
@@ -109,9 +109,12 @@ namespace Maskirovka
                 }
                 //if the difference in '+' you need to substract it 
                 valToGive = Mathf.RoundToInt(max) * -1;
-            }
+            }*/
             Catagorie[] cats = new Catagorie[] {Catagorie.A,Catagorie.B,Catagorie.C};
-            catToGive= cats[Random.Range(0,3)];
+            float[] vals = new float[] {A,B,C};
+            int r = Random.Range(0,3);
+            catToGive= cats[r];
+            valToGive = Mathf.Abs(Mathf.RoundToInt(vals[r]));
             return new NewsData { value = valToGive, catagorie = catToGive};
         }
 
