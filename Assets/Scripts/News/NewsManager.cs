@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Maskirovka.Utility;
+
 namespace Maskirovka.News
 {
     public class NewsManager : MonoBehaviour
@@ -11,6 +13,7 @@ namespace Maskirovka.News
         [SerializeField]
         private CountryList countries;
         private Queue<News> activeNewsItems;
+
 
         void Start()
         {            
@@ -38,10 +41,15 @@ namespace Maskirovka.News
                 News news = Instantiate( newsPrefab, position, Quaternion.identity).GetComponent<News>();
                 news.country = c; // set country of message                
 
+
                 // get news message from country
                 NewsData newsMessage = c.GetNews();                
                 news.catagorie = newsMessage.catagorie;
                 news.value = newsMessage.value;
+
+                SpriteRenderer fill = news.transform.GetChild(1).GetComponent<SpriteRenderer>();
+                fill.color= CatagorieSettings.GetColor(news.catagorie);
+               
 
                 // add news message to list of active news messages
                 activeNewsItems.Enqueue( news );

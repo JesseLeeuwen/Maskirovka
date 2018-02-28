@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colors:
   - catagorie: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-  - catagorie: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
-  - catagorie: 0
-    color: {r: 0, g: 0, b: 0, a: 0}
+    color: {r: 0.8980393, g: 0, b: 0.45882356, a: 1}
+  - catagorie: 1
+    color: {r: 0, g: 0.6117647, b: 0.85882354, a: 1}
+  - catagorie: 2
+    color: {r: 1, g: 0.91764706, b: 0, a: 1}
