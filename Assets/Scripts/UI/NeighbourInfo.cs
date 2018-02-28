@@ -15,6 +15,9 @@ namespace Maskirovka.UI
 		private Neighbour neighbour = new Neighbour();
 		private Vector3 reputation;
 
+		[SerializeField]
+		private float animationSpeed = 400;
+
 		public void Init(Neighbour neighbour, Country country)
 		{
 			icon.sprite = neighbour.neighbour.GetSprite();
@@ -36,12 +39,12 @@ namespace Maskirovka.UI
 			if( value < 0)
 			{
 				Vector2 target = new Vector2( 50 - Mathf.Abs(value), bar.offsetMin.y );
-				bar.offsetMin = Vector2.MoveTowards( bar.offsetMin, target, Time.deltaTime * 50.0f );
+				bar.offsetMin = Vector2.MoveTowards( bar.offsetMin, target, Time.deltaTime * animationSpeed );
 			}
 			else
 			{
 				Vector2 target = new Vector2( -50 + value, bar.offsetMax.y );
-				bar.offsetMax = Vector2.MoveTowards( bar.offsetMax, target, Time.deltaTime * 50.0f );
+				bar.offsetMax = Vector2.MoveTowards( bar.offsetMax, target, Time.deltaTime * animationSpeed );
 			}	
 		}
 	}

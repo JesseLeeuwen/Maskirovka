@@ -21,6 +21,9 @@ namespace Maskirovka.UI
 		[SerializeField]
 		private RectTransform[] bars;
 
+		[SerializeField]
+		private float animationSpeed;
+
 		public void Init( Country country )
 		{	
 			reputation = new float[3];
@@ -48,7 +51,7 @@ namespace Maskirovka.UI
 			{
 				float height = bars[i].sizeDelta.y;
 				Vector2 target = new Vector2( reputation[i] * 1.80f, height );
-				bars[i].sizeDelta = Vector2.MoveTowards( bars[i].sizeDelta, target, Time.deltaTime * 50.0f );
+				bars[i].sizeDelta = Vector2.MoveTowards( bars[i].sizeDelta, target, Time.deltaTime * animationSpeed );
 			}
 		}
 	}
