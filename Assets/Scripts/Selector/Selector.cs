@@ -7,6 +7,11 @@ using Maskirovka.Utility;
 
 namespace Maskirovka.Selector
 {
+    public interface ISelectable
+    {
+        SelectableType GetType();
+    }
+
     public class Selector : MonoBehaviour
     {
         [SerializeField]
@@ -14,31 +19,39 @@ namespace Maskirovka.Selector
         [SerializeField]
         private ISelectable selected;
 
-        public ISelectable GetSelected()
-        {
-            return selected;
-        }
-
         void Update()
         {
             if( ExtendedStandaloneInputModule.OnUI(0,1) == true )
                 return;
 
             if( Input.GetMouseButtonUp(0) )
-            {
-                RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Camera.main.transform.forward, 20, 1 << 8 | 1 << 5);
-                if( hitInfo.collider != null )
-                {
-                    ISelectable selected = hitInfo.collider.GetComponent<ISelectable>();
+            {       
+                // to prevent stupid missing ref error
+                try{
                     if( selected != null )
-                        manager.ReceiveSelection( hitInfo.collider.GetComponent<ISelectable>() ) ;
+                        ((MonoBehaviour)selected).SendMessage("Select", 0, SendMessageOptions.DontRequireReceiver);
+                }catch( MissingReferenceException e){ Debug.LogWarning("unity fucked up again"); }
+
+                // get new selected Object
+                PointerEventData data = ExtendedStandaloneInputModule.GetPointerEventData(-1);
+                selected = null;
+
+                if( data.pointerPressRaycast.gameObject.layer != 8 )
+                    return;
+
+                if( data.pointerPressRaycast.gameObject != null )
+                {
+                    selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                    
+                    manager.ReceiveSelection( selected );
+                    ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
                 }
+                
             }
         }
-    }
-
-    public interface ISelectable
-    {
-        SelectableType GetType();
+    
+        public ISelectable GetSelected()
+        {
+            return selected;
+        }
     }
 }
