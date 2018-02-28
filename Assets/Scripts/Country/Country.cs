@@ -35,6 +35,7 @@ namespace Maskirovka
         [SerializeField]        
         private Sprite sprite;
 
+        [SerializeField]
         private List<Connection> connections;
         private Country tempLand;
 
