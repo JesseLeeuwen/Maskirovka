@@ -87,7 +87,7 @@ namespace Maskirovka.UI
         public void OnChangeSlider( float value )
         {
             currentNews.value = value;
-            currentNews.chanceOfSucces = Mathf.RoundToInt(80 - ( ( value - startValue ) * 1.5f ));
+            currentNews.chanceOfSucces = Mathf.RoundToInt(80 - ( Mathf.Abs( value - startValue ) * 1.5f ) );
         }
     }
 }
