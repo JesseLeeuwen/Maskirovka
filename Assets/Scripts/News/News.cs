@@ -25,10 +25,11 @@ namespace Maskirovka.News
             return SelectableType.News;
         }
 
-        public void Send()
+        public bool Send()
         {
             bool result = GameManager.Instance.processor.ProccesNews( this );
             Destroy( gameObject );
+            return result;
         }
     }
 }

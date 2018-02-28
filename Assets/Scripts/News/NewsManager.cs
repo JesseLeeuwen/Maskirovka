@@ -13,6 +13,9 @@ namespace Maskirovka.News
         [SerializeField]
         private CountryList countries;
         private Queue<News> activeNewsItems;
+        public GameObject SuccessAnimation;
+        public GameObject FailedAnimation;
+        public Canvas canvas;
 
 
         void Start()
@@ -59,8 +62,18 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
-            foreach( News news in activeNewsItems)
-                news.Send();
+            bool result;
+            foreach( News news in activeNewsItems){
+                result = news.Send();
+                if (news.playerChanged){
+                    if (result){ 
+                        Instantiate(SuccessAnimation,canvas.transform);
+                    }else{
+                        Instantiate(FailedAnimation,canvas.transform);
+                    }
+
+                }
+            }
         }
 
         // check if a news message with given country already exists
