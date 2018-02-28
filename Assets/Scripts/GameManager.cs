@@ -1,6 +1,7 @@
 using UnityEngine;
 using Maskirovka.News;
 using Maskirovka.Selector;
+using Maskirovka.Utility;
 
 namespace Maskirovka
 {
@@ -10,6 +11,7 @@ namespace Maskirovka
         public NewsProcessor processor; // current news processor
         public NewsManager newsManager;
         public NewsFeed feed;
+        public CatagorieSettings settings;
 
         [SerializeField]
         private CountryList list;
@@ -25,6 +27,7 @@ namespace Maskirovka
         {
             instance = this;
             list.Init(countries);
+            settings.Init();
         }
     }
 }
