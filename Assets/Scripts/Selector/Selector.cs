@@ -36,11 +36,11 @@ namespace Maskirovka.Selector
                 PointerEventData data = ExtendedStandaloneInputModule.GetPointerEventData(-1);
                 selected = null;
 
-                if( data.pointerPressRaycast.gameObject.layer != 8 )
-                    return;
-
                 if( data.pointerPressRaycast.gameObject != null )
                 {
+                    if( data.pointerPressRaycast.gameObject.layer != 8 )
+                        return;
+
                     selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                    
                     manager.ReceiveSelection( selected );
                     ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
