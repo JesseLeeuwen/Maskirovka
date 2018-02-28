@@ -385,7 +385,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_MethodName: SendNews
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -396,7 +396,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: CreateNews
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -576,7 +576,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187ff5c105be2d04ab6fda0146def59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 114858842243143572}
+  backgrounds:
+  - {fileID: 1075098106201058}
+  - {fileID: 1938436058408614}
+  - {fileID: 1425605837304262}
+  texts:
+  - {fileID: 1359786243344772}
+  - {fileID: 1591111328485428}
 --- !u!114 &114374388633884964
 MonoBehaviour:
   m_ObjectHideFlags: 1
