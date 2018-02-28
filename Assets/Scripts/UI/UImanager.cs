@@ -23,7 +23,7 @@ namespace Maskirovka.UI
         public void ReceiveSelection( ISelectable selected )
         {
             SelectableType type = selected.GetType();
-            if( type == SelectableType.News )
+            if( type == SelectableType.News && newsPanel.gameObject.activeInHierarchy == false )
             {
                 newsPanel.Init( (News.News)selected );
                 targetFocus = 0;
