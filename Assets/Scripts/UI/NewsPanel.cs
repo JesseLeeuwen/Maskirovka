@@ -27,6 +27,8 @@ namespace Maskirovka.UI
             currentNews = news;
             startValue = news.value;
             slider.value = startValue;
+
+            
             Color c = CatagorieSettings.GetColor(news.catagorie);
             foreach (GameObject bg in backgrounds){
                 bg.GetComponent<Image>().color = c;
