@@ -70,46 +70,7 @@ namespace Maskirovka
             float A = wantedReputation.x =- avarageA;
             float B = wantedReputation.y =- avarageB;
             float C = wantedReputation.z =- avarageC;
-            /*
-            float max = Mathf.Max(A, B, C);
-            float min = Mathf.Min(A, B, C);
 
-            float sum = max - min;
-
-            if(sum < 0)
-            {
-                if (min == A)
-                {
-                    catToGive = Catagorie.A;
-                }
-                if (min == B)
-                {
-                    catToGive = Catagorie.B;
-                }
-                if (min == C)
-                {
-                    catToGive = Catagorie.C;
-                }
-                //if the difference in '-' you need to add it 
-                valToGive = Mathf.RoundToInt(min) *+1; 
-            }
-            else if(sum >= 0)
-            {
-                if (max == A)
-                {
-                    catToGive = Catagorie.A;
-                }
-                if (max == B)
-                {
-                    catToGive = Catagorie.B;
-                }
-                if (max == C)
-                {
-                    catToGive = Catagorie.C;
-                }
-                //if the difference in '+' you need to substract it 
-                valToGive = Mathf.RoundToInt(max) * -1;
-            }*/
             Catagorie[] cats = new Catagorie[] {Catagorie.A,Catagorie.B,Catagorie.C};
             float[] vals = new float[] {A,B,C};
             int r = Random.Range(0,3);

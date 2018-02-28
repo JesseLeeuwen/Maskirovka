@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Maskirovka.Utility;
+
 namespace Maskirovka
 {
     public class Connection : MonoBehaviour 
@@ -15,6 +17,7 @@ namespace Maskirovka
         [Header("Reputation settings")]
         public float minRep;
         public float maxRep;
+
 
         void Update()
         {
@@ -82,7 +85,11 @@ namespace Maskirovka
             country = countryGet;
             neighbour = neighbourGet;
             catagorie = cat;
-            
+
+
+            connection.material.color = CatagorieSettings.GetColor(cat);
+
+
             country.NewConnection( this );
             neighbour.NewConnection( this );
         }
