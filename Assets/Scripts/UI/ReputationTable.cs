@@ -19,14 +19,20 @@ namespace Maskirovka.UI
 		[SerializeField]
 		private float[] reputation;
 		[SerializeField]
-		private RectTransform[] bars;
-
+		private RectTransform[] bars;		
 		[SerializeField]
-		private float animationSpeed;
+		private float animationTime;
+
+		private float time;
 
 		public void Init( Country country )
 		{	
+			Sprite icon = country.GetSprite();
+			if(icon == this.country.sprite) return;
+
 			reputation = new float[3];
+			time = 0;
+			
 			reputation[0] = country.avarageA;
 			reputation[1] = country.avarageB;
 			reputation[2] = country.avarageC;
@@ -42,16 +48,18 @@ namespace Maskirovka.UI
 				neighbour = Instantiate(neighbourInfoPrefab, Vector3.zero, Quaternion.identity, neighbourContainer );
 				neighbour.GetComponent<NeighbourInfo>().Init( country.neighbours[i], country );
 			}
-			this.country.sprite = country.GetSprite();
+			
+			this.country.sprite = icon;
 		}
 		
 		void Update () 
 		{
+			time += Time.deltaTime;
 			for(int i = 0; i < 3; ++i)
 			{
 				float height = bars[i].sizeDelta.y;
-				Vector2 target = new Vector2( reputation[i] * 1.80f, height );
-				bars[i].sizeDelta = Vector2.MoveTowards( bars[i].sizeDelta, target, Time.deltaTime * animationSpeed );
+				Vector2 target = new Vector2( reputation[i] * 1.80f, height );				
+				bars[i].sizeDelta = Vector2.Lerp( bars[i].sizeDelta, target, time / animationTime );
 			}
 		}
 	}

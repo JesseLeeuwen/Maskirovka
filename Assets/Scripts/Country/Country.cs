@@ -29,6 +29,7 @@ namespace Maskirovka
         public float maxValue;
 
         //The value to give to the NewsManager
+        [SerializeField]
         private int valToGive;
         private Catagorie catToGive;
         [SerializeField]        
@@ -66,9 +67,9 @@ namespace Maskirovka
         {
             SearchNeighbours(); //Find the avarage values of A B and C
 
-            float A = wantedReputation.x - avarageA;
-            float B = wantedReputation.y - avarageB;
-            float C = wantedReputation.z - avarageC;
+            float A = wantedReputation.x =- avarageA;
+            float B = wantedReputation.y =- avarageB;
+            float C = wantedReputation.z =- avarageC;
 
             float max = Mathf.Max(A, B, C);
             float min = Mathf.Min(A, B, C);
@@ -107,7 +108,7 @@ namespace Maskirovka
                     catToGive = Catagorie.C;
                 }
                 //if the difference in '+' you need to substract it 
-                valToGive = Mathf.RoundToInt(max) *-1;
+                valToGive = Mathf.RoundToInt(max) * -1;
             }
             return new NewsData { value = valToGive, catagorie = catToGive};
         }
@@ -160,8 +161,7 @@ namespace Maskirovka
             for (int i = 0; i < neighbours.Length; i++)
             {
                 for(int x = 0; x < neighbours[i].neighbour.neighbours.Length; x++)
-                {
-                    print(neighbours[i].neighbour.neighbours[x].neighbour + "|" + this);
+                {                 
                     if (neighbours[i].neighbour.neighbours[x].neighbour == this)
                     {
                         A.Add(neighbours[i].neighbour.neighbours[x].reputation.x);
