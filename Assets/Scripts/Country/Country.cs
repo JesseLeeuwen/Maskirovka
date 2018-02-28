@@ -110,6 +110,8 @@ namespace Maskirovka
                 //if the difference in '+' you need to substract it 
                 valToGive = Mathf.RoundToInt(max) * -1;
             }
+            Catagorie[] cats = new Catagorie[] {Catagorie.A,Catagorie.B,Catagorie.C};
+            catToGive= cats[Random.Range(0,3)];
             return new NewsData { value = valToGive, catagorie = catToGive};
         }
 
