@@ -32,8 +32,12 @@ namespace Maskirovka.UI
 			{
 				while(newChanges.Count > 0 )
 				{	
-					tempChange = newChanges.Dequeue();
-					tempObject = Instantiate( listItemPrefab, Vector3.zero, Quaternion.identity, transform );
+					tempChange = newChanges.Dequeue();					
+					tempObject = Instantiate( listItemPrefab, Vector3.zero, Quaternion.identity );
+					
+					tempObject.transform.SetParent(transform, false);
+					tempObject.transform.SetAsFirstSibling();
+					
 					tempItem = tempObject.GetComponent<NewsFeedItem>();	
 					
 					int index = System.Convert.ToInt16( tempChange.madeNewConnection );			
