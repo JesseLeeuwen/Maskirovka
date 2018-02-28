@@ -25,19 +25,24 @@ namespace Maskirovka.Selector
                 return;
 
             if( Input.GetMouseButtonUp(0) )
-            {
-                // deselect previous object
-                if( selected != null )                
-                    ((MonoBehaviour)selected).SendMessage("Select", 0, SendMessageOptions.DontRequireReceiver);
-                
+            {       
+                // to prevent stupid missing ref error
+                try{
+                    if( selected != null )
+                        ((MonoBehaviour)selected).SendMessage("Select", 0, SendMessageOptions.DontRequireReceiver);
+                }catch( MissingReferenceException e){ Debug.LogWarning("unity fucked up again"); }
+
                 // get new selected Object
                 PointerEventData data = ExtendedStandaloneInputModule.GetPointerEventData(-1);
-                selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();
-                if( selected != null )
+                selected = null;
+                if( data.pointerPressRaycast.gameObject != null )
                 {
+                    selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();
+                    print( "select" + selected.GetType());
                     manager.ReceiveSelection( selected );
                     ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
                 }
+                
             }
         }
     

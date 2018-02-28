@@ -1035,7 +1035,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396836988201168, guid: 7d53795e152aa0949850bddebe4f443d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12.23
       objectReference: {fileID: 0}
     - target: {fileID: 4396836988201168, guid: 7d53795e152aa0949850bddebe4f443d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 256
-  m_MaxRayIntersections: 0
+  m_MaxRayIntersections: 1
 --- !u!114 &2112887371 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114057025948086726, guid: 7d53795e152aa0949850bddebe4f443d,
