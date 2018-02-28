@@ -160,8 +160,7 @@ namespace Maskirovka
             for (int i = 0; i < neighbours.Length; i++)
             {
                 for(int x = 0; x < neighbours[i].neighbour.neighbours.Length; x++)
-                {
-                    print(neighbours[i].neighbour.neighbours[x].neighbour + "|" + this);
+                {                 
                     if (neighbours[i].neighbour.neighbours[x].neighbour == this)
                     {
                         A.Add(neighbours[i].neighbour.neighbours[x].reputation.x);
