@@ -24,6 +24,7 @@ namespace Maskirovka
         public float maxRep;
 
         private Vector3 total;
+        private float previousSum; 
 
         private void Awake()
         {
@@ -73,9 +74,21 @@ namespace Maskirovka
 
         void colorUpdate()
         {
-            block.SetColor("_Values", new Vector4(Mathf.Abs(total.x), Mathf.Abs(total.y), Mathf.Abs(total.z)));
+            float _Sum = Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z);
+            if( _Sum == previousSum )
+                return;
+            
+            float a = 1 - (Mathf.Abs(total.x) / _Sum);
+            float b = 1 - (Mathf.Abs(total.y) / _Sum);
+            float c = 1 - (Mathf.Abs(total.z) / _Sum);
+            
+            float sum = a + b + c;
+            a /= sum;
+            b /= sum;
+
+            block.SetColor("_Values", new Vector4(a, b, 0));
             connection.SetPropertyBlock(block);
-            print(total);
+            previousSum = _Sum;
         }
 
         public void Init(Country neighbourGet, Country countryGet)

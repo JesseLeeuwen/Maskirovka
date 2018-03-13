@@ -50,17 +50,8 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{				
-				half _Sum = _Values.x + _Values.y + _Values.z;
-				half a = 1 - (_Values.x / _Sum);
-				half b = 1 - (_Values.y / _Sum);
-				half c = 1 - _Values.z / _Sum;
-				
-				half sum = a + b + c;
-				a /= sum;
-				b /= sum;
-
 				half uv = i.uv.x + ( i.uv.y / (7.5 * _Length ));
-				fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, b + a)), 1-step( uv, a) );
+				fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );
 				return col;
 			}
 			ENDCG
