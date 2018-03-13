@@ -14,17 +14,33 @@ namespace Maskirovka
         public LineRenderer connection;
         public Catagorie catagorie;
 
+        [Header("Material information")]
+        public Material material;
+        [SerializeField]
+        private MaterialPropertyBlock block;
+
         [Header("Reputation settings")]
         public float minRep;
         public float maxRep;
 
+        private Vector3 total;
+
+        private void Awake()
+        {
+            block = new MaterialPropertyBlock();
+        }
+
 
         void Update()
         {
-            float temp1 = Search(country, neighbour);
-            float temp2 = Search(neighbour, country);
+            Vector3 temp1 = Search(country, neighbour);
+            Vector3 temp2 = Search(neighbour, country);
 
-            if(Mathf.Abs( temp1 - temp2) > maxRep)
+            total = new Vector3(temp1.x - temp2.x, temp1.y - temp2.y, temp1.z - temp2.z);
+
+            colorUpdate();
+
+            if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
             {
                 GameManager.Instance.feed.PushUpdate( new Change() { 
                     madeNewConnection = false, 
@@ -42,30 +58,27 @@ namespace Maskirovka
             connection.SetPosition(1, new Vector3(core2.x, core2.y, core2.z + 0.1f));
         }
 
-        float Search(Country country, Country neighbour)
+        Vector3 Search(Country country, Country neighbour)
         {
             for (int i = 0; i < country.neighbours.Length; i++)
             {
                 if (country.neighbours[i].neighbour == neighbour)
                 {
-                    if(catagorie == Catagorie.A)
-                    {
-                        return country.neighbours[i].reputation.x;
-                    }
-                    else if (catagorie == Catagorie.B)
-                    {
-                        return country.neighbours[i].reputation.y;
-                    }
-                    else if (catagorie == Catagorie.C)
-                    {
-                        return country.neighbours[i].reputation.z;
-                    }
+                    return country.neighbours[i].reputation;
                 }
             }
-            return 0;
+            return new Vector3();
         }
 
-        public void Init(Country neighbourGet, Country countryGet, Catagorie cat)
+
+        void colorUpdate()
+        {
+            block.SetColor("_Values", new Vector4(Mathf.Abs(total.x), Mathf.Abs(total.y), Mathf.Abs(total.z)));
+            connection.SetPropertyBlock(block);
+            print(total);
+        }
+
+        public void Init(Country neighbourGet, Country countryGet)
         {            
             GameManager.Instance.feed.PushUpdate(new Change()
             {
@@ -84,10 +97,8 @@ namespace Maskirovka
 
             country = countryGet;
             neighbour = neighbourGet;
-            catagorie = cat;
 
-
-            connection.material.color = CatagorieSettings.GetColor(cat);
+            //connection.material.color = CatagorieSettings.GetColor(cat);
 
 
             country.NewConnection( this );

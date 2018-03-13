@@ -33,9 +33,9 @@ namespace Maskirovka.UI
 			reputation = new float[3];
 			time = 0;
 			
-			reputation[0] = country.avarageA;
-			reputation[1] = country.avarageB;
-			reputation[2] = country.avarageC;
+			reputation[0] = country.avarage.x;
+			reputation[1] = country.avarage.y;
+			reputation[2] = country.avarage.z;
 
 			for(int i = 0; i < neighbourContainer.childCount; ++i)
 			{

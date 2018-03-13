@@ -21,7 +21,7 @@ namespace Maskirovka.UI
 		public void Init(Neighbour neighbour, Country country)
 		{
 			icon.sprite = neighbour.neighbour.GetSprite();
-			reputation = new Vector3( country.avarageA, country.avarageB, country.avarageC );
+			reputation = country.avarage;
 			this.neighbour = neighbour;
 			reputation = reputation - neighbour.reputation;
 		}

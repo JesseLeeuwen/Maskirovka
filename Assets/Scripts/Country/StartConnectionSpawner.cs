@@ -18,9 +18,9 @@ namespace Maskirovka
 				Country country = countries[i];
 				foreach(Neighbour n in country.neighbours)
 				{
-					n.neighbour.UpdateRepu( country, country.avarageA, Catagorie.A);
-					n.neighbour.UpdateRepu( country, country.avarageB, Catagorie.B);
-					n.neighbour.UpdateRepu( country, country.avarageC, Catagorie.C);
+					n.neighbour.UpdateRepu( country, country.avarage.x, Catagorie.A);
+					n.neighbour.UpdateRepu( country, country.avarage.y, Catagorie.B);
+					n.neighbour.UpdateRepu( country, country.avarage.z, Catagorie.C);
 				}
 			}			
 		}

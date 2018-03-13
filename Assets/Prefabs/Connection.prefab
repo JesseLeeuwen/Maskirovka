@@ -56,8 +56,9 @@ MonoBehaviour:
   country: {fileID: 0}
   connection: {fileID: 0}
   catagorie: 0
+  material: {fileID: 2100000, guid: 6e277fd36d9d1f646a7864bddf112937, type: 2}
   minRep: 0
-  maxRep: 10
+  maxRep: 50
 --- !u!120 &120208802766878116
 LineRenderer:
   m_ObjectHideFlags: 1

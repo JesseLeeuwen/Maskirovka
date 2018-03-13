@@ -20,9 +20,7 @@ namespace Maskirovka
         public float randomMax;
 
         [Header("Avarage reputation in all neighbours")]
-        public float avarageA;
-        public float avarageB;
-        public float avarageC;
+        public Vector3 avarage;
 
         [Header("Min and Max to spawn new Connection")]
         public float minValue;
@@ -48,9 +46,7 @@ namespace Maskirovka
             float C = Random.Range(randomMin, randomMax);
             wantedReputation = new Vector3(A,B,C);
 
-            avarageA = wantedReputation.x;
-            avarageB = wantedReputation.y;
-            avarageC = wantedReputation.z;
+            avarage = new Vector3(wantedReputation.x, wantedReputation.y, wantedReputation.z);
         }
 
         void Start()
@@ -68,9 +64,9 @@ namespace Maskirovka
         {
             SearchNeighbours(); //Find the avarage values of A B and C
 
-            float A = wantedReputation.x =- avarageA;
-            float B = wantedReputation.y =- avarageB;
-            float C = wantedReputation.z =- avarageC;
+            float A = wantedReputation.x =- avarage.x;
+            float B = wantedReputation.y =- avarage.y;
+            float C = wantedReputation.z =- avarage.z;
 
             Catagorie[] cats = new Catagorie[] {Catagorie.A,Catagorie.B,Catagorie.C};
             float[] vals = new float[] {A,B,C};
@@ -83,41 +79,30 @@ namespace Maskirovka
 
         public void UpdateRepu( Country country, float newReputation, Catagorie catagorie, bool spawn = true)
         {  
-            float diff = 0;
             //Find the neighbour that wants a new reputation and update his reputation in your own list
             for (int i = 0; i < neighbours.Length; i++)
             {
                 if(neighbours[i].neighbour == country)
                 {
+                    tempLand = neighbours[i].neighbour;
                     if(catagorie == Catagorie.A)
                     {
                         neighbours[i].reputation.x = newReputation;
-                        diff = Mathf.Abs(neighbours[i].reputation.x - avarageA);
-                        if ( diff > minValue && diff < maxValue)
-                        {
-                            tempLand = neighbours[i].neighbour;
-                            if( spawn == true) spawnConnection(Catagorie.A);
-                        }
                     }
                     else if (catagorie == Catagorie.B)
                     {
                         neighbours[i].reputation.y = newReputation;
-                        diff = Mathf.Abs(neighbours[i].reputation.y - avarageB);
-                        if ( diff > minValue && diff < maxValue)
-                        {
-                            tempLand = neighbours[i].neighbour;
-                            if( spawn == true) spawnConnection(Catagorie.B);
-                        }
                     }
                     else if (catagorie == Catagorie.C)
                     {
                         neighbours[i].reputation.z = newReputation;
-                        diff = Mathf.Abs(neighbours[i].reputation.z - avarageC);
-                        if (diff > minValue && diff < maxValue)
-                        {
-                            tempLand = neighbours[i].neighbour;
-                            if( spawn == true) spawnConnection(Catagorie.C);
-                        }
+                    }
+                    Vector3 difference = neighbours[i].reputation - avarage;
+                    float sum = Mathf.Abs(difference.x) + Mathf.Abs(difference.y) + Mathf.Abs(difference.z);
+
+                    if(sum < maxValue && spawn)
+                    {
+                        spawnConnection();
                     }
                 }
             }
@@ -141,9 +126,11 @@ namespace Maskirovka
                     }
                 }        
             }
-            avarageA = A.Average();
-            avarageB = B.Average();
-            avarageC = C.Average();
+            avarage.x = A.Average();
+            avarage.y = B.Average();
+            avarage.z = C.Average();
+
+
         }
 
         public void ReturnToNormal()
@@ -170,7 +157,7 @@ namespace Maskirovka
             }
         }
 
-        private void spawnConnection(Catagorie cat)
+        private void spawnConnection()
         {
             foreach( Connection c in connections )
                 if(c.CountryPresent( this, tempLand) )
@@ -178,7 +165,7 @@ namespace Maskirovka
 
             //spanw new Connection
             var connection = (GameObject)Instantiate(connectionPrefab);
-            connection.GetComponent<Connection>().Init(this, tempLand, cat);
+            connection.GetComponent<Connection>().Init(this, tempLand);
         }
 
         public void NewConnection(Connection connection)

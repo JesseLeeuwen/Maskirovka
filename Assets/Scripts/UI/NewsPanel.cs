@@ -79,11 +79,11 @@ namespace Maskirovka.UI
         public float GetReputation(Catagorie cat,  Country country){
             float output = 0;
             if (cat==Catagorie.A){
-                output = country.avarageA;
+                output = country.avarage.x;
             }else if(cat==Catagorie.B){
-                output = country.avarageB;
+                output = country.avarage.y;
             }else if (cat==Catagorie.C){
-                output = country.avarageC;
+                output = country.avarage.z;
             }
             //return 300;
             return output * slider.GetComponent<RectTransform>().sizeDelta.x/100;
