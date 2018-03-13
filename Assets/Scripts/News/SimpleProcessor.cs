@@ -22,7 +22,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias < bias.x && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.x = bias.x - news.biasChanger;
                         succes = true;
                     }
                     else
@@ -35,7 +34,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias > bias.x && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.x = bias.x + news.biasChanger;
                         succes = true;
                     }
                     else
@@ -52,7 +50,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias < bias.y && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.y = bias.y - news.biasChanger;
                         succes = true;
                     }
                     else
@@ -65,7 +62,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias > bias.y && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.y = bias.y + news.biasChanger;
                         succes = true;
                     }
                     else
@@ -82,7 +78,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias < bias.z && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.z = bias.z - news.biasChanger;
                         succes = true;
                     }
                     else
@@ -95,7 +90,6 @@ namespace Maskirovka.News
                 {
                     if (valueBias > bias.z && valueNews < news.chanceOfSucces)
                     {
-                        news.currentBias.z = bias.z + news.biasChanger;
                         succes = true;
                     }
                     else
@@ -113,7 +107,7 @@ namespace Maskirovka.News
                     Neighbour.neighbour.UpdateRepu(news.country, news.value, news.catagorie);
                 }
             }
-            return valueNews < news.chanceOfSucces;
+            return succes;
         }
 	}
 }
