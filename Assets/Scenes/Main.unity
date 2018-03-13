@@ -828,7 +828,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 416044417}
   m_Layer: 0
   m_Name: Manager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -906,6 +906,7 @@ MonoBehaviour:
   FailedAnimation: {fileID: 1096788818939370, guid: dec98c9590cbb2241aa125efe04f77e5,
     type: 2}
   canvas: {fileID: 554392067}
+  bias: {x: 0, y: 0, z: 0}
 --- !u!114 &416044414
 MonoBehaviour:
   m_ObjectHideFlags: 0

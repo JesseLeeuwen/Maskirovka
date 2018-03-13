@@ -195,6 +195,9 @@ MonoBehaviour:
   catagorie: 1
   country: {fileID: 0}
   chanceOfSucces: 80
+  playerChanged: 0
+  biasChanger: 5
+  currentBias: {x: 0, y: 0, z: 0}
 --- !u!212 &212073552868520722
 SpriteRenderer:
   m_ObjectHideFlags: 1

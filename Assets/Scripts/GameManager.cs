@@ -13,6 +13,8 @@ namespace Maskirovka
         public NewsFeed feed;
         public CatagorieSettings settings;
 
+        
+
         [SerializeField]
         private CountryList list;
         [SerializeField]

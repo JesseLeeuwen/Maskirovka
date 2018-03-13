@@ -16,12 +16,14 @@ namespace Maskirovka.News
         public GameObject SuccessAnimation;
         public GameObject FailedAnimation;
         public Canvas canvas;
-
+        public Vector3 bias;
 
         void Start()
         {            
             activeNewsItems = new Queue<News>();
             CreateNews();
+            bias = new Vector3(50, 50, 50);
+
         }
 
         // create news message object for player to interact with
