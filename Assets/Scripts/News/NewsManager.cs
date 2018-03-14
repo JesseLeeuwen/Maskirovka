@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using  Maskirovka.UI;
 using Maskirovka.Utility;
 
 namespace Maskirovka.News
@@ -16,12 +16,17 @@ namespace Maskirovka.News
         public GameObject SuccessAnimation;
         public GameObject FailedAnimation;
         public Canvas canvas;
+        public Vector3 bias;
+        private bool result;
+        public NewsPanel newsPanel;
 
 
         void Start()
         {            
             activeNewsItems = new Queue<News>();
             CreateNews();
+            bias = new Vector3(50, 50, 50);
+
         }
 
         // create news message object for player to interact with
@@ -62,16 +67,22 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
-            bool result;
-            foreach( News news in activeNewsItems){
-                result = news.Send();
-                if (news.playerChanged){
-                    if (result){ 
-                        Instantiate(SuccessAnimation,canvas.transform);
-                    }else{
-                        Instantiate(FailedAnimation,canvas.transform);
-                    }
-
+            bool temp1 = true;
+            foreach (News news in activeNewsItems)
+            {
+                if(temp1 == true)
+                {
+                    Debug.Log(newsPanel.currentNews.catagorie);
+                    result = newsPanel.currentNews.Send(false);
+                    temp1 = false;
+                }               
+                news.Send(true);
+            }
+            if (newsPanel.currentNews.playerChanged){
+                if (result){ 
+                    Instantiate(SuccessAnimation,canvas.transform);
+                }else{
+                    Instantiate(FailedAnimation,canvas.transform);
                 }
             }
         }
@@ -84,7 +95,6 @@ namespace Maskirovka.News
                 if( news.country == country )
                     return false;
             }
-
             return true;
         }
     }

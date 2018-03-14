@@ -10,7 +10,7 @@ namespace Maskirovka.UI
     {
         [SerializeField]
         private Slider slider;
-        private News.News currentNews;
+        public News.News currentNews;
         private int chanceOfSucces;
         private float startValue, currentValue;
 
@@ -30,6 +30,8 @@ namespace Maskirovka.UI
             chanceOfSucces = news.chanceOfSucces;
             startValue = currentValue = news.value;
             slider.value = startValue;
+
+
 
             
             Color c = CatagorieSettings.GetColor(news.catagorie);
