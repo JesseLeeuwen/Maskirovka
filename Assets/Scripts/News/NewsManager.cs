@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using  Maskirovka.UI;
 using Maskirovka.Utility;
 
 namespace Maskirovka.News
@@ -17,6 +17,9 @@ namespace Maskirovka.News
         public GameObject FailedAnimation;
         public Canvas canvas;
         public Vector3 bias;
+
+        public NewsPanel newsPanel;
+
 
         void Start()
         {            
@@ -65,15 +68,12 @@ namespace Maskirovka.News
         public void SendNews()
         {
             bool result;
-            foreach( News news in activeNewsItems){
-                result = news.Send();
-                if (news.playerChanged){
-                    if (result){ 
-                        Instantiate(SuccessAnimation,canvas.transform);
-                    }else{
-                        Instantiate(FailedAnimation,canvas.transform);
-                    }
-
+            result = newsPanel.currentNews.Send();
+            if (newsPanel.currentNews.playerChanged){
+                if (result){ 
+                    Instantiate(SuccessAnimation,canvas.transform);
+                }else{
+                    Instantiate(FailedAnimation,canvas.transform);
                 }
             }
         }

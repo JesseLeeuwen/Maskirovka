@@ -14,13 +14,6 @@ namespace Maskirovka.News
         public bool playerChanged;
         public float biasChanger;
 
-        public Vector3 currentBias;
-
-        public void Start()
-        {
-            currentBias = GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias;
-        }
-
         public void Init( float value, Catagorie catagorie, Country country )
         {
             this.value = value;
@@ -36,7 +29,6 @@ namespace Maskirovka.News
         public bool Send()
         {
             bool result = GameManager.Instance.processor.ProccesNews( this );
-            GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias = currentBias;
             Destroy( gameObject );
             return result;
         }
