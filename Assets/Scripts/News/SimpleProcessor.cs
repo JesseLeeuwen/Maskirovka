@@ -15,87 +15,94 @@ namespace Maskirovka.News
             float valueNews = Random.value * 100;
             float valueBias = Random.value * 100;
             biasValue = GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias;
+            float bias = news.biasChanger;
 
 
             if (news.catagorie == Catagorie.A)
             {
-                if (valueNews < 50)
+                if (news.value < 50)
                 {
-                    if (valueBias < biasValue.x && valueNews < news.chanceOfSucces)
+                    if(biasValue.x < valueBias && news.chanceOfSucces < valueNews)
                     {
+                        Debug.Log(biasValue.x);
+                        Debug.Log(valueBias);
+                        Debug.Log("Smaller");
                         succes = true;
                     }
                     else
                     {
-                        biasValue.x = biasValue.x + news.biasChanger;
-                        succes = false;                      
+                        biasValue.x = biasValue.x - bias;
+                        succes = false;
                     }
                 }
-                else if (valueNews >= 50)
+                if (news.value >= 50)
                 {
-                    if (valueBias > biasValue.x && valueNews < news.chanceOfSucces)
+                    if (biasValue.x > valueBias && news.chanceOfSucces < valueNews)
                     {
+                        Debug.Log(biasValue.x);
+                        Debug.Log(valueBias);
+                        Debug.Log("Bigger");
                         succes = true;
                     }
                     else
                     {
-                        biasValue.x = biasValue.x - news.biasChanger;
+                        biasValue.x = biasValue.x + bias;
                         succes = false;
                     }
                 }
             }
 
-            else if (news.catagorie == Catagorie.B)
+            if (news.catagorie == Catagorie.B)
             {
-                if (valueNews < 50)
+                if (news.value < 50)
                 {
-                    if (valueBias < biasValue.y && valueNews < news.chanceOfSucces)
+                    if (biasValue.y < valueBias && news.chanceOfSucces < valueNews)
                     {
                         succes = true;
                     }
                     else
                     {
-                        biasValue.y = biasValue.y + news.biasChanger;
-                        succes = false;                       
+                        biasValue.y = biasValue.y - bias;
+                        succes = false;
                     }
                 }
-                else if (valueNews >= 50)
+                if (news.value >= 50)
                 {
-                    if (valueBias > biasValue.y && valueNews < news.chanceOfSucces)
+                    if (biasValue.y > valueBias && news.chanceOfSucces < valueNews)
                     {
                         succes = true;
                     }
                     else
                     {
-                        biasValue.y = biasValue.y - news.biasChanger;
-                        succes = false;                        
+                        biasValue.y = biasValue.y + bias;
+                        succes = false;
                     }
                 }
             }
 
-            else if (news.catagorie == Catagorie.C)
+            if (news.catagorie == Catagorie.C)
             {
-                if (valueNews < 50)
+                if (news.value < 50)
                 {
-                    if (valueBias < biasValue.z && valueNews < news.chanceOfSucces)
+                    if (biasValue.z < valueBias && news.chanceOfSucces < valueNews)
                     {
                         succes = true;
                     }
                     else
                     {
-                        biasValue.z = biasValue.z + news.biasChanger;
-                        succes = false;                       
+                        biasValue.z = biasValue.z - bias;
+                        succes = false;
                     }
                 }
-                else if (valueNews >= 50)
+                if (news.value >= 50)
                 {
-                    if (valueBias > biasValue.z && valueNews < news.chanceOfSucces)
+                    if (biasValue.z > valueBias && news.chanceOfSucces < valueNews)
                     {
                         succes = true;
                     }
                     else
                     {
-                        biasValue.z = biasValue.z - news.biasChanger;
+                        biasValue.z = biasValue.z + bias;
                         succes = false;
                     }
                 }
@@ -106,6 +113,7 @@ namespace Maskirovka.News
                 foreach (Neighbour Neighbour in news.country.neighbours)
                 {
                     Neighbour.neighbour.UpdateRepu(news.country, news.value, news.catagorie);
+                    return succes;
                 }
             }
             GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias = biasValue;

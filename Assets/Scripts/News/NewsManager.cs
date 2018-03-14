@@ -17,7 +17,7 @@ namespace Maskirovka.News
         public GameObject FailedAnimation;
         public Canvas canvas;
         public Vector3 bias;
-
+        private bool result;
         public NewsPanel newsPanel;
 
 
@@ -67,8 +67,17 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
-            bool result;
-            result = newsPanel.currentNews.Send();
+            bool temp1 = true;
+            foreach (News news in activeNewsItems)
+            {
+                if(temp1 == true)
+                {
+                    Debug.Log(newsPanel.currentNews.catagorie);
+                    result = newsPanel.currentNews.Send(false);
+                    temp1 = false;
+                }               
+                news.Send(true);
+            }
             if (newsPanel.currentNews.playerChanged){
                 if (result){ 
                     Instantiate(SuccessAnimation,canvas.transform);
@@ -86,7 +95,6 @@ namespace Maskirovka.News
                 if( news.country == country )
                     return false;
             }
-
             return true;
         }
     }
