@@ -64,6 +64,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Length: 2
+    - _LineWidth: 0.15
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -87,4 +88,5 @@ Material:
     - _ColorB: {r: 1, g: 0.90196085, b: 0, a: 1}
     - _ColorC: {r: 0, g: 0.6039216, b: 0.8196079, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Values: {r: 0.33, g: 0.33, b: 0.33, a: 0}

@@ -9,6 +9,9 @@
 		/* data */
 		_Length	( "Length", Range(0,10)) = 1
 		_Values	( "values", Vector) = (0,0,0,0)
+		_LineWidth ("Line Width", float) = 0
+		_LineColor	( "Line Color", COLOR) = (0,0,0,1)
+
 	}
 
 	Category {
@@ -40,9 +43,9 @@
 					float4 vertex : SV_POSITION;
 				};
 
-				fixed4 	_ColorA, _ColorB, _ColorC;
+				fixed4 	_ColorA, _ColorB, _ColorC, _LineColor;
 				fixed4 	_Values;
-				half 	_Length, _Sum;
+				half 	_Length, _Sum, _LineWidth;
 				
 				v2f vert (appdata v)
 				{
@@ -54,6 +57,9 @@
 				
 				fixed4 frag (v2f i) : SV_Target
 				{
+				if (i.uv.y<_LineWidth || i.uv.y>1-_LineWidth){
+					return _LineColor;
+				};	
 					half uvY = i.uv.y - 0.5;
 					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03); //i.uv.x + ( i.uv.y / (7.5 * _Length ));
 					fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );
