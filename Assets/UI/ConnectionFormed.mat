@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ConnectionFormed
-  m_Shader: {fileID: 205, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -113,3 +113,4 @@ Material:
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.9264706, g: 0.21118078, b: 0.285176, a: 0.5}

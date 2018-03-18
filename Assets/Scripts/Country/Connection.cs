@@ -116,7 +116,7 @@ namespace Maskirovka
             }); 
 
             connection = GetComponent<LineRenderer>();
-            background = GetComponentsInChildren<LineRenderer>()[1];            
+            //background = GetComponentsInChildren<LineRenderer>()[1];            
 
             Vector3 core1 = country.transform.GetChild(0).position;
             Vector3 core2 = neighbour.transform.GetChild(0).position;
@@ -126,7 +126,7 @@ namespace Maskirovka
             connection.SetPosition(0, core1);
             connection.SetPosition(1, core2);
             background.SetPosition(0, core1);
-            background.SetPosition(1, core2);            
+            background.SetPosition(1, core2);
             
             Instantiate(AppearParticles,(core1+core2)/2,transform.rotation);
 
@@ -137,11 +137,6 @@ namespace Maskirovka
             return ( country == this.country || country == this.neighbour ) && (neighbour == this.country || neighbour == this.neighbour);
         }
 
-
-        public void KillSelf(){
-                Instantiate(DisappearParticles,transform);
-                Destroy(transform);
-        }
     }
 }
     

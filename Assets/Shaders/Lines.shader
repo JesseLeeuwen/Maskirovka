@@ -40,9 +40,9 @@
 					float4 vertex : SV_POSITION;
 				};
 
-				fixed4 	_ColorA, _ColorB, _ColorC;
+				fixed4 	_ColorA, _ColorB, _ColorC, _LineColor;
 				fixed4 	_Values;
-				half 	_Length, _Sum;
+				half 	_Length, _Sum, _LineWidth;
 				
 				v2f vert (appdata v)
 				{
@@ -53,7 +53,7 @@
 				}
 				
 				fixed4 frag (v2f i) : SV_Target
-				{
+				{	
 					half uvY = i.uv.y - 0.5;
 					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03); //i.uv.x + ( i.uv.y / (7.5 * _Length ));
 					fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );

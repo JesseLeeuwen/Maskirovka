@@ -96,7 +96,7 @@ namespace Maskirovka.UI
         public void OnChangeSlider( float value )
         {
             currentValue = value;
-            chanceOfSucces = Mathf.Max(0,Mathf.RoundToInt(100 - ( Mathf.Abs( value - startValue ) * 1.5f ) ));
+            chanceOfSucces = Mathf.Max(0,Mathf.RoundToInt(100 - ( Mathf.Abs( value - startValue ) * 2.5f ) ));
             ChanceDisplay.text=chanceOfSucces.ToString()+"%";
         }
 
@@ -104,6 +104,8 @@ namespace Maskirovka.UI
         {
             currentNews.playerChanged = true;
             currentNews.value = currentValue;
+            if (chanceOfSucces==69)
+                chanceOfSucces=100; //nice
             currentNews.chanceOfSucces = chanceOfSucces;
         }
     }

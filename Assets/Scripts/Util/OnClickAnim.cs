@@ -48,5 +48,13 @@ namespace Maskirovka.Utility
 			routine = StartCoroutine(ToPosition( offset * (int)arg ));
 		}
 
+	void OnMouseOver(){
+		render.color= new Color(.9f,.9f,.9f);
+	}
+	    void OnMouseExit()
+    {
+
+		render.color= new Color(1,1,1);
+	}
 	}
 }
