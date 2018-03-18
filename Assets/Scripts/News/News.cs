@@ -28,17 +28,17 @@ namespace Maskirovka.News
 
         public bool Send(bool youcandie)
         {
-            if(youcandie == false)
-            {
+            //if(youcandie == false)
+            //{
                 bool result = GameManager.Instance.processor.ProccesNews(this);
-                return result;
-            }
-            
-            if(youcandie == true)
-            {
                 Destroy(gameObject);
-            }
-            return false;
+                return result;
+            //}
+            
+            /*if(youcandie == true)
+            {*/
+            //}
+            //return false;
         }
     }
 }

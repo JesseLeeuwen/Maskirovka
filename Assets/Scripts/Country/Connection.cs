@@ -12,10 +12,7 @@ namespace Maskirovka
         public Country neighbour;
         public Country country;
         public LineRenderer connection;
-        public Catagorie catagorie;
 
-        [Header("Material information")]
-        public Material material;
         [SerializeField]
         private MaterialPropertyBlock block;
 
@@ -25,12 +22,15 @@ namespace Maskirovka
 
         private Vector3 total;
         private float previousSum; 
+        private LineRenderer background;
 
         private void Awake()
         {
             block = new MaterialPropertyBlock();
+            block.SetColor("_ColorA", CatagorieSettings.GetColor( Catagorie.A ));
+            block.SetColor("_ColorB", CatagorieSettings.GetColor( Catagorie.B ));
+            block.SetColor("_ColorC", CatagorieSettings.GetColor( Catagorie.C ));
         }
-
 
         void Update()
         {
@@ -86,6 +86,9 @@ namespace Maskirovka
             a /= sum;
             b /= sum;
 
+            float distance = Vector3.Distance( connection.GetPosition(0), connection.GetPosition(1));
+
+            block.SetFloat("_Length", distance );
             block.SetColor("_Values", new Vector4(a, b, 0));
             connection.SetPropertyBlock(block);
             previousSum = _Sum;
@@ -101,19 +104,20 @@ namespace Maskirovka
             }); 
 
             connection = GetComponent<LineRenderer>();
-            connection.positionCount = 2;
+            background = GetComponentsInChildren<LineRenderer>()[1];            
 
             Vector3 core1 = countryGet.transform.GetChild(0).position;
             Vector3 core2 = neighbourGet.transform.GetChild(0).position;
-            connection.SetPosition(0, new Vector3(core1.x, core1.y, core1.z + 0.1f));
-            connection.SetPosition(1, new Vector3(core2.x, core2.y, core2.z + 0.1f));
+            Vector3 countryAnchor = new Vector3(core1.x, core1.y, core1.z + 0.1f);
+            Vector3 neighbourAnchor = new Vector3(core2.x, core2.y, core2.z + 0.1f);
+            
+            connection.SetPosition(0, core1);
+            connection.SetPosition(1, core2);
+            background.SetPosition(0, core1);
+            background.SetPosition(1, core2);
 
             country = countryGet;
             neighbour = neighbourGet;
-
-            //connection.material.color = CatagorieSettings.GetColor(cat);
-
-
             country.NewConnection( this );
             neighbour.NewConnection( this );
         }

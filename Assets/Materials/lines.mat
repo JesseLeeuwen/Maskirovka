@@ -63,7 +63,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Length: 10
+    - _Length: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -87,4 +87,4 @@ Material:
     - _ColorB: {r: 0.21568628, g: 0.31764707, b: 0.72156864, a: 1}
     - _ColorC: {r: 0.8980392, g: 0.48235294, b: 0.8156863, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Values: {r: 3.72, g: 6.67, b: 1, a: 0}
+    - _Values: {r: 0.33, g: 0.33, b: 0.33, a: 0}

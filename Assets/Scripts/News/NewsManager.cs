@@ -70,19 +70,20 @@ namespace Maskirovka.News
             bool temp1 = true;
             foreach (News news in activeNewsItems)
             {
-                if(temp1 == true)
+                //if(temp1 == true)
+                //{
+                //    Debug.Log(newsPanel.currentNews.catagorie);
+                //   result = newsPanel.currentNews.Send(false);
+                //    temp1 = false;
+                //}               
+                result = news.Send(false);
+                if( news.playerChanged == true)
                 {
-                    Debug.Log(newsPanel.currentNews.catagorie);
-                    result = newsPanel.currentNews.Send(false);
-                    temp1 = false;
-                }               
-                news.Send(true);
-            }
-            if (newsPanel.currentNews.playerChanged){
-                if (result){ 
-                    Instantiate(SuccessAnimation,canvas.transform);
-                }else{
-                    Instantiate(FailedAnimation,canvas.transform);
+                    if (result){ 
+                        Instantiate(SuccessAnimation,canvas.transform);
+                    }else{
+                        Instantiate(FailedAnimation,canvas.transform);
+                    }
                 }
             }
         }

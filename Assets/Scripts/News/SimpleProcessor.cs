@@ -12,7 +12,7 @@ namespace Maskirovka.News
 
         public override bool ProccesNews(News news)
         {
-            float valueNews = Random.value * 100;
+            /*float valueNews = Random.value * 100;
             float valueBias = Random.value * 100;
             biasValue = GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias;
             float bias = news.biasChanger;
@@ -106,17 +106,19 @@ namespace Maskirovka.News
                         succes = false;
                     }
                 }
-            }
+            }*/
+            
+			float value = Random.value * 100;
+            succes = value < news.chanceOfSucces;
 
             if (succes)
             {
                 foreach (Neighbour Neighbour in news.country.neighbours)
                 {
                     Neighbour.neighbour.UpdateRepu(news.country, news.value, news.catagorie);
-                    return succes;
                 }
             }
-            GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias = biasValue;
+            //GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias = biasValue;
             return succes;
         }
 	}
