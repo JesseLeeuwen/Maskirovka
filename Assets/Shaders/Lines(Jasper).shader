@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Lines"
+﻿Shader "Unlit/Lines(Jasper)"
 {
 	Properties
 	{		

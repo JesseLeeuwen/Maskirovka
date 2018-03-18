@@ -178,6 +178,11 @@ namespace Maskirovka
             connections.Remove(connection);
         }
 
+        public List<Connection> GetConnections()
+        {
+            return connections;
+        }
+
         public Sprite GetSprite()
         {
             return sprite;

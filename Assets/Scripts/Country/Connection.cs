@@ -49,13 +49,12 @@ namespace Maskirovka
 
             if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
             {
+                
                 GameManager.Instance.feed.PushUpdate( new Change() { 
                     madeNewConnection = false, 
                     countryA = country,
                     countryB = neighbour 
                 });
-                country.RemoveConnection( this );
-                neighbour.RemoveConnection( this );
                 Instantiate(DisappearParticles,(core1+core2)/2,transform.rotation);
                 Destroy(gameObject);
             }
@@ -100,7 +99,15 @@ namespace Maskirovka
         }
 
         public void Init(Country neighbourGet, Country countryGet)
-        {            
+        {    
+            // set country and neighbour        
+            country = countryGet;
+            neighbour = neighbourGet;
+
+            // register new connection
+            country.NewConnection( this );   
+            neighbour.NewConnection( this ); 
+
             GameManager.Instance.feed.PushUpdate(new Change()
             {
                 madeNewConnection = true,
@@ -111,23 +118,18 @@ namespace Maskirovka
             connection = GetComponent<LineRenderer>();
             background = GetComponentsInChildren<LineRenderer>()[1];            
 
-            Vector3 core1 = countryGet.transform.GetChild(0).position;
-            Vector3 core2 = neighbourGet.transform.GetChild(0).position;
+            Vector3 core1 = country.transform.GetChild(0).position;
+            Vector3 core2 = neighbour.transform.GetChild(0).position;
             Vector3 countryAnchor = new Vector3(core1.x, core1.y, core1.z + 0.1f);
             Vector3 neighbourAnchor = new Vector3(core2.x, core2.y, core2.z + 0.1f);
             
             connection.SetPosition(0, core1);
             connection.SetPosition(1, core2);
             background.SetPosition(0, core1);
-            background.SetPosition(1, core2);
-
-            country = countryGet;
-            neighbour = neighbourGet;
+            background.SetPosition(1, core2);            
             
             Instantiate(AppearParticles,(core1+core2)/2,transform.rotation);
-            
-            country.NewConnection( this );
-            neighbour.NewConnection( this );
+
         }
 
         public bool CountryPresent(Country country, Country neighbour)
