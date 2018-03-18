@@ -13,9 +13,12 @@ namespace Maskirovka.News
         public override bool ProccesNews(News news)
         {
             /*float valueNews = Random.value * 100;
+            float valueNews = Random.value * 100;
             float valueBias = Random.value * 100;
             biasValue = GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias;
             float bias = news.biasChanger;
+
+
 
 
             if (news.catagorie == Catagorie.A)
@@ -110,7 +113,6 @@ namespace Maskirovka.News
             
 			float value = Random.value * 100;
             succes = value < news.chanceOfSucces;
-
             if (succes)
             {
                 foreach (Neighbour Neighbour in news.country.neighbours)
