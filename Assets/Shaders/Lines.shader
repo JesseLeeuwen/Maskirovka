@@ -40,9 +40,9 @@
 					float4 vertex : SV_POSITION;
 				};
 
-				fixed4 	_ColorA, _ColorB, _ColorC, _LineColor;
+				fixed4 	_ColorA, _ColorB, _ColorC;
 				fixed4 	_Values;
-				half 	_Length, _Sum, _LineWidth;
+				half 	_Length, _Sum;
 				
 				v2f vert (appdata v)
 				{
