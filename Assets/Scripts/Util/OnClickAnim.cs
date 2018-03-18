@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Maskirovka.Utility
 {
-	public class OnClickAnim : MonoBehaviour,
+	public class OnClickAnim : MonoBehaviour
 	{		
 		[SerializeField]
 		private float offset;
@@ -49,9 +49,12 @@ namespace Maskirovka.Utility
 		}
 
 	void OnMouseOver(){
-		GetComponent<SpriteRenderer>().color= new Color(1,1,1,.5f);
+		render.color= new Color(.9f,.9f,.9f);
 	}
+	    void OnMouseExit()
+    {
 
-
+		render.color= new Color(1,1,1);
+	}
 	}
 }
