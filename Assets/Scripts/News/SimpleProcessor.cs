@@ -18,6 +18,8 @@ namespace Maskirovka.News
             float bias = news.biasChanger;
 
 
+
+
             if (news.catagorie == Catagorie.A)
             {
                 if (news.value < 50)
@@ -107,6 +109,9 @@ namespace Maskirovka.News
                     }
                 }
             }
+
+            //BYPASS BIAS SYSTEM
+            succes =  valueNews < news.chanceOfSucces;
 
             if (succes)
             {
