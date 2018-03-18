@@ -73,7 +73,7 @@ MonoBehaviour:
   catagorie: 0
   material: {fileID: 2100000, guid: 6e277fd36d9d1f646a7864bddf112937, type: 2}
   minRep: 0
-  maxRep: 80
+  maxRep: 50
   AppearParticles: {fileID: 1300913849884676, guid: 56c435311e84a2e49b624bd310363e65,
     type: 2}
   DisappearParticles: {fileID: 1407364922217668, guid: b21bd32e568567845b993bd006734187,

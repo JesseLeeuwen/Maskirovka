@@ -11,12 +11,14 @@ namespace Maskirovka.UI
         [SerializeField]
         private Slider slider;
         public News.News currentNews;
-        private int chanceOfSucces;
+        public int chanceOfSucces;
         private float startValue, currentValue;
 
 
         public GameObject[] backgrounds;
         public GameObject[] texts;
+
+        public Text ChanceDisplay;
 
         public GameObject countryCircle;
         public GameObject[] neighborCircle;
@@ -94,7 +96,8 @@ namespace Maskirovka.UI
         public void OnChangeSlider( float value )
         {
             currentValue = value;
-            chanceOfSucces = Mathf.RoundToInt(80 - ( Mathf.Abs( value - startValue ) * 1.5f ) );
+            chanceOfSucces = Mathf.Max(0,Mathf.RoundToInt(100 - ( Mathf.Abs( value - startValue ) * 1.5f ) ));
+            ChanceDisplay.text=chanceOfSucces.ToString()+"%";
         }
 
         public void OnSend()        
