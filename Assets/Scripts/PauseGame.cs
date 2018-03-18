@@ -10,8 +10,7 @@ public class PauseGame : MonoBehaviour {
 	public GameObject pauseBackground;
 
 	void Start(){
-		Button btn = GetComponent<Button>();
-        btn.onClick.AddListener(TaskOnClick);
+
 	}
 	
     void TaskOnClick()
