@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4841083756652148}
   - component: {fileID: 114672063920515768}
   - component: {fileID: 120208802766878116}
+  - component: {fileID: 114208169963501148}
   m_Layer: 0
   m_Name: Connection
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990271421933476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.0647216, y: 3.382715, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4841083756652148}
@@ -71,6 +72,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114208169963501148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627551818622460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114672063920515768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +102,10 @@ MonoBehaviour:
   connection: {fileID: 0}
   minRep: 0
   maxRep: 50
+  AppearParticles: {fileID: 1300913849884676, guid: 56c435311e84a2e49b624bd310363e65,
+    type: 2}
+  DisappearParticles: {fileID: 1407364922217668, guid: b21bd32e568567845b993bd006734187,
+    type: 2}
 --- !u!120 &120208802766878116
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -126,7 +145,7 @@ LineRenderer:
   - {x: 3, y: 3, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.1
+    widthMultiplier: 0.15
     widthCurve:
       serializedVersion: 2
       m_Curve:
