@@ -24,7 +24,10 @@ namespace Maskirovka
         public float maxRep;
 
         private Vector3 total;
-        private float previousSum; 
+        private float previousSum;
+
+        public GameObject AppearParticles;
+        public GameObject DisappearParticles;
 
         private void Awake()
         {
@@ -41,6 +44,9 @@ namespace Maskirovka
 
             colorUpdate();
 
+            Vector3 core1 = country.transform.GetChild(0).position;
+            Vector3 core2 = neighbour.transform.GetChild(0).position;
+
             if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
             {
                 GameManager.Instance.feed.PushUpdate( new Change() { 
@@ -50,11 +56,10 @@ namespace Maskirovka
                 });
                 country.RemoveConnection( this );
                 neighbour.RemoveConnection( this );
+                Instantiate(DisappearParticles,(core1+core2)/2,transform.rotation);
                 Destroy(gameObject);
             }
 
-            Vector3 core1 = country.transform.GetChild(0).position;
-            Vector3 core2 = neighbour.transform.GetChild(0).position;
             connection.SetPosition(0, new Vector3(core1.x, core1.y, core1.z + 0.1f));
             connection.SetPosition(1, new Vector3(core2.x, core2.y, core2.z + 0.1f));
         }
@@ -111,6 +116,8 @@ namespace Maskirovka
             country = countryGet;
             neighbour = neighbourGet;
 
+            Instantiate(AppearParticles,(core1+core2)/2,transform.rotation);
+
             //connection.material.color = CatagorieSettings.GetColor(cat);
 
 
@@ -122,5 +129,12 @@ namespace Maskirovka
         {
             return ( country == this.country || country == this.neighbour ) && (neighbour == this.country || neighbour == this.neighbour);
         }
+
+
+        public void KillSelf(){
+                Instantiate(DisappearParticles,transform);
+                Destroy(transform);
+        }
     }
 }
+    

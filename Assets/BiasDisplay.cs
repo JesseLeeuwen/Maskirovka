@@ -26,7 +26,7 @@ public class BiasDisplay : MonoBehaviour {
 		v-=50;
 		Slider pos = neg.transform.GetChild(0).GetComponent<Slider>();
 		neg.value = Mathf.Max(-v,0);
-		pos.value = Mathf.Max( v,0);
+		pos.value = Mathf.Max(v,0);
 		
 	}
 

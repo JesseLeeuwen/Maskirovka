@@ -1456,7 +1456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396836988201168, guid: 7d53795e152aa0949850bddebe4f443d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1909097437057670, guid: 7d53795e152aa0949850bddebe4f443d, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -3223,7 +3223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431437140
 GameObject:
@@ -4097,6 +4097,10 @@ Prefab:
       propertyPath: manager
       value: 
       objectReference: {fileID: 416044413}
+    - target: {fileID: 1404514924071936, guid: 3b2466b403f57a442a6676cabeb023f4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b2466b403f57a442a6676cabeb023f4, type: 2}
   m_IsPrefabParent: 0
