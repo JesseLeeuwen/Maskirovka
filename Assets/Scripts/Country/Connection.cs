@@ -62,6 +62,8 @@ namespace Maskirovka
 
             connection.SetPosition(0, new Vector3(core1.x, core1.y, core1.z + 0.1f));
             connection.SetPosition(1, new Vector3(core2.x, core2.y, core2.z + 0.1f));
+            background.SetPosition(0, core1);
+            background.SetPosition(1, core2);
         }
 
         Vector3 Search(Country country, Country neighbour)
@@ -109,7 +111,7 @@ namespace Maskirovka
             }); 
 
             connection = GetComponent<LineRenderer>();
-            //background = GetComponentsInChildren<LineRenderer>()[1];            
+            background = GetComponentsInChildren<LineRenderer>()[1];            
 
             Vector3 core1 = countryGet.transform.GetChild(0).position;
             Vector3 core2 = neighbourGet.transform.GetChild(0).position;
@@ -118,8 +120,8 @@ namespace Maskirovka
             
             connection.SetPosition(0, core1);
             connection.SetPosition(1, core2);
-            //background.SetPosition(0, core1);
-            //background.SetPosition(1, core2);
+            background.SetPosition(0, core1);
+            background.SetPosition(1, core2);
 
             country = countryGet;
             neighbour = neighbourGet;
