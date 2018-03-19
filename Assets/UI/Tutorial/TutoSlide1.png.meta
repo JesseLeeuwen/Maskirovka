@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 436cc1b93ea60ea4b8da9fce64849182
-timeCreated: 1519742337
+guid: 757e6f0ff791369418089d55acdb8fcc
+timeCreated: 1521417840
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -66,22 +66,12 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
-  spritePackingTag: 9063a7
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
