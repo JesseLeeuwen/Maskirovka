@@ -79,11 +79,7 @@ namespace Maskirovka.News
                 result = news.Send(false);
                 if( news.playerChanged == true)
                 {
-                    if (result){ 
-                        Instantiate(SuccessAnimation,canvas.transform);
-                    }else{
-                        Instantiate(FailedAnimation,canvas.transform);
-                    }
+                   StateAnimation(result);
                 }
             }
         }
@@ -97,6 +93,14 @@ namespace Maskirovka.News
                     return false;
             }
             return true;
+        }
+
+        public GameObject StateAnimation(bool success){
+            if (success){ 
+                return Instantiate(SuccessAnimation,canvas.transform);
+            }else{
+                return Instantiate(FailedAnimation,canvas.transform);
+            }
         }
     }
 }

@@ -15,11 +15,13 @@ namespace Maskirovka.Utility
 		private float target;
 		private float current;
 		private SpriteRenderer render;
+		private Color currentColor;
 
 		void Start()
 		{
 			defaultPosition = transform.position;
 			render = GetComponent<SpriteRenderer>();
+			currentColor = render.color;
 		}
 
 		IEnumerator ToPosition(float target)
@@ -49,12 +51,12 @@ namespace Maskirovka.Utility
 		}
 
 	void OnMouseOver(){
-		render.color= new Color(.9f,.9f,.9f);
+		render.color= currentColor * new Color(.9f,.9f,.9f);
 	}
 	    void OnMouseExit()
     {
 
-		render.color= new Color(1,1,1);
+		render.color= currentColor;
 	}
 	}
 }
