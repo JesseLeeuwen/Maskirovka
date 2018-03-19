@@ -20,7 +20,7 @@ IPointerDownHandler, IPointerClickHandler, IPointerExitHandler {
 	}
 
 	public void OnPointerDown(PointerEventData eventData)
-	{	
+	{			
 		transform.offsetMax = new Vector2(transform.offsetMax.x, -defaultOffset);
 		transform.offsetMin = new Vector2(transform.offsetMin.x, 0);
 		isDown = true;

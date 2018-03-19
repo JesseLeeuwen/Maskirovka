@@ -26,10 +26,8 @@ namespace Maskirovka.Utility
 
 		IEnumerator ToPosition(float target)
 		{
-
 			while( current != target )
-			{
-				
+			{				
 				current = Mathf.MoveTowards( current, target, Time.deltaTime * speed);
 				if (current > 0 && target >= current){
 				render.sortingOrder=2;
@@ -43,20 +41,19 @@ namespace Maskirovka.Utility
 
 		public void Select(object arg)
 		{
-			
 			if(routine != null)
 				StopCoroutine(routine);
 				
 			routine = StartCoroutine(ToPosition( offset * (int)arg ));
 		}
 
-	void OnMouseOver(){
-		render.color= currentColor * new Color(.9f,.9f,.9f);
-	}
-	    void OnMouseExit()
-    {
-
-		render.color= currentColor;
-	}
+		void OnMouseOver(){
+			render.color= currentColor * new Color(.9f,.9f,.9f);
+		}
+		
+		void OnMouseExit()
+		{
+			render.color= currentColor;
+		}
 	}
 }

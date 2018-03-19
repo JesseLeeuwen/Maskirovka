@@ -42,6 +42,7 @@ namespace Maskirovka
 		
 		[SerializeField, Range(0, 100)]
 		private float chaos;
+		private int biggestCluster;
 		private bool clusterExist;
 		[SerializeField]
 		private int countConnections;
@@ -58,7 +59,7 @@ namespace Maskirovka
 			GameManager.Instance.feed.SubToNewsEvents( OnReceiveChange );
 		}
 
-		public void OnReceiveChange( Change change )
+		void OnReceiveChange( Change change )
 		{
 			countConnections += change.madeNewConnection? 1 : -1;
 
@@ -83,18 +84,35 @@ namespace Maskirovka
 			}
 		}		
 
+		public bool Invade(Country country)
+		{
+			bool canInvade = chaos < 50 && biggestCluster <= 3;
+			Cluster cluster = new Cluster();
+			cluster.Init();
+
+			foreach( Cluster c in clusters)
+			{
+				if( c.ContainsCountry( country ) )
+					cluster = c;
+			}
+
+			canInvade = canInvade && cluster.Count < 2;
+			return canInvade;
+		}
+
 		private void UpdateChoas()
 		{
 			int elementCount = 0;			
-			
+			biggestCluster = 0;
 			foreach( Cluster c in clusters)
 			{
 				elementCount += c.Count * 2;
 				
+				if( c.Count > biggestCluster )
+					biggestCluster = c.Count;
+
 				if( c.Count >= 3)
-				{
 					elementCount += 5 * c.Count;
-				}
 			}
 			chaos = elementCount;
 		}		

@@ -14,6 +14,11 @@ namespace Maskirovka
 			this.countries = new List<Country>(countries);
 		}
 
+		public void Remove( Country country )
+		{
+			countries.Remove( country );
+		}
+
 		public int Length{
 			get{ return countries.Count; }
 		}

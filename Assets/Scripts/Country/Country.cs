@@ -178,6 +178,19 @@ namespace Maskirovka
             connections.Remove(connection);
         }
 
+        public void Invaded()
+        {
+            foreach( Neighbour n in neighbours )
+            {
+                Country c = n.neighbour;
+                List<Neighbour> neighbourList = c.neighbours.ToList();
+                neighbourList.RemoveAll( x => x.neighbour == this );
+                c.neighbours = neighbourList.ToArray();
+            }
+            neighbours = new Neighbour[0];
+            GetComponent<SpriteRenderer>().color = new Color(0.77647f, 0.77647f, 0.77647f, 1);
+        }
+
         public List<Connection> GetConnections()
         {
             return connections;
