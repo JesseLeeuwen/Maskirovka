@@ -11,9 +11,7 @@ public class SlideShow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		canvas = GetComponent<Image>();
-		canvas.sprite= slides[0];
-		canvas.color= new Color(1,1,1,.9f);
+		ResetTutorial();
 	}
 	
 	public void NextSlide()
@@ -22,8 +20,16 @@ public class SlideShow : MonoBehaviour {
 		if (currentSlide<slides.Length){
 			canvas.sprite= slides[currentSlide];
 		}else{
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 		
+	}
+
+	public void ResetTutorial(){
+		gameObject.SetActive(true);
+		canvas = GetComponent<Image>();
+		currentSlide=0;
+		canvas.sprite= slides[0];
+		canvas.color= new Color(1,1,1,.9f);
 	}
 }
