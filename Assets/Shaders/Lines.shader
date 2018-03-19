@@ -2,6 +2,7 @@
 {
 	Properties
 	{		
+		_Noise ( "noise", 2D ) = "white"{}
 		/* colors */
 		_ColorA	( "colorA", COLOR) = (0,0,0,1)
 		_ColorB	( "colorB", COLOR) = (0,0,0,1)
@@ -9,6 +10,7 @@
 		/* data */
 		_Length	( "Length", Range(0,10)) = 1
 		_Values	( "values", Vector) = (0,0,0,0)
+		_Fade	( "fade",	Range(0,50)) = 0
 	}
 
 	Category {
@@ -40,9 +42,10 @@
 					float4 vertex : SV_POSITION;
 				};
 
-				fixed4 	_ColorA, _ColorB, _ColorC;
-				fixed4 	_Values;
-				half 	_Length, _Sum;
+				fixed4 	  _ColorA, _ColorB, _ColorC;
+				fixed4 	  _Values;
+				half 	  _Length, _Sum, _Fade;
+				sampler2D _Noise;
 				
 				v2f vert (appdata v)
 				{
@@ -57,6 +60,11 @@
 					half uvY = i.uv.y - 0.5;
 					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03); //i.uv.x + ( i.uv.y / (7.5 * _Length ));
 					fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );
+					
+					half2 uvX = half2(i.uv.x, i.uv.y);
+					
+					/*half power = abs(0.5 - i.uv.x) * _Fade;
+					col.a = tex2D(_Noise, uvX).r * power;*/
 					return col;
 				}
 				ENDCG

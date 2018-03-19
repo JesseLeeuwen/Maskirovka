@@ -35,7 +35,6 @@ namespace Maskirovka
 		public int Count{ get{ return connections.Count; } }
 	}
 
-
 	public class ChaosMeter : MonoBehaviour 
 	{
 		[SerializeField]
@@ -54,6 +53,7 @@ namespace Maskirovka
 
 		void Start()
 		{
+			print(null);
 			clusters = new List<Cluster>();
 			GameManager.Instance.feed.SubToNewsEvents( OnReceiveChange );
 		}
@@ -81,20 +81,27 @@ namespace Maskirovka
 				change.countryA.RemoveConnection( current );
                 change.countryA.RemoveConnection( current );				
 			}
-
-			UpdateClusters();
-			UpdateChoas();
 		}		
 
 		private void UpdateChoas()
 		{
+			int elementCount = 0;			
 			
+			foreach( Cluster c in clusters)
+			{
+				elementCount += c.Count * 2;
+				
+				if( c.Count >= 3)
+				{
+					elementCount += 5 * c.Count;
+				}
+			}
+			chaos = elementCount;
 		}		
 
-		private void UpdateClusters()
+		private void Update()
 		{
 			clusters = new List<Cluster>();
-
 			foreach( Connection c in connections )
 			{
 				if( IsInCluster( c ) == true )
@@ -105,6 +112,7 @@ namespace Maskirovka
 				clusters.Add(current);
 				SeekCluster( c.country, current);
 			}
+			UpdateChoas();
 		}
 
 		private bool IsInCluster(Connection c)
@@ -122,8 +130,8 @@ namespace Maskirovka
 			foreach( Connection c in country.GetConnections() )
 			{
 				if( cluster.Contains(c) == false )
-				{
-					if( c != null )
+				{										
+					if( c.Equals(null) == false )
 					{
 						cluster.Add( c );
 						SeekCluster( c.neighbour == country? c.country : c.neighbour, cluster);

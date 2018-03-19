@@ -48,8 +48,7 @@ namespace Maskirovka
             Vector3 core2 = neighbour.transform.GetChild(0).position;
 
             if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
-            {
-                
+            {                
                 GameManager.Instance.feed.PushUpdate( new Change() { 
                     madeNewConnection = false, 
                     countryA = country,
