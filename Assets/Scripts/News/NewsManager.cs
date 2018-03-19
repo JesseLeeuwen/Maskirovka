@@ -19,6 +19,8 @@ namespace Maskirovka.News
         public Vector3 bias;
         private bool result;
         public NewsPanel newsPanel;
+        [SerializeField]
+        private 
 
 
         void Start()

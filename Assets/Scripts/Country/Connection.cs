@@ -21,6 +21,9 @@ namespace Maskirovka
         public float maxRep;
 
         private Vector3 total;
+        private Vector4 targetValues;
+        private Vector4 values;
+
         private float previousSum; 
         private LineRenderer background;
 
@@ -79,6 +82,10 @@ namespace Maskirovka
 
         void colorUpdate()
         {
+            values = Vector4.MoveTowards( values, targetValues, Time.deltaTime / 8);
+            block.SetColor("_Values", values);
+            connection.SetPropertyBlock(block);
+            
             float _Sum = Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z);
             if( _Sum == previousSum )
                 return;
@@ -92,9 +99,9 @@ namespace Maskirovka
             b /= sum;
 
             float distance = Vector3.Distance( connection.GetPosition(0), connection.GetPosition(1));
-
+            targetValues = new Vector4(a, b);
+            
             block.SetFloat("_Length", distance );
-            block.SetColor("_Values", new Vector4(a, b, 0));
             connection.SetPropertyBlock(block);
             previousSum = _Sum;
         }
@@ -130,6 +137,14 @@ namespace Maskirovka
             background.SetPosition(1, core2);
             
             Instantiate(AppearParticles,(core1+core2)/2,transform.rotation);
+
+            // update connection graphics
+            Vector3 temp1 = Search(country, neighbour);
+            Vector3 temp2 = Search(neighbour, country);
+
+            total = new Vector3(temp1.x - temp2.x, temp1.y - temp2.y, temp1.z - temp2.z);
+            colorUpdate();
+            values = targetValues;
 
         }
 

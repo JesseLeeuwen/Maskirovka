@@ -10,7 +10,7 @@
 		/* data */
 		_Length	( "Length", Range(0,10)) = 1
 		_Values	( "values", Vector) = (0,0,0,0)
-		_Fade	( "fade",	Range(0,50)) = 0
+		_Fade	( "fade",	Range(0,0.7)) = 0
 	}
 
 	Category {
@@ -60,11 +60,9 @@
 					half uvY = i.uv.y - 0.5;
 					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03); //i.uv.x + ( i.uv.y / (7.5 * _Length ));
 					fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );
-					
-					half2 uvX = half2(i.uv.x, i.uv.y);
-					
-					/*half power = abs(0.5 - i.uv.x) * _Fade;
-					col.a = tex2D(_Noise, uvX).r * power;*/
+															
+					half power = (abs(0.5 - i.uv.x) - (_Fade - 0.2)) * 10;					
+					col.a = tex2D(_Noise, i.uv).r * power;
 					return col;
 				}
 				ENDCG
