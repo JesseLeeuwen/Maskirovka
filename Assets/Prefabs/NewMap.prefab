@@ -204,6 +204,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4559766744078966}
   - component: {fileID: 212732872792348828}
+  - component: {fileID: 114790189206693218}
+  - component: {fileID: 114276399937672608}
+  - component: {fileID: 60026321956052382}
   m_Layer: 8
   m_Name: Country (10)
   m_TagString: Untagged
@@ -831,7 +834,7 @@ Transform:
   m_LocalPosition: {x: 1.93, y: 1.64, z: 5.9583335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4519920158687988}
+  - {fileID: 4317763882330240}
   m_Father: {fileID: 4849099032417688}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -881,11 +884,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014625143284322}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.47, y: -1.4, z: -0.3000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.47, y: -1.4, z: -0.3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
-  m_Father: {fileID: 4529173264812172}
+  m_Father: {fileID: 4225525506771184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4339359302226370
@@ -1039,11 +1042,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1334523952713468}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: -3.36, z: -0.3000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7, y: -3.36, z: -0.3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
-  m_Father: {fileID: 4225525506771184}
+  m_Father: {fileID: 4529173264812172}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4527435441707390
@@ -1070,7 +1073,7 @@ Transform:
   m_LocalPosition: {x: 1.93, y: 1.64, z: 5.9583335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4317763882330240}
+  - {fileID: 4519920158687988}
   m_Father: {fileID: 4849099032417688}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1274,6 +1277,41 @@ Transform:
   m_Father: {fileID: 4559766744078966}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60026321956052382
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279542378421596}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 14, y: 10}
+    newSize: {x: 14, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.98999995, y: 0.58}
+      - {x: -0.35, y: 0.58}
+      - {x: -0.42, y: 0.32}
+      - {x: -0.40698147, y: -0.7958532}
+      - {x: 0.41636598, y: -0.8170876}
+      - {x: 0.44338548, y: -0.91999996}
+      - {x: 1.4499999, y: -0.91999996}
+      - {x: 1.52, y: -0.84999996}
+      - {x: 1.52, y: -0.06}
+      - {x: 1.0913228, y: -0.0774343}
+      - {x: 1.0799999, y: 0.48999998}
 --- !u!60 &60198005947818370
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -1855,6 +1893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114464593141020450}
     reputation: {x: 0, y: 0, z: 0}
@@ -1887,12 +1927,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114385043054330548}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114371793867041454}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114257168628738212}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
   connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
@@ -1956,12 +1998,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114875518876076262}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114834810857201140}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114371793867041454}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114464593141020450}
     reputation: {x: 0, y: 0, z: 0}
@@ -1988,10 +2032,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114464593141020450}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114107483043219004}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114129117068530542}
     reputation: {x: 0, y: 0, z: 0}
@@ -2009,6 +2055,19 @@ MonoBehaviour:
   valToGive: 0
   sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
   connections: []
+--- !u!114 &114276399937672608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279542378421596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf949fd36f630347a75e1ff2aed393e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.2
+  speed: 1
 --- !u!114 &114328448102175492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2046,6 +2105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114875518876076262}
     reputation: {x: 0, y: 0, z: 0}
@@ -2078,6 +2139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114983894118723286}
     reputation: {x: 0, y: 0, z: 0}
@@ -2134,12 +2197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114237623712018880}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114895376622989442}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114107483043219004}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   - neighbour: {fileID: 114257168628738212}
     reputation: {x: 0, y: 0, z: 0}
@@ -2207,6 +2272,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0.2
   speed: 1
+--- !u!114 &114790189206693218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279542378421596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
+  neighbours: []
+  wantedReputation: {x: 0, y: 0, z: 0}
+  connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
+    type: 2}
+  returnValue: 0
+  randomMin: 30
+  randomMax: 70
+  avarage: {x: 0, y: 0, z: 0}
+  minValue: 0
+  maxValue: 50
+  valToGive: 0
+  sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
+  connections: []
 --- !u!114 &114806603712802034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2218,6 +2309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114107483043219004}
     reputation: {x: 0, y: 0, z: 0}
@@ -2246,6 +2339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114875518876076262}
     reputation: {x: 0, y: 0, z: 0}
@@ -2274,14 +2369,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114834810857201140}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114237623712018880}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114371793867041454}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114983894118723286}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
   connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
@@ -2306,10 +2403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114464593141020450}
     reputation: {x: 0, y: 0, z: 0}
-  - neighbour: {fileID: 114107483043219004}
+  - neighbour: {fileID: 0}
     reputation: {x: 0, y: 0, z: 0}
   wantedReputation: {x: 0, y: 0, z: 0}
   connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
@@ -2347,6 +2446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5933d51fe65bda41aabd084ae909db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterName: 
+  characterBio: 
   neighbours:
   - neighbour: {fileID: 114875518876076262}
     reputation: {x: 0, y: 0, z: 0}
@@ -3411,7 +3512,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cdbc9de82e2d3134e924c661f9425536, type: 3}
-  m_Color: {r: 0.6014721, g: 0.697, b: 0.42103046, a: 1}
+  m_Color: {r: 0.5203553, g: 0.603, b: 0.3642487, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

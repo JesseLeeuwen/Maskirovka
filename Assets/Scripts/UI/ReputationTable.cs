@@ -17,6 +17,8 @@ namespace Maskirovka.UI
 		[SerializeField]
 		private Image country;
 		[SerializeField]
+		private Text charName;
+		[SerializeField]
 		private float[] reputation;
 		[SerializeField]
 		private RectTransform[] bars;		
@@ -51,6 +53,7 @@ namespace Maskirovka.UI
 			}
 			
 			this.country.sprite = icon;
+			this.charName.text = country.characterName;
 		}
 		
 		void Update () 

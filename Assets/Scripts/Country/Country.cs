@@ -9,6 +9,7 @@ namespace Maskirovka
 {
 	public class Country : MonoBehaviour, ISelectable {
 
+        public string characterName;
         public Neighbour[] neighbours;
         public Vector3 wantedReputation;
         public GameObject connectionPrefab;

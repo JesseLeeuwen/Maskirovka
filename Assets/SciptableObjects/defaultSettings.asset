@@ -14,7 +14,37 @@ MonoBehaviour:
   colors:
   - catagorie: 0
     color: {r: 0.8980393, g: 0, b: 0.45882356, a: 1}
+    iconLeft: {fileID: 21300000, guid: 71725aaa5eb47bd4badf70bc36079980, type: 3}
+    iconRight: {fileID: 21300000, guid: 0c606a80baa7eb546b831859e39c8c3c, type: 3}
+    keywordsLeft:
+    - bike
+    - public
+    - green
+    keywordsRight:
+    - car
+    - fast
+    - luxury
   - catagorie: 1
     color: {r: 0, g: 0.6117647, b: 0.85882354, a: 1}
+    iconLeft: {fileID: 21300000, guid: 26bbce505f816a84fa825caa9379c446, type: 3}
+    iconRight: {fileID: 21300000, guid: b71d5b4a7e4433e4e99a6cca8acedb36, type: 3}
+    keywordsLeft:
+    - shirt
+    - casual
+    - comfortable
+    keywordsRight:
+    - suit
+    - business
+    - fancy
   - catagorie: 2
     color: {r: 1, g: 0.91764706, b: 0, a: 1}
+    iconLeft: {fileID: 21300000, guid: 321388d71277e344abfcdf480d2c4a30, type: 3}
+    iconRight: {fileID: 21300000, guid: 6c691642961b715468a3ac774d5703b4, type: 3}
+    keywordsLeft:
+    - dogs
+    - leash
+    - bone
+    keywordsRight:
+    - cats
+    - purring
+    - milk
