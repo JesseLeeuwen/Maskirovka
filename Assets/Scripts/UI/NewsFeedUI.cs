@@ -41,7 +41,7 @@ namespace Maskirovka.UI
 					tempItem = tempObject.GetComponent<NewsFeedItem>();	
 					
 					int index = System.Convert.ToInt16( tempChange.madeNewConnection );			
-					tempItem.Init(tempChange, connections[ index ]);
+					//tempItem.Init(tempChange, connections[ index ]);
 				}
 			}
 			for(int i = transform.childCount - 1; i >= maxListItems; --i )

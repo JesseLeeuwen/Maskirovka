@@ -11,13 +11,18 @@ namespace Maskirovka.UI
 		[SerializeField]
 		private RectTransform content;
 
-		public void NewTweet(NewsData newMessage)
+		public NewsFeedItem NewTweet(NewsData newMessage, Country country)
 		{
 			GameObject n = Instantiate(prefab);
 			n.transform.SetParent( transform, false);
 			n.transform.SetAsFirstSibling( );
 
-			content.sizeDelta = new Vector2( content.sizeDelta.x, content.childCount * 140 );			
+            NewsFeedItem item = n.GetComponent<NewsFeedItem>();
+            item.Init(country, newMessage);
+
+            content.sizeDelta = new Vector2( content.sizeDelta.x, content.childCount * 140 );
+
+            return item;
 		}
 
 		void Update()

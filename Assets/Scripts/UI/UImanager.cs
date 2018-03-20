@@ -45,7 +45,7 @@ namespace Maskirovka.UI
             
             if( type == SelectableType.News && newsPanel.gameObject.activeInHierarchy == false )
             {
-                newsPanel.Init( (News.News)selected );
+                newsPanel.Init( (NewsFeedItem)selected );
                 targetFocus = 0;
             }
             else if ( type == SelectableType.Country )

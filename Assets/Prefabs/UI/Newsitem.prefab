@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 114354635131660894}
   - component: {fileID: 222873008250216324}
   - component: {fileID: 114736427944728940}
-  - component: {fileID: 114491352541167198}
+  - component: {fileID: 114617755102388372}
   m_Layer: 5
   m_Name: Newsitem
   m_TagString: Untagged
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &114491352541167198
+--- !u!114 &114617755102388372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -398,11 +398,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1893452581064436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 042247e6733386e49a95031fe7bc4021, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c6aa52b60833334290e7fd4bd8d7a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countries: []
-  connection: {fileID: 0}
+  portrait: {fileID: 114242652394158568}
+  valueSlider: {fileID: 114819307599363298}
+  chanceOfSucces: 0
+  playerChanged: 0
+  contentText: {fileID: 114224602894049036}
+  biasChanger: 0
+  subject: {fileID: 0}
+  catagorie: 0
+  value: 0
 --- !u!114 &114736427944728940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -765,7 +772,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 120}
+  m_SizeDelta: {x: 230, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224755258871403680
 RectTransform:
