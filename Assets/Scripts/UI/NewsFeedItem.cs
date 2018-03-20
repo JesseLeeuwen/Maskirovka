@@ -6,16 +6,21 @@ using Maskirovka.News;
 using Maskirovka;
 using Maskirovka.Utility;
 
+using Maskirovka.Selector;
+
 namespace Maskirovka.UI
 {
-    public class NewsFeedItem : MonoBehaviour
+    public class NewsFeedItem : MonoBehaviour, ISelectable
     {
+        public Image icon_L;
+        public Image icon_R;
         public Image portrait;
         public Slider valueSlider;
         public int chanceOfSucces;
         public bool playerChanged;
         public Text contentText;
         public float biasChanger;
+        public Image ValueBar;
 
         //PUT THESE IN INIT
         public Country subject;
@@ -32,16 +37,17 @@ namespace Maskirovka.UI
             this.portrait.sprite = country.GetSprite();
             this.contentText.text = getCopy(data.catagorie, Mathf.RoundToInt(value), country);
 
-            Color a = CatagorieSettings.GetColor(catagorie);
-
-		}
+            this.ValueBar.color = CatagorieSettings.GetColor(catagorie);
+            this.icon_L.sprite = CatagorieSettings.GetIconLeft(catagorie);
+            this.icon_R.sprite = CatagorieSettings.GetIconRight(catagorie);
+        }
 
 		string getCopy(Catagorie cat, int value, Country country){
 			string[] left  = CatagorieSettings.GetKeywordsLeft(cat);
 			string[] right = CatagorieSettings.GetKeywordsRight(cat);
 			string line = getWord(left,right,value);
 			line = char.ToUpper(line[0]) + line.Substring(1); //capitalize first letter
-			for (int i = 0; i < Random.Range(12,18);i++){
+			for (int i = 0; i < Random.Range(8,11);i++){
 				line += " ";
 				line += getWord(left,right,value);
 			};
@@ -55,6 +61,11 @@ namespace Maskirovka.UI
 				return left[Random.Range(0,left.Length)];
 			}
 			return right[Random.Range(0,right.Length)];		
+        }
+
+        public new SelectableType GetType()
+        {
+            return SelectableType.NewsFeedItem;
         }
 
         public bool Send(bool youcandie)

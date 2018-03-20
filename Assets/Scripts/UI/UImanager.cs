@@ -43,7 +43,7 @@ namespace Maskirovka.UI
                 return;        
             }
             
-            if( type == SelectableType.News && newsPanel.gameObject.activeInHierarchy == false )
+            if( type == SelectableType.NewsFeedItem && newsPanel.gameObject.activeInHierarchy == false )
             {
                 newsPanel.Init( (NewsFeedItem)selected );
                 targetFocus = 0;
