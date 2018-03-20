@@ -60,9 +60,8 @@ namespace Maskirovka
                 Instantiate(DisappearParticles,(core1+core2)/2,transform.rotation);
                 Destroy(gameObject);
             }
-
-            connection.SetPosition(0, new Vector3(core1.x, core1.y, core1.z + 0.1f));
-            connection.SetPosition(1, new Vector3(core2.x, core2.y, core2.z + 0.1f));
+            connection.SetPosition(0, core1);
+            connection.SetPosition(1, core2);
             background.SetPosition(0, core1);
             background.SetPosition(1, core2);
         }
