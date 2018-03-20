@@ -13,6 +13,10 @@ namespace Maskirovka.Utility
 		{
 			public Catagorie catagorie;
 			public Color color;
+			public Sprite iconLeft;
+			public Sprite iconRight;
+			public string[] keywordsLeft;
+			public string[] keywordsRight;
 		}
 		[SerializeField]
 		private CatagorieSetting[] colors;
@@ -26,6 +30,26 @@ namespace Maskirovka.Utility
 		public static Color GetColor(Catagorie catagorie)
 		{
 			return instance.colors.SingleOrDefault( x => x.catagorie == catagorie ).color;
+		}
+
+		public static Sprite GetIconLeft(Catagorie catagorie)
+		{
+			return instance.colors.SingleOrDefault( x => x.catagorie == catagorie ).iconLeft;
+		}
+
+		public static Sprite GetIconRight(Catagorie catagorie)
+		{
+			return instance.colors.SingleOrDefault( x => x.catagorie == catagorie ).iconRight;
+		}
+
+		public static string[] GetKeywordsLeft(Catagorie catagorie)
+		{
+			return instance.colors.SingleOrDefault( x => x.catagorie == catagorie ).keywordsLeft;
+		}
+
+		public static string[] GetKeywordsRight(Catagorie catagorie)
+		{
+			return instance.colors.SingleOrDefault( x => x.catagorie == catagorie ).keywordsRight;
 		}
 	}
 }
