@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using System.Linq;
 
 namespace Maskirovka.Utility
@@ -13,6 +14,8 @@ namespace Maskirovka.Utility
 		{
 			public Catagorie catagorie;
 			public Color color;
+			public Sprite iconLeft;
+			public Sprite iconRight;
 		}
 		[SerializeField]
 		private CatagorieSetting[] colors;
