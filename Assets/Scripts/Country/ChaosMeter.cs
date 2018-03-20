@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Maskirovka
 {	
 	[System.Serializable]
-	struct Cluster
+	public struct Cluster
 	{		
 		// connection that are part of the connections
 		public List<Connection> connections;
@@ -80,11 +80,11 @@ namespace Maskirovka
 			{							
 				connections.RemoveAt(index);
 				change.countryA.RemoveConnection( current );
-                change.countryA.RemoveConnection( current );				
+                change.countryB.RemoveConnection( current );				
 			}
 		}		
 
-		public bool Invade(Country country)
+		public bool CanInvade(Country country)
 		{
 			bool canInvade = chaos < 50 && biggestCluster <= 3;
 			Cluster cluster = new Cluster();
@@ -133,7 +133,7 @@ namespace Maskirovka
 			UpdateChoas();
 		}
 
-		private bool IsInCluster(Connection c)
+		public bool IsInCluster(Connection c)
 		{
 			foreach( Cluster cluster in clusters)
 			{
@@ -152,6 +152,7 @@ namespace Maskirovka
 					if( c.Equals(null) == false )
 					{
 						cluster.Add( c );
+						c.SetCluster( cluster );
 						SeekCluster( c.neighbour == country? c.country : c.neighbour, cluster);
 					}
 				}

@@ -11,9 +11,7 @@ namespace Maskirovka
         public NewsProcessor processor; // current news processor
         public NewsManager newsManager;
         public NewsFeed feed;
-        public CatagorieSettings settings;
-
-        
+        public CatagorieSettings settings;        
 
         [SerializeField]
         private CountryList list;

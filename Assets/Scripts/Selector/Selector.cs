@@ -42,7 +42,9 @@ namespace Maskirovka.Selector
                         return;
                     selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                    
                     manager.ReceiveSelection( selected );
-                    ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
+                    
+                    if( manager.IsInvasionMode() == false )
+                        ((MonoBehaviour)selected).SendMessage("Select", 1, SendMessageOptions.DontRequireReceiver);
                 }
                 
             }

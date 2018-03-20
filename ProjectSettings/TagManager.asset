@@ -51,3 +51,6 @@ TagManager:
   - name: UI
     uniqueID: 797185087
     locked: 0
+  - name: People
+    uniqueID: 3540866671
+    locked: 0
