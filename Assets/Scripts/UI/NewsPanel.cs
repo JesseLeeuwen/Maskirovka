@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using System.Collections.Generic;
+
 using Maskirovka.News;
 using Maskirovka.Utility;
 
@@ -22,6 +24,8 @@ namespace Maskirovka.UI
 
         public GameObject countryCircle;
         public GameObject[] neighborCircle;
+
+        private List<float> prevV = new List<float>();
 
 
         public void Init( News.News news)
@@ -55,6 +59,7 @@ namespace Maskirovka.UI
             int i =0;
             
             
+            prevV.Clear();
             
             foreach (Neighbour n in news.country.neighbours){
                 float v = 0;
@@ -68,12 +73,26 @@ namespace Maskirovka.UI
                 }else if (news.catagorie==Catagorie.C){
                     v = n.reputation.z;
                 }
-                markerPos = neighborCircle[i].transform.position;
-                markerPos.x = v * slider.GetComponent<RectTransform>().sizeDelta.x/100;
-                neighborCircle[i].transform.position=markerPos;
+
+                markerPos = img.GetComponent<RectTransform>().anchoredPosition;
+                markerPos.y=20;
+                bool move = false;
+                foreach(float value in prevV){
+                    if (Mathf.Abs(value-v)<7){
+                        markerPos.y=50;
+                        move = true;
+                        break;
+                    }
+                }
+                img.GetComponent<RectTransform>().anchoredPosition = markerPos;
+                if (!move) prevV.Add(v);
+
+
 
                 markerPos = neighborCircle[i].GetComponent<RectTransform>().anchoredPosition;
                 markerPos.x = v * slider.GetComponent<RectTransform>().sizeDelta.x/100;
+                
+                
                 neighborCircle[i].GetComponent<RectTransform>().anchoredPosition = markerPos;
                 i++;
             }
