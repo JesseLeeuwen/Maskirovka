@@ -46,6 +46,7 @@ namespace Maskirovka.UI
 			for(int i = 0; i < country.neighbours.Length; ++i)
 			{
 				neighbour = Instantiate(neighbourInfoPrefab, Vector3.zero, Quaternion.identity, neighbourContainer );
+				neighbour.transform.localPosition = Vector3.zero;				
 				neighbour.GetComponent<NeighbourInfo>().Init( country.neighbours[i], country );
 			}
 			
