@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Maskirovka.Selector;
-
+using Maskirovka.Utility;
 
 namespace Maskirovka
 {
@@ -33,7 +33,12 @@ namespace Maskirovka
         private Catagorie catToGive;
         [SerializeField]        
         private Sprite sprite;
-
+        
+        [SerializeField]
+        private Animator person;
+        
+        [SerializeField]
+        private Cluster cluster;
         [SerializeField]
         private List<Connection> connections;
         private Country tempLand;
@@ -46,12 +51,14 @@ namespace Maskirovka
             float B = Random.Range(randomMin, randomMax);
             float C = Random.Range(randomMin, randomMax);
             wantedReputation = new Vector3(A,B,C);
-
+            cluster.Init();
+            
             avarage = new Vector3(wantedReputation.x, wantedReputation.y, wantedReputation.z);
         }
 
         void Start()
         {
+            person = GetComponentInChildren<Animator>();
             //Fill neigbours with the random generated wanted reputation
             for (int i = 0; i < neighbours.Length; i++)
             {
@@ -59,6 +66,11 @@ namespace Maskirovka
                 neighbours[i].neighbour.UpdateRepu(this, wantedReputation.y, Catagorie.B, false);
                 neighbours[i].neighbour.UpdateRepu(this, wantedReputation.z, Catagorie.C, false);
             } 
+        }
+
+        void Update()
+        {
+            person.SetInteger("IntMood", cluster.Count);
         }
 
         public NewsData GetNews()
@@ -172,14 +184,17 @@ namespace Maskirovka
         public void NewConnection(Connection connection)
         {
             connections.Add(connection);
+            person.SetTrigger( "TriggerWelcome" );
         }
 
         public void RemoveConnection(Connection connection)
         {
             connections.Remove(connection);
+            cluster = new Cluster();
+            cluster.Init();
         }
 
-        public void Invaded()
+        public void Invaded(Color newOnwerColor)
         {
             foreach( Neighbour n in neighbours )
             {
@@ -188,8 +203,24 @@ namespace Maskirovka
                 neighbourList.RemoveAll( x => x.neighbour == this );
                 c.neighbours = neighbourList.ToArray();
             }
+            
+            for(int i = connections.Count -1; i >= 0; --i)
+            {
+                print( i );
+                if( connections[i].Equals(null) == false )
+                { 
+                    connections[i].Delete();
+                }
+               // connections.RemoveAt(i);
+            }
             neighbours = new Neighbour[0];
-            GetComponent<SpriteRenderer>().color = new Color(0.77647f, 0.77647f, 0.77647f, 1);
+            GetComponent<SpriteRenderer>().color = newOnwerColor;
+            GetComponent<OnClickAnim>().SetColor( newOnwerColor );
+        }
+
+        public void SetCluster( Cluster cluster )
+        {
+            this.cluster = cluster;
         }
 
         public List<Connection> GetConnections()

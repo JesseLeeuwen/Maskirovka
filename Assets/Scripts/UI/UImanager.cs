@@ -17,12 +17,32 @@ namespace Maskirovka.UI
         [SerializeField]
         private float targetFocus;
         [SerializeField]
+        private InvasionManager invasion;
+        [SerializeField]
         private float speed;
         private float focus;
+        
+        private bool isInvasionMode;
+
+        public void ToggleInvasionMode()
+        {
+            isInvasionMode = !isInvasionMode;
+        }
+
+        public bool IsInvasionMode()
+        {
+            return isInvasionMode;
+        }
 
         public void ReceiveSelection( ISelectable selected )
         {
             SelectableType type = selected.GetType();
+            if( isInvasionMode == true )
+            {
+                invasion.InvadeAttempt( (Country)selected );
+                return;        
+            }
+            
             if( type == SelectableType.News && newsPanel.gameObject.activeInHierarchy == false )
             {
                 newsPanel.Init( (News.News)selected );

@@ -35,8 +35,12 @@ namespace Maskirovka.News
         public void CreateNews()
         {
             activeNewsItems.Clear();
+            
+            int length = 3;
+            if( countries.Length < 3 )
+                length = countries.Length;
 
-            while( activeNewsItems.Count < 3 )
+            while( activeNewsItems.Count < length )
             {       
                 // Get Random country that has no news on him
                 Country c;

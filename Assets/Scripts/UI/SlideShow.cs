@@ -10,7 +10,7 @@ public class SlideShow : MonoBehaviour {
 	private int currentSlide = 0;
 
 	// Use this for initialization
-	void Start () {
+	void Start () {		
 		ResetTutorial();
 	}
 	
@@ -26,8 +26,12 @@ public class SlideShow : MonoBehaviour {
 	}
 
 	public void ResetTutorial(){
-		gameObject.SetActive(true);
+		gameObject.SetActive(true);		
+		
 		canvas = GetComponent<Image>();
+		transform.GetChild(0).gameObject.SetActive(true);
+
+		canvas.enabled = true;
 		currentSlide=0;
 		canvas.sprite= slides[0];
 		canvas.color= new Color(1,1,1,.9f);

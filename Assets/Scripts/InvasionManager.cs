@@ -12,6 +12,9 @@ public class InvasionManager : MonoBehaviour {
 	[SerializeField]
 	private CountryList countries;
 
+	[SerializeField]
+	private Color russiaColor;
+
 	private NewsManager manager;
 	private ChaosMeter chaos;
 
@@ -22,20 +25,20 @@ public class InvasionManager : MonoBehaviour {
 
 	public void InvadeAttempt(Country country)
 	{
-		win = chaos.Invade( country );
+		win = chaos.CanInvade( country );
 
 		if( win )
 		{			
 			countries.Remove( country );
-			country.Invaded();
+			country.Invaded(russiaColor);
 
-			for (int i=0; i<10;i++)
+			/*for (int i=0; i<10;i++)
 			{
 				GameObject anim = manager.StateAnimation(win);
 				anim.transform.localScale = new Vector3(.5f,.5f,.5f);
 				anim.transform.position += Random.insideUnitSphere * 5;
 			}
-			WinScreen.SetActive(win);
+			WinScreen.SetActive(win);*/
 		}
 	}
 }

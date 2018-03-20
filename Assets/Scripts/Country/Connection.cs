@@ -26,6 +26,7 @@ namespace Maskirovka
 
         private float previousSum; 
         private LineRenderer background;
+        
 
         public GameObject AppearParticles;
         public GameObject DisappearParticles;
@@ -52,13 +53,8 @@ namespace Maskirovka
 
             if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
             {                
-                GameManager.Instance.feed.PushUpdate( new Change() { 
-                    madeNewConnection = false, 
-                    countryA = country,
-                    countryB = neighbour 
-                });
                 Instantiate(DisappearParticles,(core1+core2)/2,transform.rotation);
-                Destroy(gameObject);
+                Delete( );
             }
             connection.SetPosition(0, core1);
             connection.SetPosition(1, core2);
@@ -145,6 +141,22 @@ namespace Maskirovka
             colorUpdate();
             values = targetValues;
 
+        }
+
+        public void SetCluster( Cluster cluster )
+        {
+            country.SetCluster( cluster );
+            neighbour.SetCluster( cluster );
+        }
+
+        public void Delete()
+        {
+            GameManager.Instance.feed.PushUpdate( new Change() { 
+                madeNewConnection = false, 
+                countryA = country,
+                countryB = neighbour 
+            });
+            Destroy(gameObject);
         }
 
         public bool CountryPresent(Country country, Country neighbour)
