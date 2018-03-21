@@ -15,7 +15,7 @@ namespace Maskirovka.UI
         public Image iconLeft;
         public Image iconRight;
 
-        public News.News currentNews;
+        public NewsFeedItem currentNews;
         public int chanceOfSucces;
         private float startValue, currentValue;
 
