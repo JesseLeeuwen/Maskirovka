@@ -12,6 +12,9 @@ namespace Maskirovka.UI
     {
         [SerializeField]
         private Slider slider;
+        public Image iconLeft;
+        public Image iconRight;
+
         public News.News currentNews;
         public int chanceOfSucces;
         private float startValue, currentValue;
@@ -28,7 +31,7 @@ namespace Maskirovka.UI
         private List<float> prevV = new List<float>();
 
 
-        public void Init( News.News news)
+        public void Init( NewsFeedItem news)
         {
             gameObject.SetActive( true );
             
@@ -36,8 +39,8 @@ namespace Maskirovka.UI
             chanceOfSucces = news.chanceOfSucces;
             startValue = currentValue = news.value;
             slider.value = startValue;
-
-
+            iconLeft.sprite=CatagorieSettings.GetIconLeft(news.catagorie);
+            iconRight.sprite=CatagorieSettings.GetIconRight(news.catagorie);
 
             
             Color c = CatagorieSettings.GetColor(news.catagorie);
@@ -47,10 +50,10 @@ namespace Maskirovka.UI
             foreach (GameObject t in texts){
                 t.GetComponent<Text>().color = c;
             }
-            countryCircle.transform.GetChild(0).GetComponent<Image>().sprite = news.country.GetSprite();
+            countryCircle.transform.GetChild(0).GetComponent<Image>().sprite = news.subject.GetSprite();
 
            Vector3 markerPos = countryCircle.GetComponent<RectTransform>().anchoredPosition;
-           markerPos.x = GetReputation(news.catagorie, news.country);
+           markerPos.x = GetReputation(news.catagorie, news.subject);
            countryCircle.GetComponent<RectTransform>().anchoredPosition = markerPos;
 
             foreach (GameObject n in neighborCircle){
@@ -61,11 +64,11 @@ namespace Maskirovka.UI
             
             prevV.Clear();
             
-            foreach (Neighbour n in news.country.neighbours){
+            foreach (Neighbour n in news.subject.neighbours){
                 float v = 0;
                 neighborCircle[i].SetActive(true);
                 Image img = neighborCircle[i].transform.GetChild(0).GetComponent<Image>();
-                img.sprite = news.country.neighbours[i].neighbour.GetSprite();
+                img.sprite = news.subject.neighbours[i].neighbour.GetSprite();
                 if (news.catagorie==Catagorie.A){
                     v = n.reputation.x;
                 }else if(news.catagorie==Catagorie.B){

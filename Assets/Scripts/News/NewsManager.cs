@@ -12,23 +12,23 @@ namespace Maskirovka.News
         private GameObject newsPrefab;
         [SerializeField]
         private CountryList countries;
-        private Queue<News> activeNewsItems;
+        private Queue<NewsFeedItem> activeNewsItems;
         public GameObject SuccessAnimation;
         public GameObject FailedAnimation;
         public Canvas canvas;
         public Vector3 bias;
         private bool result;
         public NewsPanel newsPanel;
+
         [SerializeField]
-        private 
+        private TwitterFeed feed;
 
 
         void Start()
         {            
-            activeNewsItems = new Queue<News>();
+            activeNewsItems = new Queue<NewsFeedItem>();
             CreateNews();
             bias = new Vector3(50, 50, 50);
-
         }
 
         // create news message object for player to interact with
@@ -40,6 +40,7 @@ namespace Maskirovka.News
             if( countries.Length < 3 )
                 length = countries.Length;
 
+
             while( activeNewsItems.Count < length )
             {       
                 // Get Random country that has no news on him
@@ -48,25 +49,18 @@ namespace Maskirovka.News
                     c = countries[ Random.Range(0, countries.Length) ];
                 }while( IsCountryAvailable( c ) == false );
 
-                // position of news message
-                Vector3 position = c.transform.GetChild(0).position - Vector3.forward;
-
                 // spawn a news message object
-                News news = Instantiate( newsPrefab, position, Quaternion.identity).GetComponent<News>();
-                news.country = c; // set country of message                
+                //NewsFeedItem news = Instantiate(new NewsFeedItem());
+                //news.subject = c; // set country of message                
 
 
                 // get news message from country
                 NewsData newsMessage = c.GetNews();                
-                news.catagorie = newsMessage.catagorie;
-                news.value = newsMessage.value;
-
-                SpriteRenderer fill = news.transform.GetChild(1).GetComponent<SpriteRenderer>();
-                fill.color= CatagorieSettings.GetColor(news.catagorie);
-               
+                //news.catagorie = newsMessage.catagorie;
+                //news.value = newsMessage.value;
 
                 // add news message to list of active news messages
-                activeNewsItems.Enqueue( news );
+                activeNewsItems.Enqueue( feed.NewTweet(newsMessage, c) );
             }
         }
 
@@ -74,7 +68,7 @@ namespace Maskirovka.News
         public void SendNews()
         {
             bool temp1 = true;
-            foreach (News news in activeNewsItems)
+            foreach (NewsFeedItem news in activeNewsItems)
             {
                 //if(temp1 == true)
                 //{
@@ -93,9 +87,9 @@ namespace Maskirovka.News
         // check if a news message with given country already exists
         private bool IsCountryAvailable(Country country)
         {
-            foreach( News news in activeNewsItems)
+            foreach( NewsFeedItem news in activeNewsItems)
             {
-                if( news.country == country )
+                if( news.subject == country )
                     return false;
             }
             return true;

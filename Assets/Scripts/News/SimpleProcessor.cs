@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using Maskirovka.UI;
 namespace Maskirovka.News
 {
     [CreateAssetMenu(menuName = "simple processor")]
@@ -10,7 +10,7 @@ namespace Maskirovka.News
         private bool succes;
 
 
-        public override bool ProccesNews(News news)
+        public override bool ProccesNews(NewsFeedItem news)
         {
             /*float valueNews = Random.value * 100;
             float valueNews = Random.value * 100;
@@ -115,9 +115,9 @@ namespace Maskirovka.News
             succes = value < news.chanceOfSucces;
             if (succes)
             {
-                foreach (Neighbour Neighbour in news.country.neighbours)
+                foreach (Neighbour Neighbour in news.subject.neighbours)
                 {
-                    Neighbour.neighbour.UpdateRepu(news.country, news.value, news.catagorie);
+                    Neighbour.neighbour.UpdateRepu(news.subject, news.value, news.catagorie);
                 }
             }
             //GameObject.FindWithTag("Manager").GetComponent<NewsManager>().bias = biasValue;
