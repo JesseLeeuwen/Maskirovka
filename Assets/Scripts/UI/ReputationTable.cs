@@ -53,7 +53,7 @@ namespace Maskirovka.UI
 			}
 			
 			this.country.sprite = icon;
-			this.charName.text = country.characterName;
+			//this.charName.text = country.characterName;
 		}
 		
 		void Update () 

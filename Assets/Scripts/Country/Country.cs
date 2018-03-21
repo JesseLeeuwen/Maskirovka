@@ -194,8 +194,9 @@ namespace Maskirovka
             cluster.Init();
         }
 
-        public void Invaded(Color newOnwerColor)
+        public void Invaded(Russia russia)
         {
+            russia.AddNeighbours( neighbours );
             foreach( Neighbour n in neighbours )
             {
                 Country c = n.neighbour;
@@ -205,17 +206,17 @@ namespace Maskirovka
             }
             
             for(int i = connections.Count -1; i >= 0; --i)
-            {
-                print( i );
+            {                
                 if( connections[i].Equals(null) == false )
                 { 
                     connections[i].Delete();
                 }
-               // connections.RemoveAt(i);
             }
+
             neighbours = new Neighbour[0];
-            GetComponent<SpriteRenderer>().color = newOnwerColor;
-            GetComponent<OnClickAnim>().SetColor( newOnwerColor );
+            
+            GetComponent<SpriteRenderer>().color = russia.GetColor();
+            GetComponent<OnClickAnim>().SetColor( russia.GetColor() );
         }
 
         public void SetCluster( Cluster cluster )
@@ -237,6 +238,4 @@ namespace Maskirovka
 			return SelectableType.Country;
 		}
 	}
-
-
 }

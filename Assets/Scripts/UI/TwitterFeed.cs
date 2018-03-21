@@ -20,14 +20,9 @@ namespace Maskirovka.UI
             NewsFeedItem item = n.GetComponent<NewsFeedItem>();
             item.Init(country, newMessage);
 
+			content.anchoredPosition = Vector2.zero;
             content.sizeDelta = new Vector2( content.sizeDelta.x, content.childCount * 140 );
-
             return item;
-		}
-
-		void Update()
-		{
-			
 		}
 	}
 }

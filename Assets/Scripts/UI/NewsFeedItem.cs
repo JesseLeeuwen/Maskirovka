@@ -27,7 +27,6 @@ namespace Maskirovka.UI
         public Catagorie catagorie;
         public float value;
 
-
         public void Init(Country country, NewsData data)
         {
             this.subject = country;
@@ -53,7 +52,6 @@ namespace Maskirovka.UI
 			};
 			line += ".";
 			return line;
-
 		}
 
 		string getWord(string[] left, string[] right, int value){
@@ -69,18 +67,10 @@ namespace Maskirovka.UI
         }
 
         public bool Send(bool youcandie)
-        {
-            //if(youcandie == false)
-            //{
+        {            
             bool result = GameManager.Instance.processor.ProccesNews(this);
-            Destroy(gameObject);
-            return result;
-            //}
-
-            /*if(youcandie == true)
-            {*/
-            //}
-            //return false;
+            gameObject.layer = 0;
+            return result;            
         }
     }
 }
