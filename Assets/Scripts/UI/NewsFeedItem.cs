@@ -61,17 +61,9 @@ namespace Maskirovka.UI
 			if (Random.Range(0,100) < value){
 				return left[Random.Range(0,left.Length)];
 			}
-			return right[Random.Range(0,right.Length)];		
-<<<<<<< HEAD
-=======
+			return right[Random.Range(0,right.Length)];
         }
-
-        public new SelectableType GetType()
-        {
-            return SelectableType.NewsFeedItem;
->>>>>>> bf7439c0d524238a9619f6ceea7d1dc6beaafc3a
-        }
-
+        
         public new SelectableType GetType()
         {
             return SelectableType.NewsFeedItem;
