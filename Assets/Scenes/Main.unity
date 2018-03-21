@@ -3392,6 +3392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 396448861}
+  iconLeft: {fileID: 0}
+  iconRight: {fileID: 0}
   currentNews: {fileID: 0}
   chanceOfSucces: 0
   backgrounds:
