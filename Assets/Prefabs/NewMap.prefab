@@ -82,6 +82,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4849099032417688}
+  - component: {fileID: 114007188758518374}
   m_Layer: 0
   m_Name: NewMap
   m_TagString: Untagged
@@ -868,8 +869,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4559766744078966}
   - component: {fileID: 212732872792348828}
+  - component: {fileID: 114671914099452442}
   m_Layer: 8
-  m_Name: Country (10)
+  m_Name: Russia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6704,6 +6706,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114007188758518374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017209161585724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca48b9c87fb1c3243bbdb06cf3c9d659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: {fileID: 11400000, guid: 881b7bdc19926b142974d9b3376cefb4, type: 2}
 --- !u!114 &114107483043219004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7082,6 +7096,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0.2
   speed: 1
+--- !u!114 &114671914099452442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279542378421596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7dc669679652e143b200985b9a6b4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighbours:
+  - neighbour: {fileID: 114237623712018880}
+    reputation: {x: 0, y: 0, z: 0}
+  - neighbour: {fileID: 114464593141020450}
+    reputation: {x: 0, y: 0, z: 0}
+  - neighbour: {fileID: 114257168628738212}
+    reputation: {x: 0, y: 0, z: 0}
+  - neighbour: {fileID: 114129117068530542}
+    reputation: {x: 0, y: 0, z: 0}
+  - neighbour: {fileID: 114371793867041454}
+    reputation: {x: 0, y: 0, z: 0}
 --- !u!114 &114778691045850338
 MonoBehaviour:
   m_ObjectHideFlags: 1

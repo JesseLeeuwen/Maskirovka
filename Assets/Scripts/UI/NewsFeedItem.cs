@@ -73,6 +73,7 @@ namespace Maskirovka.UI
         {            
             bool result = GameManager.Instance.processor.ProccesNews(this);
             gameObject.layer = 0;
+            GetComponent<Image>().color = new Color( 0.95f, 0.95f, 0.95f, 1);
             return result;            
         }
     }
