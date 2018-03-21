@@ -40,7 +40,7 @@ namespace Maskirovka.UI
             this.ValueBar.color = CatagorieSettings.GetColor(catagorie);
             this.icon_L.sprite = CatagorieSettings.GetIconLeft(catagorie);
             this.icon_R.sprite = CatagorieSettings.GetIconRight(catagorie);
-            this.headline.text = country.characterName.ToUpper();
+//            this.headline.text = country.characterName.ToUpper();
         }
 
 		string getCopy(Catagorie cat, int value, Country country, int length){
@@ -63,7 +63,7 @@ namespace Maskirovka.UI
 			}
 			return right[Random.Range(0,right.Length)];
         }
-        
+
         public new SelectableType GetType()
         {
             return SelectableType.NewsFeedItem;

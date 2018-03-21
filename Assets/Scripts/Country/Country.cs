@@ -214,6 +214,7 @@ namespace Maskirovka
             }
 
             neighbours = new Neighbour[0];
+            person.gameObject.SetActive(false);
             
             GetComponent<SpriteRenderer>().color = russia.GetColor();
             GetComponent<OnClickAnim>().SetColor( russia.GetColor() );

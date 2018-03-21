@@ -31,13 +31,16 @@ public class InvasionManager : MonoBehaviour {
 			if( russia.InvadeCountry( country ) == true )
 				countries.Remove( country );
 
-			/*for (int i=0; i<10;i++)
+			if( countries.Length == 0 )
 			{
-				GameObject anim = manager.StateAnimation(win);
-				anim.transform.localScale = new Vector3(.5f,.5f,.5f);
-				anim.transform.position += Random.insideUnitSphere * 5;
+				for (int i=0; i<10;i++)
+				{
+					GameObject anim = manager.StateAnimation(win);
+					anim.transform.localScale = new Vector3(.5f,.5f,.5f);
+					anim.transform.position += Random.insideUnitSphere * 5;
+				}
+				WinScreen.SetActive(win);
 			}
-			WinScreen.SetActive(win);*/
 		}
 	}
 }

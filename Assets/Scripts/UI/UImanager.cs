@@ -37,7 +37,7 @@ namespace Maskirovka.UI
         public void ReceiveSelection( ISelectable selected )
         {
             SelectableType type = selected.GetType();
-            if( isInvasionMode == true )
+            if( isInvasionMode == true && type == SelectableType.Country )
             {
                 invasion.InvadeAttempt( (Country)selected );
                 return;        
