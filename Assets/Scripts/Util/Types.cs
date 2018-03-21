@@ -11,7 +11,7 @@ namespace Maskirovka
 
     public enum SelectableType
     {
-        News, Country
+        NewsFeedItem, Country
     }
 
     public struct NewsData

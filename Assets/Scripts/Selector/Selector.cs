@@ -30,7 +30,7 @@ namespace Maskirovka.Selector
                 try{
                     if( selected != null )
                         ((MonoBehaviour)selected).SendMessage("Select", 0, SendMessageOptions.DontRequireReceiver);
-                }catch( MissingReferenceException e){ Debug.LogWarning("unity fucked up again"); }
+                }catch( MissingReferenceException e){ Debug.LogWarning( e + ": unity fucked up again"); }
 
                 // get new selected Object
                 PointerEventData data = ExtendedStandaloneInputModule.GetPointerEventData(-1);
@@ -40,7 +40,7 @@ namespace Maskirovka.Selector
                 {
                     if( data.pointerPressRaycast.gameObject.layer != 8 )
                         return;
-                    selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                    
+                    selected = data.pointerPressRaycast.gameObject.GetComponent<ISelectable>();                   
                     manager.ReceiveSelection( selected );
                     
                     if( manager.IsInvasionMode() == false )

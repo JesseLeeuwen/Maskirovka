@@ -20,10 +20,24 @@ MonoBehaviour:
     - bike
     - public
     - green
+    - ticket
+    - passenger
+    - pedal
+    - exercise
+    - train
+    - nature
+    - walk
     keywordsRight:
     - car
     - fast
     - luxury
+    - automobile
+    - jeep
+    - exhaust
+    - petrol
+    - seatbelts
+    - truck
+    - gas
   - catagorie: 1
     color: {r: 0, g: 0.6117647, b: 0.85882354, a: 1}
     iconLeft: {fileID: 21300000, guid: 26bbce505f816a84fa825caa9379c446, type: 3}
@@ -32,10 +46,24 @@ MonoBehaviour:
     - shirt
     - casual
     - comfortable
+    - sport
+    - jeans
+    - sneakers
+    - flip-flops
+    - lounge
+    - sweatshirt
+    - sports
     keywordsRight:
     - suit
     - business
     - fancy
+    - tie
+    - dress
+    - tuxedo
+    - tailor
+    - gown
+    - professional
+    - office
   - catagorie: 2
     color: {r: 1, g: 0.91764706, b: 0, a: 1}
     iconLeft: {fileID: 21300000, guid: 321388d71277e344abfcdf480d2c4a30, type: 3}
@@ -43,8 +71,22 @@ MonoBehaviour:
     keywordsLeft:
     - dogs
     - leash
+    - poodle
     - bone
+    - retriever
+    - beagle
+    - spaniel
+    - corgi
+    - doggie
+    - pug
     keywordsRight:
     - cats
     - purring
     - milk
+    - feline
+    - mice
+    - claws
+    - bird-catching
+    - lion
+    - kitten
+    - whiskers

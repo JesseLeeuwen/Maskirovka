@@ -8,12 +8,11 @@ public class InvasionManager : MonoBehaviour {
 
 	public GameObject WinScreen;
 	public bool win;
-	
-	[SerializeField]
-	private CountryList countries;
 
 	[SerializeField]
-	private Color russiaColor;
+	private Russia russia;
+	[SerializeField]
+	private CountryList countries;
 
 	private NewsManager manager;
 	private ChaosMeter chaos;
@@ -28,9 +27,9 @@ public class InvasionManager : MonoBehaviour {
 		win = chaos.CanInvade( country );
 
 		if( win )
-		{			
-			countries.Remove( country );
-			country.Invaded(russiaColor);
+		{
+			if( russia.InvadeCountry( country ) == true )
+				countries.Remove( country );
 
 			/*for (int i=0; i<10;i++)
 			{

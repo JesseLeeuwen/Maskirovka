@@ -67,15 +67,8 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
-            bool temp1 = true;
             foreach (NewsFeedItem news in activeNewsItems)
-            {
-                //if(temp1 == true)
-                //{
-                //    Debug.Log(newsPanel.currentNews.catagorie);
-                //   result = newsPanel.currentNews.Send(false);
-                //    temp1 = false;
-                //}               
+            {                             
                 result = news.Send(false);
                 if( news.playerChanged == true)
                 {
