@@ -78,11 +78,11 @@ namespace Maskirovka.UI
                 }
 
                 markerPos = img.GetComponent<RectTransform>().anchoredPosition;
-                markerPos.y=20;
+                markerPos.y=15;
                 bool move = false;
                 foreach(float value in prevV){
                     if (Mathf.Abs(value-v)<7){
-                        markerPos.y=50;
+                        markerPos.y=35;
                         move = true;
                         break;
                     }
