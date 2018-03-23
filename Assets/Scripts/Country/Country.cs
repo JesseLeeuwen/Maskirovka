@@ -13,6 +13,7 @@ namespace Maskirovka
         public Neighbour[] neighbours;
         public Vector3 wantedReputation;
         public GameObject connectionPrefab;
+        public SpriteRenderer Inline;
 
         public float returnValue;
 
