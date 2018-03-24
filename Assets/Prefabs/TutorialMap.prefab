@@ -974,7 +974,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  characterBio: 
   neighbours:
   - neighbour: {fileID: 114842834797327850}
     reputation: {x: 0, y: 0, z: 0}
@@ -991,6 +990,9 @@ MonoBehaviour:
   maxValue: 50
   valToGive: 0
   sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
+  person: {fileID: 0}
+  cluster:
+    connections: []
   connections: []
 --- !u!114 &114432344508606648
 MonoBehaviour:
@@ -1067,7 +1069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  characterBio: 
   neighbours:
   - neighbour: {fileID: 114398717984687676}
     reputation: {x: 0, y: 0, z: 0}
@@ -1084,6 +1085,9 @@ MonoBehaviour:
   maxValue: 50
   valToGive: 0
   sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
+  person: {fileID: 0}
+  cluster:
+    connections: []
   connections: []
 --- !u!114 &114696448937070782
 MonoBehaviour:
@@ -1114,6 +1118,7 @@ MonoBehaviour:
   countryInfo: {fileID: 0}
   countryInfoContainer: {fileID: 0}
   targetFocus: 0
+  invasion: {fileID: 0}
   speed: 5
 --- !u!114 &114766321714948112
 MonoBehaviour:
@@ -1127,7 +1132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  characterBio: 
   neighbours: []
   wantedReputation: {x: 0, y: 0, z: 0}
   connectionPrefab: {fileID: 1627551818622460, guid: a729a25410a1f144b87e5fa223aad2c9,
@@ -1140,6 +1144,9 @@ MonoBehaviour:
   maxValue: 50
   valToGive: 0
   sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
+  person: {fileID: 0}
+  cluster:
+    connections: []
   connections: []
 --- !u!114 &114772743079760298
 MonoBehaviour:
@@ -1174,7 +1181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: 
-  characterBio: 
   neighbours:
   - neighbour: {fileID: 114398717984687676}
     reputation: {x: 0, y: 0, z: 0}
@@ -1191,6 +1197,9 @@ MonoBehaviour:
   maxValue: 50
   valToGive: 0
   sprite: {fileID: 21300000, guid: a14a3b6e623b5ad46b4359d952a221ff, type: 3}
+  person: {fileID: 0}
+  cluster:
+    connections: []
   connections: []
 --- !u!114 &114858226490982146
 MonoBehaviour:
@@ -2044,6 +2053,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 309, y: 63}
-  m_SizeDelta: {x: -679.8, y: 230.25}
+  m_AnchoredPosition: {x: 276.85004, y: 95.48}
+  m_SizeDelta: {x: -706.9, y: 230.25}
   m_Pivot: {x: 0.5, y: 0.5}
