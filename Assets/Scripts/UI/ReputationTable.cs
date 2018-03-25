@@ -16,8 +16,7 @@ namespace Maskirovka.UI
 		[Header("country Settings")]
 		[SerializeField]
 		private Image country;
-		[SerializeField]
-		private Text charName;
+		public Text charName;
 		[SerializeField]
 		private float[] reputation;
 		[SerializeField]

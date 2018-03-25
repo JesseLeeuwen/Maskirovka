@@ -17,7 +17,7 @@ namespace Maskirovka.UI
 
         public NewsFeedItem currentNews;
         public int chanceOfSucces;
-        private float startValue, currentValue;
+        public float startValue, currentValue;
 
 
         public GameObject[] backgrounds;
