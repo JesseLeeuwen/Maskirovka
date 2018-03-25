@@ -14,11 +14,13 @@ public class TutorialOverlays : MonoBehaviour {
 	public GameObject endScreen;
 	public GameObject nextButton;
 	public GameObject newspanel;
+	public Russia russia;
 	private NewsPanel panelScript;
 
 	public ReputationTable reputationTable;
 
 	private Connection[] connections;
+	private int connectionAmount;
 
 	public int currentSlide = 0;
 
@@ -34,6 +36,7 @@ public class TutorialOverlays : MonoBehaviour {
 			case 0:
 				if (connections.Length<1){
 					connections = FindObjectsOfType<Connection>();
+					connectionAmount=connections.Length;
 					for (int i =0; i<connections.Length;i++){
 						connections[i].gameObject.SetActive(false);
 					};
@@ -56,7 +59,24 @@ public class TutorialOverlays : MonoBehaviour {
 			case 12:
 				requiredAction(!newspanel.activeInHierarchy);
 				break;
-			default:
+			case 13:
+				connections = FindObjectsOfType<Connection>();
+				requiredAction(connections.Length<connectionAmount);
+				break;
+			case 14:
+				connections = FindObjectsOfType<Connection>();
+				requiredAction(connections.Length==0);
+				break;
+			case 15:
+			requiredAction(invasion.IsInvasionMode());
+			break;
+			case 16:
+			requiredAction(russia.neighbours.Count>1);
+			break;
+			case 17:
+				nextButton.SetActive(false);
+				if (endScreen.activeInHierarchy)
+					Destroy(gameObject);
 			break;
 		}
 	}

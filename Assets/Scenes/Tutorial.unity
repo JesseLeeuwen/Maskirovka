@@ -349,7 +349,7 @@ RectTransform:
   m_LocalScale: {x: 0.74526376, y: 0.74526376, z: 0.74526376}
   m_Children: []
   m_Father: {fileID: 1621851878}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2106,8 +2106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -330, y: -202}
-  m_SizeDelta: {x: -774.33044, y: 211.93}
+  m_AnchoredPosition: {x: -247.2, y: -403.9}
+  m_SizeDelta: {x: -497.2, y: 208.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231904836
 MonoBehaviour:
@@ -2142,8 +2142,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Well done, you drove them away from eachother with your lies! Keep going
-    the sever all connections
+  m_Text: Well done, you drove them away from each other with your lies! Keep going
+    to sever all of the connections.
 --- !u!222 &231904837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3838,8 +3838,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -268, y: 143.06738}
-  m_SizeDelta: {x: -697.64685, y: 236.3}
+  m_AnchoredPosition: {x: -347.4, y: -206.8}
+  m_SizeDelta: {x: -750.3, y: 243.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481423326
 MonoBehaviour:
@@ -3874,9 +3874,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'These are the interests of the selected neigbor. If these are similar to
-    the next neigours, they wil form a connection. These interests are devided in
-    three subjects: Bike versus Car, Casual versus Formal and Dogs versus Cats.'
+  m_Text: "These interests are divided in three subjects: \n\nBike versus Car, \nCasual
+    versus Formal and \nDogs versus Cats."
 --- !u!222 &481423327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3884,6 +3883,85 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481423324}
+--- !u!1 &484214194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1026617831348356, guid: 1399ffa8017aef1458d999933364a843,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 484214195}
+  - component: {fileID: 484214197}
+  - component: {fileID: 484214196}
+  m_Layer: 5
+  m_Name: Interests (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &484214195
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224892852145963984, guid: 1399ffa8017aef1458d999933364a843,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 484214194}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0789564, y: 1.0789564, z: 1.0789564}
+  m_Children: []
+  m_Father: {fileID: 1621851878}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -258, y: 137}
+  m_SizeDelta: {x: -697.64685, y: 236.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &484214196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114345226288337170, guid: 1399ffa8017aef1458d999933364a843,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 484214194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 0fa87ce7ccbe7734abb1c962d12c0956, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 71
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: These are the interests of the selected neigbour. If these are similar to
+    their immediate neighbours, they wil form a connection.
+--- !u!222 &484214197
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222034421423647340, guid: 1399ffa8017aef1458d999933364a843,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 484214194}
 --- !u!1 &485678412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,7 +4087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4313,8 +4391,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the newsfeed, here you will see what news there is about the interests
-    of your neighbours.
+  m_Text: This is the newsfeed, here people find out what their your neighbours are
+    interested in.
 --- !u!222 &514415877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6602,7 +6680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7083,11 +7161,13 @@ MonoBehaviour:
   - {fileID: 1030625602}
   - {fileID: 1711980682}
   - {fileID: 918981107}
-  newspanel: {fileID: 1571145080}
   invasion: {fileID: 940000375}
   endScreen: {fileID: 1294322885}
   nextButton: {fileID: 1828847591}
-  currentSlide: 0
+  newspanel: {fileID: 1571145080}
+  russia: {fileID: 1195282641}
+  reputationTable: {fileID: 36294440}
+  currentSlide: 15
 --- !u!114 &837886529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7725,7 +7805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7892,7 +7972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8035,7 +8115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014468266, y: -0.000073505755}
+  m_AnchoredPosition: {x: -0.000014468266, y: -0.000016798456}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &932186700
@@ -8513,6 +8593,8 @@ MonoBehaviour:
   iconRight: {fileID: 945068587}
   currentNews: {fileID: 0}
   chanceOfSucces: 0
+  startValue: 0
+  currentValue: 0
   backgrounds:
   - {fileID: 1571145080}
   - {fileID: 907087961}
@@ -8563,7 +8645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: -223}
+  m_AnchoredPosition: {x: -368.03046, y: -399.086}
   m_SizeDelta: {x: -736.0609, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976014646
@@ -8960,7 +9042,7 @@ GameObject:
   - component: {fileID: 1030625605}
   - component: {fileID: 1030625604}
   m_Layer: 5
-  m_Name: 16-InvationStart
+  m_Name: 16-InvasionStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10933,7 +11015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11624,7 +11706,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Your neighbours took your garden, and now it is time for them to pay. You
     will take their gardens. Before you will be able to do that, you will need to
-    make sure they will not gang up against you when take what should be yours!
+    make sure they will not gang up against you when take what is rightfully yours!
 --- !u!222 &1311722743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13457,7 +13539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -13496,7 +13578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1534909806
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14299,6 +14381,7 @@ RectTransform:
   m_LocalScale: {x: 1.0000024, y: 1.0000024, z: 1.0000024}
   m_Children:
   - {fileID: 481423325}
+  - {fileID: 484214195}
   - {fileID: 31255192}
   m_Father: {fileID: 837886527}
   m_RootOrder: 13
@@ -14871,7 +14954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15564,7 +15647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15932,7 +16015,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When there are no big groups of friends left in the neigbourhood en your
+  m_Text: When there are no big groups of friends left in the neigbourhood and your
     target is all alone, you can take over their garden. Press the garden of <INSERT
     NAME> to claim it as your own!
 --- !u!222 &1862007657
@@ -16690,7 +16773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -16972,7 +17055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3372549, g: 0.3372549, b: 0.3372549, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -17464,7 +17547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2073163273
 RectTransform:
   m_ObjectHideFlags: 0
