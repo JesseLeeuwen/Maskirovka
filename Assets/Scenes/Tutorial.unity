@@ -7165,9 +7165,8 @@ MonoBehaviour:
   endScreen: {fileID: 1294322885}
   nextButton: {fileID: 1828847591}
   newspanel: {fileID: 1571145080}
-  russia: {fileID: 1195282641}
-  reputationTable: {fileID: 36294440}
-  currentSlide: 15
+  reputationTable: {fileID: 0}
+  currentSlide: 0
 --- !u!114 &837886529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8977,8 +8976,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc97c80e57f472489a812176af631f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1893452581064436, guid: 2bc7a261aa2d1cd4cbe4517f266a9396, type: 2}
+  normalPrefab: {fileID: 1893452581064436, guid: 2bc7a261aa2d1cd4cbe4517f266a9396,
+    type: 2}
+  tuturialPrefab: {fileID: 1893452581064436, guid: f2f46f25d5cf74d448cc71ea5435afe1,
+    type: 2}
   content: {fileID: 932186699}
+  maxToSpawn: 3
 --- !u!4 &1012318915
 Transform:
   m_ObjectHideFlags: 0
