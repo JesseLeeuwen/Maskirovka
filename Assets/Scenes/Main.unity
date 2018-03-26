@@ -640,7 +640,7 @@ Prefab:
     - target: {fileID: 224983449433771080, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000049987957
+      value: -0.000036012367
       objectReference: {fileID: 0}
     - target: {fileID: 223514106163975362, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
@@ -660,7 +660,7 @@ Prefab:
     - target: {fileID: 224999207182134036, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 124.87842
+      value: 124.925354
       objectReference: {fileID: 0}
     - target: {fileID: 224999207182134036, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
@@ -670,7 +670,7 @@ Prefab:
     - target: {fileID: 224999207182134036, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 249.75684
+      value: 249.85071
       objectReference: {fileID: 0}
     - target: {fileID: 224999207182134036, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
@@ -690,7 +690,7 @@ Prefab:
     - target: {fileID: 224445028168490922, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 124.87842
+      value: 124.925354
       objectReference: {fileID: 0}
     - target: {fileID: 224445028168490922, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
@@ -700,7 +700,7 @@ Prefab:
     - target: {fileID: 224445028168490922, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 249.75684
+      value: 249.85071
       objectReference: {fileID: 0}
     - target: {fileID: 224445028168490922, guid: 04b516ff54d874f45ac9f37e635f23f1,
         type: 2}
@@ -719,6 +719,21 @@ Prefab:
       value: 
       objectReference: {fileID: 1893452581064436, guid: f2f46f25d5cf74d448cc71ea5435afe1,
         type: 2}
+    - target: {fileID: 114775031762153650, guid: 04b516ff54d874f45ac9f37e635f23f1,
+        type: 2}
+      propertyPath: invasion
+      value: 
+      objectReference: {fileID: 416044419}
+    - target: {fileID: 114170059495675486, guid: 04b516ff54d874f45ac9f37e635f23f1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 416044418}
+    - target: {fileID: 114170059495675486, guid: 04b516ff54d874f45ac9f37e635f23f1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b516ff54d874f45ac9f37e635f23f1, type: 2}
   m_IsPrefabParent: 0
@@ -1231,7 +1246,7 @@ Prefab:
     - target: {fileID: 212785477935690408, guid: 443381808f165df47b4353b148395885,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212810628832321188, guid: 443381808f165df47b4353b148395885,
         type: 2}
@@ -1252,6 +1267,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212785477935690408, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 443381808f165df47b4353b148395885, type: 2}
