@@ -15,12 +15,14 @@ public class TutorialOverlays : MonoBehaviour {
 	public GameObject nextButton;
 	public GameObject newspanel;
 	public Russia russia;
+	public GameObject[] clickBlockers;
 	private NewsPanel panelScript;
 
 	public ReputationTable reputationTable;
 
 	private Connection[] connections;
 	private int connectionAmount;
+	private float timer;
 
 	public int currentSlide = 0;
 
@@ -29,6 +31,7 @@ public class TutorialOverlays : MonoBehaviour {
 		connections = FindObjectsOfType<Connection>();
 		setCanvas(currentSlide);
 		panelScript = newspanel.GetComponent<NewsPanel>();
+		clickBlockers[0].SetActive(true);
 	}
 
 	void Update () {
@@ -52,12 +55,15 @@ public class TutorialOverlays : MonoBehaviour {
 				break;
 			case 6:
 				requiredAction(newspanel.activeInHierarchy);
+				clickBlockers[0].SetActive(false);
+				clickBlockers[1].SetActive(true);
 				break;
 			case 11:
 				requiredAction(panelScript.currentValue>panelScript.startValue);
 				break;
 			case 12:
 				requiredAction(!newspanel.activeInHierarchy);
+				clickBlockers[1].SetActive(false);
 				break;
 			case 13:
 				connections = FindObjectsOfType<Connection>();

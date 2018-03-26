@@ -7,7 +7,6 @@ namespace Maskirovka
 
 	public class Russia : MonoBehaviour 
 	{
-		[SerializeField]
 		public List<Neighbour> neighbours;
 		private Color color;
 				
