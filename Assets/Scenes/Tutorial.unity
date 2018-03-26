@@ -476,14 +476,14 @@ RectTransform:
   m_GameObject: {fileID: 41033257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6419708, y: 0.6419707, z: 0.64197}
+  m_LocalScale: {x: 0.85110235, y: 0.8511026, z: 0.85110164}
   m_Children: []
   m_Father: {fileID: 1435788341}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -59, y: -246}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41033259
@@ -1306,14 +1306,14 @@ RectTransform:
   m_GameObject: {fileID: 156935519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6419708, y: 0.6419707, z: 0.64197}
+  m_LocalScale: {x: 0.7350635, y: 0.7350634, z: 0.7350626}
   m_Children: []
   m_Father: {fileID: 1273333810}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -146, y: -146}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156935521
@@ -1949,8 +1949,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 229.0657, y: -374}
-  m_SizeDelta: {x: -565.4615, y: 211.93}
+  m_AnchoredPosition: {x: -126.62457, y: -374}
+  m_SizeDelta: {x: -654.7108, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220336267
 MonoBehaviour:
@@ -1985,8 +1985,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is the current interest of the neighbour <INSERT HERE> about <INSERT
-    HERE>
+  m_Text: This is the current interest of the neighbour Yellow Baker about Bikes versus
+    Cars.
 --- !u!222 &220336268
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2405,7 +2405,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 229.0657, y: -374}
+  m_AnchoredPosition: {x: 155, y: -388}
   m_SizeDelta: {x: -565.4615, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270569228
@@ -2442,8 +2442,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This is where your magic happens. Here you will manipulate the news your
-    neigbours send out. In this case the news is from <INSERT HERE> about <INSERT
-    HERE>
+    neigbours send out. In this case the news is about Bikes versus Cars.
 --- !u!222 &270569229
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5583,8 +5582,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Move the slider towards the given point. By doing this, surrounding neighbours
-    of <INSERT HERE> is more interested in <INSERT HERE> than in <INSERT HERE>. By
-    doing this you will drive them apart!
+    of Yellow Baker is more interested in Cars than in Bikes. By doing this you will
+    drive them apart!
 --- !u!222 &673227114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6472,7 +6471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click on a news item.
+  m_Text: Click on the news item of Yellow Baker.
 --- !u!222 &740014378
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6589,8 +6588,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 229.0657, y: -374}
-  m_SizeDelta: {x: -565.4615, y: 211.93}
+  m_AnchoredPosition: {x: -111.43483, y: -374}
+  m_SizeDelta: {x: -676.3303, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &764745594
 MonoBehaviour:
@@ -6625,7 +6624,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: These are the interests of the neigbours surrounding <INSERT HERE>
+  m_Text: These are the interests of the neigbours surrounding Bikes versus Cars
 --- !u!222 &764745595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6658,14 +6657,14 @@ RectTransform:
   m_GameObject: {fileID: 808382380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6419708, y: 0.6419707, z: 0.64197}
+  m_LocalScale: {x: 0.87941206, y: 0.8794119, z: 0.8794109}
   m_Children: []
   m_Father: {fileID: 1996043757}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -208.7992, y: -144}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808382382
@@ -7165,6 +7164,7 @@ MonoBehaviour:
   endScreen: {fileID: 1294322885}
   nextButton: {fileID: 1828847591}
   newspanel: {fileID: 1571145080}
+  russia: {fileID: 0}
   reputationTable: {fileID: 0}
   currentSlide: 0
 --- !u!114 &837886529
@@ -7780,16 +7780,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910762686}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6419779, y: 0.6419779, z: 0.6419779}
+  m_LocalScale: {x: 0.87941206, y: 0.8794119, z: 0.8794109}
   m_Children: []
   m_Father: {fileID: 1996043757}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48, y: -292}
+  m_AnchoredPosition: {x: -177, y: -144}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910762688
@@ -7956,7 +7956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -146, y: -157}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930493155
@@ -8476,8 +8476,8 @@ MonoBehaviour:
     type: 2}
   Inline: {fileID: 0}
   returnValue: 0
-  randomMin: 40
-  randomMax: 40
+  randomMin: 30
+  randomMax: 30
   avarage: {x: 0, y: 0, z: 0}
   minValue: 0
   maxValue: 50
@@ -9021,8 +9021,8 @@ MonoBehaviour:
     type: 2}
   Inline: {fileID: 0}
   returnValue: 0
-  randomMin: 60
-  randomMax: 60
+  randomMin: 40
+  randomMax: 40
   avarage: {x: 0, y: 0, z: 0}
   minValue: 0
   maxValue: 50
@@ -11751,7 +11751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 229.0657, y: -374}
+  m_AnchoredPosition: {x: -96.62131, y: -361}
   m_SizeDelta: {x: -565.4615, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313765465
@@ -11788,7 +11788,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This slider is your weapon of choice. With this you can manipulare the news
-    the surrounding neigbours of <INSERT HERE> will recieve about topic <INSERT HERE>.
+    the surrounding neigbours of Yellow Baker will recieve about topic Bakes versus
+    Cars.
 --- !u!222 &1313765466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12788,7 +12789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1435788341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13527,7 +13528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -146, y: -287}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527291161
@@ -16374,7 +16375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 229.0657, y: -374}
+  m_AnchoredPosition: {x: 229.0657, y: -387}
   m_SizeDelta: {x: -565.4615, y: 211.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1882897951
@@ -16410,8 +16411,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press apply to send your lie about <INSERT HERE> being more interested in
-    <INSERT HERE> into the wild!
+  m_Text: Press apply to send your lie about Yellow Baker being more interested in
+    Cars into the wild!
 --- !u!222 &1882897952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16761,7 +16762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: -292}
+  m_AnchoredPosition: {x: -120.41171, y: -127}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955369718
@@ -17550,7 +17551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2073163273
 RectTransform:
   m_ObjectHideFlags: 0
