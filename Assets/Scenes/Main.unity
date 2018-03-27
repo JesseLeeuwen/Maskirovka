@@ -2098,7 +2098,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 50
   m_Viewport: {fileID: 1721045375}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -12621,6 +12621,7 @@ GameObject:
   - component: {fileID: 2079468756}
   - component: {fileID: 2079468757}
   - component: {fileID: 2079468760}
+  - component: {fileID: 2079468761}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12711,6 +12712,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_MaxRayIntersections: 0
+--- !u!114 &2079468761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079468755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952716cf544fee84781a4ff80e4c5b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  library: {fileID: 11400000, guid: 7881f4d481f7eac42949bba4f193022a, type: 2}
+  bufferSize: 5
+  ongoingEvents: []
+  mixer: {fileID: 24100000, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
 --- !u!114 &2086564430 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114875518876076262, guid: 443381808f165df47b4353b148395885,

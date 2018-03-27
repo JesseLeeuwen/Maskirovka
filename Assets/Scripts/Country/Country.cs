@@ -221,8 +221,9 @@ namespace Maskirovka
 
         public void InvadeMode(Color lineColor, bool active)
         {
-            if( invaded == true && active == true) return;
-
+            if( invaded == true && active == true)                
+                return;
+                
             Color mapColor = new Color( countryColor.grayscale, countryColor.grayscale, countryColor.grayscale, 1);
             renderer.color = active? mapColor : countryColor;
             clickAnim.SetColor( active? mapColor : countryColor );
@@ -247,7 +248,7 @@ namespace Maskirovka
                     connections[i].Delete();
                 }
             }
-
+            Highlight( Color.white, false);
             neighbours = new Neighbour[0];
             person.gameObject.SetActive(false);
             invaded =  true;
