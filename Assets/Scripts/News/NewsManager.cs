@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using  Maskirovka.UI;
 using Maskirovka.Utility;
 
@@ -20,9 +21,15 @@ namespace Maskirovka.News
         public Vector3 bias;
         private bool result;
         public NewsPanel newsPanel;
+        public int turns = 0;
+        public int turnsToInvade = 0;
+        public Text TurnDisplay;
 
         [SerializeField]
         private TwitterFeed feed;
+
+        [SerializeField]
+        private GameObject loseScreen;
 
 
         void Start()
@@ -30,6 +37,7 @@ namespace Maskirovka.News
             activeNewsItems = new Queue<NewsFeedItem>();
             CreateNews();
             bias = new Vector3(50, 50, 50);
+            setTurnDisplay();
         }
 
         // create news message object for player to interact with
@@ -68,6 +76,7 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
+            
             foreach (NewsFeedItem news in activeNewsItems)
             {                             
                 result = news.Send(false);
@@ -76,6 +85,10 @@ namespace Maskirovka.News
                    StateAnimation(result);
                 }
             }
+            turns++;
+            loseScreen.SetActive(turns>=turnsToInvade && turnsToInvade>0);
+            setTurnDisplay();
+            
         }
 
         // check if a news message with given country already exists
@@ -105,5 +118,11 @@ namespace Maskirovka.News
                 return Instantiate(FailedAnimation,canvas.transform);
             }
         }
+        void setTurnDisplay(){
+            TurnDisplay.text = "TURNS: "+turns.ToString();
+            if (turnsToInvade>0)
+                 TurnDisplay.text+="/"+ turnsToInvade.ToString();
+        }
+
     }
 }
