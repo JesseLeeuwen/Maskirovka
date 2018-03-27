@@ -81,6 +81,11 @@ namespace Maskirovka
             person.SetInteger("IntMood", cluster.Count);
         }
 
+        public Cluster GetCluster()
+        {
+           return cluster;
+        }
+
         public NewsData GetNews()
         {
             SearchNeighbours(); //Find the avarage values of A B and C
@@ -96,7 +101,6 @@ namespace Maskirovka
             valToGive = Mathf.Abs(Mathf.RoundToInt(vals[r]));
             return new NewsData { value = valToGive, catagorie = catToGive};
         }
-
 
         public void UpdateRepu( Country country, float newReputation, Catagorie catagorie, bool spawn = true)
         {  
@@ -131,6 +135,8 @@ namespace Maskirovka
 
         public void SearchNeighbours()
         {
+            if( neighbours.Length <= 0 ) return;
+
             List<float> A = new List<float>();
             List<float> B = new List<float>();
             List<float> C = new List<float>();
@@ -150,8 +156,6 @@ namespace Maskirovka
             avarage.x = A.Average();
             avarage.y = B.Average();
             avarage.z = C.Average();
-
-
         }
 
         public void ReturnToNormal()
@@ -252,6 +256,12 @@ namespace Maskirovka
         public List<Connection> GetConnections()
         {
             return connections;
+        }
+
+        public void Select(object arg)
+		{
+            foreach( Connection c in connections)
+                c.Activate( System.Convert.ToBoolean( (int)arg ));
         }
 
         public Sprite GetSprite()

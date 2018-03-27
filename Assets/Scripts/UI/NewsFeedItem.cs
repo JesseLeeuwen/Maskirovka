@@ -76,9 +76,11 @@ namespace Maskirovka.UI
             gameObject.layer = 0;
             Color c = new Color( 0.77f, 0.77f, 0.77f, 1);
             
-            if (result) c.g=1;
-            else        c.r=1;
-            
+            if( playerChanged == true )
+            {
+                if (result ) c.g=1;
+                else        c.r=1;
+            }
             GetComponent<Image>().color = c;
             return result;      
         }

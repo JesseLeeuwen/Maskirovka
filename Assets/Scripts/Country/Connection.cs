@@ -26,13 +26,16 @@ namespace Maskirovka
 
         private float previousSum; 
         private LineRenderer background;
-        
-
+        private Animator animator;
+        public float backgroundWidth;
         public GameObject AppearParticles;
         public GameObject DisappearParticles;
 
+        private bool deleted;
+
         private void Awake()
         {
+            animator = GetComponent<Animator>();
             block = new MaterialPropertyBlock();
             block.SetColor("_ColorA", CatagorieSettings.GetColor( Catagorie.A ));
             block.SetColor("_ColorB", CatagorieSettings.GetColor( Catagorie.B ));
@@ -48,10 +51,11 @@ namespace Maskirovka
 
             colorUpdate();
 
+            background.widthMultiplier = backgroundWidth;
             Vector3 core1 = country.transform.GetChild(0).position;
             Vector3 core2 = neighbour.transform.GetChild(0).position;
 
-            if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep)
+            if (Mathf.Abs(total.x) + Mathf.Abs(total.y) + Mathf.Abs(total.z) > maxRep && animator.GetBool("FadeOut") == false)
             {                
                 Instantiate(DisappearParticles,(core1+core2)/2,transform.rotation);
                 Delete( );
@@ -73,7 +77,6 @@ namespace Maskirovka
             }
             return new Vector3();
         }
-
 
         void colorUpdate()
         {
@@ -152,6 +155,8 @@ namespace Maskirovka
         public void Activate(bool value)
         {
             connection.enabled = value;
+            animator.SetBool( "Selected", value );
+            
         }
 
         public void Delete()
@@ -161,6 +166,11 @@ namespace Maskirovka
                 countryA = country,
                 countryB = neighbour 
             });
+            animator.SetBool("FadeOut", true);
+        }
+
+        public void DestroyLine()
+        {
             Destroy(gameObject);
         }
 

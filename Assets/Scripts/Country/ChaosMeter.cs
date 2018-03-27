@@ -104,14 +104,7 @@ namespace Maskirovka
 		public bool CanInvade(Country country)
 		{
 			bool canInvade = chaos < chaosMinimum && biggestCluster <= maxBigCluster;
-			Cluster cluster = new Cluster();
-			cluster.Init();
-
-			foreach( Cluster c in clusters)
-			{
-				if( c.ContainsCountry( country ) )
-					cluster = c;
-			}
+			Cluster cluster = country.GetCluster();
 
 			bool neighbourIsInCluster = false;
 			foreach( Neighbour n in country.neighbours)
