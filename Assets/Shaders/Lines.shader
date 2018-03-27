@@ -58,11 +58,11 @@
 				fixed4 frag (v2f i) : SV_Target
 				{	
 					half uvY = i.uv.y - 0.5;
-					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03); //i.uv.x + ( i.uv.y / (7.5 * _Length ));
+					half uv =  i.uv.x + 0.01 + (uvY * uvY * 0.03);
 					fixed4 col = lerp( _ColorA, lerp(_ColorB, _ColorC, 1-step( uv, _Values.y + _Values.x)), 1-step( uv, _Values.x) );
 															
 					half power = (abs(0.5 - i.uv.x) - (_Fade - 0.2)) * 10;					
-					col.a = tex2D(_Noise, i.uv).r * power;
+					col.a = tex2D( _Noise, i.uv ).r * (power + step(_Fade, 0.69 ));
 					return col;
 				}
 				ENDCG

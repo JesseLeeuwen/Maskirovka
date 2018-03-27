@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4841083756652148}
   - component: {fileID: 114672063920515768}
   - component: {fileID: 120208802766878116}
+  - component: {fileID: 95453171032042956}
   m_Layer: 0
   m_Name: Connection
   m_TagString: Untagged
@@ -71,6 +72,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95453171032042956
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627551818622460}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6884c71386e74d4db6f7d650d12ec9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114672063920515768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,6 +105,7 @@ MonoBehaviour:
   connection: {fileID: 0}
   minRep: 0
   maxRep: 50
+  backgroundWidth: 0.25
   AppearParticles: {fileID: 1300913849884676, guid: 56c435311e84a2e49b624bd310363e65,
     type: 2}
   DisappearParticles: {fileID: 1407364922217668, guid: b21bd32e568567845b993bd006734187,
@@ -97,7 +116,7 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627551818622460}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
