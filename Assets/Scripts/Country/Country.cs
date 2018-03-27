@@ -221,7 +221,7 @@ namespace Maskirovka
 
         public void InvadeMode(Color lineColor, bool active)
         {
-            if( invaded == true ) return;
+            if( invaded == true && active == true) return;
 
             Color mapColor = new Color( countryColor.grayscale, countryColor.grayscale, countryColor.grayscale, 1);
             renderer.color = active? mapColor : countryColor;
