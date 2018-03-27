@@ -76,16 +76,17 @@ namespace Maskirovka.News
         // Send all news to neighbours
         public void SendNews()
         {
-            
+            bool notInvading = false; 
             foreach (NewsFeedItem news in activeNewsItems)
             {                             
                 result = news.Send(false);
                 if( news.playerChanged == true)
                 {
+                    notInvading=true;
                    StateAnimation(result);
                 }
             }
-            turns++;
+            if (notInvading) turns++;
             loseScreen.SetActive(turns>=turnsToInvade && turnsToInvade>0);
             setTurnDisplay();
             

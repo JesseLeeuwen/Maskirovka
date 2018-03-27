@@ -3142,7 +3142,7 @@ MonoBehaviour:
   bias: {x: 0, y: 0, z: 0}
   newsPanel: {fileID: 249688083}
   turns: 0
-  turnsToInvade: 25
+  turnsToInvade: 35
   TurnDisplay: {fileID: 730690157}
   feed: {fileID: 1785841187}
   loseScreen: {fileID: 941846259}
@@ -9917,7 +9917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014468266, y: -0.00003462535}
+  m_AnchoredPosition: {x: -0.000014468266, y: -0.0000077485}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1699690081
