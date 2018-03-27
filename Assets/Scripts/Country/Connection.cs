@@ -149,6 +149,11 @@ namespace Maskirovka
             neighbour.SetCluster( cluster );
         }
 
+        public void Activate(bool value)
+        {
+            connection.enabled = value;
+        }
+
         public void Delete()
         {
             GameManager.Instance.feed.PushUpdate( new Change() { 

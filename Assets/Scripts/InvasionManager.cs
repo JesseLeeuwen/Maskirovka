@@ -32,8 +32,11 @@ public class InvasionManager : MonoBehaviour {
 			// conquered feedback
 			manager.ConqueredFeedback(canInvade);
 			countries.Remove( country );
+			// consume turn
+			manager.SendNews();
+			manager.CreateNews();
 		}
-		
+
 		// spawn feedback win 
 		if( countries.Length == 0 )
 		{

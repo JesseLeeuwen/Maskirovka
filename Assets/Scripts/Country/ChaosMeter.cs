@@ -43,6 +43,8 @@ namespace Maskirovka
 		private float chaos;
 		[SerializeField]
 		private int countConnections;
+		[SerializeField]
+		private Achievement achievement;
 
 		private int biggestCluster;
 		private bool clusterExist;
@@ -60,11 +62,16 @@ namespace Maskirovka
 		private List<Cluster> clusters;
 		[SerializeField]
 		private List<Connection> connections;
+		private int maxConnections;
 
 		void Start()
 		{
 			print(null);
 			clusters = new List<Cluster>();
+
+			for(int i = 0; i < countries.Length; ++i)
+				maxConnections += countries[i].neighbours.Length;
+
 			GameManager.Instance.feed.SubToNewsEvents( OnReceiveChange );
 		}
 
@@ -91,6 +98,7 @@ namespace Maskirovka
 				change.countryA.RemoveConnection( current );
                 change.countryB.RemoveConnection( current );				
 			}
+			CheckForWorldPeace();
 		}		
 
 		public bool CanInvade(Country country)
@@ -173,6 +181,12 @@ namespace Maskirovka
 					}
 				}
 			}
+		}
+
+		private void CheckForWorldPeace()
+		{
+			if( maxConnections == connections.Count)
+				achievement.gameObject.SetActive(true);
 		}
 	}
 }
