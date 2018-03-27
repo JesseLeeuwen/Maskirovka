@@ -3792,6 +3792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0db3f8ebd753841b4b28a2a59bca93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
 --- !u!114 &416044418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5755,7 +5756,7 @@ GameObject:
   - component: {fileID: 663955462}
   m_Layer: 8
   m_Name: Country (1)
-  m_TagString: Untagged
+  m_TagString: Baker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5871,7 +5872,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5ca42ace9329852408f9108e977bd4fe, type: 3}
-  m_Color: {r: 0.97794116, g: 0.9533439, b: 0.08628895, a: 1}
+  m_Color: {r: 1, g: 0.8666667, b: 0.34901962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7794,7 +7795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b0f737f8a33b40a22fe342a1a4aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSlide: 20
+  minSlide: 17
   canvas:
   - {fileID: 1534909805}
   - {fileID: 707481220}
@@ -8840,7 +8841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014468266, y: -0.000063059866}
+  m_AnchoredPosition: {x: -0.000014468266, y: -0.000007329358}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &932186700
@@ -10923,7 +10924,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 2129d31fad12f2448a026ced358d3fce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12647,7 +12648,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: a241225cd0ba48247b57df8235cc4dbf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16046,7 +16047,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: 39a72aa6b92cc0c4bb1144ff06311558, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
