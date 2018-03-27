@@ -29,6 +29,8 @@ namespace Maskirovka.UI
         public Catagorie catagorie;
         public float value;
 
+        public Dictionary<Connection, bool> cache;
+
         public void Init(Country country, NewsData data)
         {
             this.subject = country;
@@ -90,11 +92,21 @@ namespace Maskirovka.UI
             Color c = CatagorieSettings.GetColor(catagorie);
             c += Color.white;
             subject.Highlight( (c)/2, true);
+
+            cache = new Dictionary<Connection, bool>();
+            foreach( Connection con in subject.GetConnections() )
+            {
+                cache.Add( con, con.IsActive() );
+                con.Activate(true);
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             subject.Highlight( Color.white, false);
+            
+            foreach( Connection con in cache.Keys )
+                con.Activate( cache[con] );
         }
     }
 }

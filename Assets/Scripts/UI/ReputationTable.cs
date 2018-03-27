@@ -60,9 +60,9 @@ namespace Maskirovka.UI
 			time += Time.deltaTime;
 			for(int i = 0; i < 3; ++i)
 			{
-				float height = bars[i].sizeDelta.y;
+				float height = bars[i].anchoredPosition.y;
 				Vector2 target = new Vector2( reputation[i] * 1.80f, height );				
-				bars[i].sizeDelta = Vector2.Lerp( bars[i].sizeDelta, target, time / animationTime );
+				bars[i].anchoredPosition = Vector2.Lerp( bars[i].anchoredPosition, target, time / animationTime );
 			}
 		}
 	}

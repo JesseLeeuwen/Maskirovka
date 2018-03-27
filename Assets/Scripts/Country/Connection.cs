@@ -31,7 +31,7 @@ namespace Maskirovka
         public GameObject AppearParticles;
         public GameObject DisappearParticles;
 
-        private bool deleted;
+        private bool isActive;
 
         private void Awake()
         {
@@ -156,7 +156,7 @@ namespace Maskirovka
         {
             connection.enabled = value;
             animator.SetBool( "Selected", value );
-            
+            isActive = value;
         }
 
         public void Delete()
@@ -167,6 +167,11 @@ namespace Maskirovka
                 countryB = neighbour 
             });
             animator.SetBool("FadeOut", true);
+        }
+
+        public bool IsActive()
+        {
+            return isActive;
         }
 
         public void DestroyLine()
