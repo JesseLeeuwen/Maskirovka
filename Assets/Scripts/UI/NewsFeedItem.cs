@@ -32,7 +32,7 @@ namespace Maskirovka.UI
         public void Init(Country country, NewsData data)
         {
             this.subject = country;
-            this.catagorie = data.catagorie;
+            catagorie = data.catagorie;
             this.value = data.value;
             this.valueSlider.value = data.value;
             this.portrait.sprite = country.GetSprite();
@@ -85,7 +85,9 @@ namespace Maskirovka.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            subject.Highlight( Color.white, true);
+            Color c = CatagorieSettings.GetColor(catagorie);
+            c += Color.white;
+            subject.Highlight( (c)/2, true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
