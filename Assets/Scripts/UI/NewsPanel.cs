@@ -118,7 +118,7 @@ namespace Maskirovka.UI
         public void OnChangeSlider( float value )
         {
             currentValue = value;
-            chanceOfSucces = Mathf.Max(0,Mathf.RoundToInt(100 - ( Mathf.Abs( value - startValue ) * 2.5f ) ));
+            chanceOfSucces = Mathf.Max(0,Mathf.RoundToInt(100 - ( Mathf.Abs( value - startValue ) * 2f ) ));
             ChanceDisplay.text=chanceOfSucces.ToString()+"%";
         }
 
