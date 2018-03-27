@@ -7,7 +7,9 @@ using Maskirovka;
 public class InvasionManager : MonoBehaviour {
 
 	public GameObject WinScreen;
+	public GameObject LoseScreen;
 	public bool canInvade;
+	public int turnsToInvade;
 
 	[SerializeField]
 	private Russia russia;
@@ -20,6 +22,10 @@ public class InvasionManager : MonoBehaviour {
 	public void Start(){
 		manager = GetComponent<NewsManager>();
 		chaos = GetComponent<ChaosMeter>();
+	}
+
+	public void CheckTurns(int turns){
+		LoseScreen.SetActive(!canInvade && turns>=turnsToInvade && turnsToInvade>0);
 	}
 
 	public void InvadeAttempt(Country country)
@@ -45,5 +51,10 @@ public class InvasionManager : MonoBehaviour {
 			}
 			WinScreen.SetActive(canInvade);
 		}
+	
+
+
 	}
+
+	
 }
