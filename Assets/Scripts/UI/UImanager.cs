@@ -21,12 +21,16 @@ namespace Maskirovka.UI
         [SerializeField]
         private float speed;
         private float focus;
-        
+    
+        // invasion
+        [SerializeField]
+        private InvasionMapState map;
         private bool isInvasionMode;
 
         public void ToggleInvasionMode()
         {
             isInvasionMode = !isInvasionMode;
+            map.UpdateInvasionMapState( isInvasionMode );
         }
 
         public bool IsInvasionMode()
@@ -40,8 +44,10 @@ namespace Maskirovka.UI
             if( isInvasionMode == true)
             {
                 if( type == SelectableType.Country )
+                {
                     invasion.InvadeAttempt( (Country)selected );
-                
+                    map.UpdateInvasionMapState( isInvasionMode );
+                }
                 return;        
             }
             
@@ -55,7 +61,6 @@ namespace Maskirovka.UI
                 targetFocus = 1;
                 countryInfo.Init( (Country)selected );
             }
-
             countryInfoContainer.SetActive( type == SelectableType.Country );
         }
 

@@ -13,7 +13,7 @@ namespace Maskirovka
         public Neighbour[] neighbours;
         public Vector3 wantedReputation;
         public GameObject connectionPrefab;
-        public SpriteRenderer Inline;
+        public SpriteRenderer inline;
 
         public float returnValue;
 
@@ -43,9 +43,15 @@ namespace Maskirovka
         [SerializeField]
         private List<Connection> connections;
         private Country tempLand;
+        private bool invaded;
+        new private SpriteRenderer renderer;
+        private OnClickAnim clickAnim;
+        private Color countryColor;
 
         void Awake()
         {      
+            clickAnim = GetComponent<OnClickAnim>();
+            renderer = GetComponent<SpriteRenderer>();
             connections = new List<Connection>();     
             //Generate random wanted reputation withing range of given floats
             float A = Random.Range(randomMin, randomMax);
@@ -54,6 +60,7 @@ namespace Maskirovka
             wantedReputation = new Vector3(A,B,C);
             cluster.Init();
             
+            countryColor = renderer.color;
             avarage = new Vector3(wantedReputation.x, wantedReputation.y, wantedReputation.z);
         }
 
@@ -195,8 +202,24 @@ namespace Maskirovka
             cluster.Init();
         }
 
-        public void Invaded(Russia russia)
+        public void Highlight(Color col, bool active)
         {
+            inline.enabled = active;
+            inline.color = col;
+        }
+
+        public void InvadeMode(Color lineColor, bool active)
+        {
+            if( invaded == true ) return;
+
+            Color mapColor = new Color( countryColor.grayscale, countryColor.grayscale, countryColor.grayscale, 1);
+            renderer.color = active? mapColor : countryColor;
+            clickAnim.SetColor( active? mapColor : countryColor );
+            Highlight( lineColor, active && lineColor.grayscale > 0 );
+        }
+
+        public void Invaded(Russia russia)
+        {            
             russia.AddNeighbours( neighbours );
             foreach( Neighbour n in neighbours )
             {
@@ -216,8 +239,8 @@ namespace Maskirovka
 
             neighbours = new Neighbour[0];
             person.gameObject.SetActive(false);
-            
-            GetComponent<SpriteRenderer>().color = russia.GetColor();
+            invaded =  true;
+            renderer.color = russia.GetColor();
             GetComponent<OnClickAnim>().SetColor( russia.GetColor() );
         }
 
@@ -234,6 +257,11 @@ namespace Maskirovka
         public Sprite GetSprite()
         {
             return sprite;
+        }
+
+        public int GetClusterSize()
+        {
+            return cluster.Count;
         }
 
         new public SelectableType GetType() {

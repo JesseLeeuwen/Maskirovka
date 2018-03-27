@@ -38,15 +38,24 @@ namespace Maskirovka
 	public class ChaosMeter : MonoBehaviour 
 	{
 		[SerializeField]
-		private CountryList countries;
-		
+		private CountryList countries;		
 		[SerializeField, Range(0, 100)]
 		private float chaos;
-		private int biggestCluster;
-		private bool clusterExist;
 		[SerializeField]
 		private int countConnections;
 
+		private int biggestCluster;
+		private bool clusterExist;
+
+		[Header("Invade Settings")]
+		[SerializeField, Range(0, 10)]
+		private int maxNeighbourClusterSize = 1;
+		[SerializeField, Range(0, 10)]
+		private int maxBigCluster = 3;
+		[SerializeField, Range(0, 100)]
+		private int chaosMinimum = 50;
+
+		[Header("Cluster Debug")]
 		[SerializeField]
 		private List<Cluster> clusters;
 		[SerializeField]
@@ -86,7 +95,7 @@ namespace Maskirovka
 
 		public bool CanInvade(Country country)
 		{
-			bool canInvade = chaos < 50 && biggestCluster <= 3;
+			bool canInvade = chaos < chaosMinimum && biggestCluster <= maxBigCluster;
 			Cluster cluster = new Cluster();
 			cluster.Init();
 
@@ -96,7 +105,14 @@ namespace Maskirovka
 					cluster = c;
 			}
 
-			canInvade = canInvade && cluster.Count < 2;
+			bool neighbourIsInCluster = false;
+			foreach( Neighbour n in country.neighbours)
+			{
+				if( n.neighbour.GetClusterSize() > maxNeighbourClusterSize)
+					neighbourIsInCluster = true;
+			}
+
+			canInvade = neighbourIsInCluster == false && canInvade && cluster.Count < 1;
 			return canInvade;
 		}
 

@@ -14,6 +14,7 @@ namespace Maskirovka.News
         private CountryList countries;
         private Queue<NewsFeedItem> activeNewsItems;
         public GameObject SuccessAnimation;
+        public GameObject ConqueredAnimation;
         public GameObject FailedAnimation;
         public Canvas canvas;
         public Vector3 bias;
@@ -91,6 +92,15 @@ namespace Maskirovka.News
         public GameObject StateAnimation(bool success){
             if (success){ 
                 return Instantiate(SuccessAnimation,canvas.transform);
+            }else{
+                return Instantiate(FailedAnimation,canvas.transform);
+            }
+        }
+
+        public GameObject ConqueredFeedback( bool success )
+        {
+            if (success){ 
+                return Instantiate(ConqueredAnimation,canvas.transform);
             }else{
                 return Instantiate(FailedAnimation,canvas.transform);
             }

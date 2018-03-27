@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 using Maskirovka.News;
 using Maskirovka;
 using Maskirovka.Utility;
-
 using Maskirovka.Selector;
 
 namespace Maskirovka.UI
 {
-    public class NewsFeedItem : MonoBehaviour, ISelectable
+    public class NewsFeedItem : MonoBehaviour, ISelectable, IPointerEnterHandler, IPointerExitHandler
     {
         public Image icon_L;
         public Image icon_R;
@@ -74,7 +75,17 @@ namespace Maskirovka.UI
             bool result = GameManager.Instance.processor.ProccesNews(this);
             gameObject.layer = 0;
             GetComponent<Image>().color = new Color( 0.95f, 0.95f, 0.95f, 1);
-            return result;            
+            return result;        
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            subject.Highlight( Color.white, true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            subject.Highlight( Color.white, false);
         }
     }
 }

@@ -31,6 +31,11 @@ namespace Maskirovka
 			return color;
 		}
 
+		public bool IsNeighbour(Country country)
+		{
+			return neighbours.FindAll( x => x.neighbour == country).Count > 0;
+		}
+
 		public void AddNeighbours( Neighbour[] newNeighbours )
 		{
 			foreach( Neighbour n in newNeighbours)

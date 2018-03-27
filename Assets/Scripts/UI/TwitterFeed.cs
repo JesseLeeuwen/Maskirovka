@@ -19,33 +19,22 @@ namespace Maskirovka.UI
 
 		public NewsFeedItem NewTweet(NewsData newMessage, Country country)
 		{
+            GameObject n;
             if(Amount < maxToSpawn)
-            {
-                GameObject n = Instantiate(tuturialPrefab);
-                n.transform.SetParent(transform, false);
-                n.transform.SetAsFirstSibling();
-
-                NewsFeedItem item = n.GetComponent<NewsFeedItem>();
-                item.Init(country, newMessage);
-
-                content.anchoredPosition = Vector2.zero;
-                content.sizeDelta = new Vector2(content.sizeDelta.x, content.childCount * 140);
-                Amount++;
-                return item;
-            }
+                n = Instantiate(tuturialPrefab);
             else
-            {
-                GameObject n = Instantiate(normalPrefab);
-                n.transform.SetParent(transform, false);
-                n.transform.SetAsFirstSibling();
+                n = Instantiate(normalPrefab);
 
-                NewsFeedItem item = n.GetComponent<NewsFeedItem>();
-                item.Init(country, newMessage);
+            n.transform.SetParent(transform, false);
+            n.transform.SetAsFirstSibling();
 
-                content.anchoredPosition = Vector2.zero;
-                content.sizeDelta = new Vector2(content.sizeDelta.x, content.childCount * 140);
-                return item;
-            }
+            NewsFeedItem item = n.GetComponent<NewsFeedItem>();
+            item.Init(country, newMessage);
+
+            content.anchoredPosition = Vector2.zero;
+            content.sizeDelta = new Vector2(content.sizeDelta.x, content.childCount * 140);
+            Amount++;
+            return item;
 		}
 	}
 }
