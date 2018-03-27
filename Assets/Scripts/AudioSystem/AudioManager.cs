@@ -19,7 +19,7 @@ namespace FMODCLONE
 		private Queue<AudioSource> sources;
 		private static AudioManager instance;
 
-		void Start () 
+		void Awake () 
 		{
 			instance = this;
 			AudioSource newSource;

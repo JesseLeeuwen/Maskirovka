@@ -126,7 +126,7 @@ namespace Maskirovka.UI
 
         public void OnSend()        
         {
-            AudioManager.PlayClip("Send_news"); 
+            AudioManager.PlayClip("Send_News"); 
             currentNews.playerChanged = true;
             currentNews.value = currentValue;
             if (chanceOfSucces==69)

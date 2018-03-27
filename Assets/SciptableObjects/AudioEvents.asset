@@ -27,7 +27,7 @@ MonoBehaviour:
   - identifier: Send_News
     clip: {fileID: 8300000, guid: 594c8f20dd24124428b9e598f9a87b32, type: 3}
     mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
-    volume: 1
+    volume: 0.5
     loop: 0
     source: {fileID: 0}
   - identifier: Conquere
