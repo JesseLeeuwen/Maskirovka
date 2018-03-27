@@ -24,6 +24,14 @@ namespace Maskirovka.UI
             news.icon_R.sprite = CatagorieSettings.GetIconRight(whatYouWant);
         }
 
+        void Update()
+        {
+            if (gameObject.GetComponent<NewsFeedItem>().subject.tag == "Baker")
+            {
+                gameObject.layer = 8;
+            }
+        }
+
         string getCopy(Catagorie cat, int value, Country country, int length)
         {
             string[] left = CatagorieSettings.GetKeywordsLeft(cat);
