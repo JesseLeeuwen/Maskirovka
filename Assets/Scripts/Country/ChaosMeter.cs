@@ -138,7 +138,7 @@ namespace Maskirovka
 		}		
 
 		private void Update()
-		{
+		{			
 			clusters = new List<Cluster>();
 			foreach( Connection c in connections )
 			{

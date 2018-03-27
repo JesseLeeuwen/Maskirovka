@@ -77,9 +77,13 @@ namespace Maskirovka
         }
 
         void Update()
-        {
-            if( cluster.ContainsCountry(this) == false) cluster.Init();
-            
+        {   
+            for( int i = connections.Count -1; i >= 0; --i)
+                if( connections[i].Equals(null) )
+                    connections.RemoveAt(i);
+
+            if( connections.Count == 0 ) cluster.Init();
+
             person.SetInteger("IntMood", cluster.Count);
         }
 
@@ -204,12 +208,9 @@ namespace Maskirovka
         public void RemoveConnection(Connection connection)
         {
             connections.Remove(connection);
-            
-            if( cluster.Count == 0)
-            {
-                cluster = new Cluster();
-                cluster.Init();
-            }
+
+            cluster = new Cluster();
+            cluster.Init();
         }
 
         public void Highlight(Color col, bool active)
