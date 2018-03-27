@@ -27,6 +27,9 @@ namespace Maskirovka
 			foreach( Connection c in connections )
 			{
 				result = (country == c.neighbour || country == c.country);
+				
+				if( result == true)
+					break;
 			}
 			return result;
 		}
