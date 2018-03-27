@@ -5,6 +5,8 @@ using System.Linq;
 using Maskirovka.Selector;
 using Maskirovka.Utility;
 
+using FMODCLONE;
+
 namespace Maskirovka
 {
 	public class Country : MonoBehaviour, ISelectable {
@@ -221,7 +223,8 @@ namespace Maskirovka
 
         public void InvadeMode(Color lineColor, bool active)
         {
-            if( invaded == true && active == true) return;
+            if( invaded == true && active == true)                
+                return;
 
             Color mapColor = new Color( countryColor.grayscale, countryColor.grayscale, countryColor.grayscale, 1);
             renderer.color = active? mapColor : countryColor;
@@ -230,7 +233,8 @@ namespace Maskirovka
         }
 
         public void Invaded(Russia russia)
-        {            
+        {       
+            AudioManager.PlayClip("Conquere");     
             russia.AddNeighbours( neighbours );
             foreach( Neighbour n in neighbours )
             {
@@ -247,7 +251,7 @@ namespace Maskirovka
                     connections[i].Delete();
                 }
             }
-
+            Highlight( Color.white, false);
             neighbours = new Neighbour[0];
             person.gameObject.SetActive(false);
             invaded =  true;

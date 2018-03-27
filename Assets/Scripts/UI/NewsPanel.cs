@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Maskirovka.News;
 using Maskirovka.Utility;
 
+using FMODCLONE;
+
 namespace Maskirovka.UI
 {
     public class NewsPanel : MonoBehaviour
@@ -124,6 +126,7 @@ namespace Maskirovka.UI
 
         public void OnSend()        
         {
+            AudioManager.PlayClip("Send_news"); 
             currentNews.playerChanged = true;
             currentNews.value = currentValue;
             if (chanceOfSucces==69)

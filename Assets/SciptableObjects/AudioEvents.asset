@@ -11,4 +11,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b6fd5d388d8b544ab275f69ef11905, type: 3}
   m_Name: AudioEvents
   m_EditorClassIdentifier: 
-  eventList: []
+  eventList:
+  - identifier: ConnectionLost
+    clip: {fileID: 8300000, guid: 3873c76bd9546fe49b31f01c48e036d6, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - identifier: Music
+    clip: {fileID: 8300000, guid: 883f82d2f65c90b42b727fb01f19bea8, type: 3}
+    mixer: {fileID: 243684724729731896, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - identifier: Send_News
+    clip: {fileID: 8300000, guid: 594c8f20dd24124428b9e598f9a87b32, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - identifier: Conquere
+    clip: {fileID: 8300000, guid: e78533d379a33ff43b09e67c2b08ba9e, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - identifier: NewConnection
+    clip: {fileID: 8300000, guid: 870e5183b53d4dc499e61c52fa566c1f, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - identifier: LiedSucces
+    clip: {fileID: 8300000, guid: 8a1d305b1d28920408051e5985722fac, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - identifier: MusicTutorial
+    clip: {fileID: 8300000, guid: 8a1d305b1d28920408051e5985722fac, type: 3}
+    mixer: {fileID: 243706820808189358, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}

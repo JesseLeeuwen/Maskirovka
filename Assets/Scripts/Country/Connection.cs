@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using FMODCLONE;
+
 using Maskirovka.Utility;
 
 namespace Maskirovka
@@ -106,6 +108,8 @@ namespace Maskirovka
 
         public void Init(Country neighbourGet, Country countryGet)
         {    
+            AudioManager.PlayClip( "NewConnection" );
+
             // set country and neighbour        
             country = countryGet;
             neighbour = neighbourGet;
@@ -161,6 +165,7 @@ namespace Maskirovka
 
         public void Delete()
         {
+            AudioManager.PlayClip("ConnectionLost");
             GameManager.Instance.feed.PushUpdate( new Change() { 
                 madeNewConnection = false, 
                 countryA = country,
