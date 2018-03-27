@@ -3043,7 +3043,7 @@ MonoBehaviour:
   bias: {x: 0, y: 0, z: 0}
   newsPanel: {fileID: 249688083}
   turns: 0
-  turnsToInvade: 3
+  turnsToInvade: 25
   TurnDisplay: {fileID: 730690157}
   feed: {fileID: 1785841187}
   loseScreen: {fileID: 941846259}
@@ -4681,8 +4681,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 544, y: -335}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 481.29, y: -335}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730690156
 MonoBehaviour:
@@ -9364,7 +9364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014468266, y: -0.000061174935}
+  m_AnchoredPosition: {x: -0.000014468266, y: -0.00000031627297}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1699690081
@@ -10003,6 +10003,126 @@ Prefab:
     - target: {fileID: 4305682451460704, guid: 443381808f165df47b4353b148395885, type: 2}
       propertyPath: m_LocalPosition.y
       value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806603712802034, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834810857201140, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385043054330548, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129117068530542, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114983894118723286, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114257168628738212, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895376622989442, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114875518876076262, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237623712018880, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464593141020450, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371793867041454, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107483043219004, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMin
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806603712802034, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114834810857201140, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114385043054330548, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129117068530542, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114983894118723286, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114257168628738212, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895376622989442, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114875518876076262, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237623712018880, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114464593141020450, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114371793867041454, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107483043219004, guid: 443381808f165df47b4353b148395885,
+        type: 2}
+      propertyPath: randomMax
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 443381808f165df47b4353b148395885, type: 2}
