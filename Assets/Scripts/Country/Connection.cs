@@ -108,6 +108,8 @@ namespace Maskirovka
 
         public void Init(Country neighbourGet, Country countryGet)
         {    
+            AudioManager.PlayClip( "NewConnection" );
+
             // set country and neighbour        
             country = countryGet;
             neighbour = neighbourGet;

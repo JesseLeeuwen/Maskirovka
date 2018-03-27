@@ -9,6 +9,8 @@ using Maskirovka;
 using Maskirovka.Utility;
 using Maskirovka.Selector;
 
+using FMODCLONE;
+
 namespace Maskirovka.UI
 {
     public class NewsFeedItem : MonoBehaviour, ISelectable, IPointerEnterHandler, IPointerExitHandler
@@ -75,6 +77,8 @@ namespace Maskirovka.UI
         public bool Send(bool youcandie)
         {            
             bool result = GameManager.Instance.processor.ProccesNews(this);
+            if( result == true )
+                AudioManager.PlayClip("LiedSucces"); 
             gameObject.layer = 0;
             Color c = new Color( 0.77f, 0.77f, 0.77f, 1);
             

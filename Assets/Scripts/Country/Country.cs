@@ -5,6 +5,8 @@ using System.Linq;
 using Maskirovka.Selector;
 using Maskirovka.Utility;
 
+using FMODCLONE;
+
 namespace Maskirovka
 {
 	public class Country : MonoBehaviour, ISelectable {
@@ -223,7 +225,7 @@ namespace Maskirovka
         {
             if( invaded == true && active == true)                
                 return;
-                
+
             Color mapColor = new Color( countryColor.grayscale, countryColor.grayscale, countryColor.grayscale, 1);
             renderer.color = active? mapColor : countryColor;
             clickAnim.SetColor( active? mapColor : countryColor );
@@ -231,7 +233,8 @@ namespace Maskirovka
         }
 
         public void Invaded(Russia russia)
-        {            
+        {       
+            AudioManager.PlayClip("Conquere");     
             russia.AddNeighbours( neighbours );
             foreach( Neighbour n in neighbours )
             {
