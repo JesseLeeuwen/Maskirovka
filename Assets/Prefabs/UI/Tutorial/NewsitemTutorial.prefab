@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224984520958455928}
   - component: {fileID: 222009037076043078}
   - component: {fileID: 114322143651258994}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224269095370298604}
   - component: {fileID: 114819307599363298}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 224195227745375784}
   - component: {fileID: 222989477423819616}
   - component: {fileID: 114224602894049036}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 224755258871403680}
   - component: {fileID: 222435681912716664}
   - component: {fileID: 114109499566670496}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Click to edit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 224397857581177982}
   - component: {fileID: 222967862981988568}
   - component: {fileID: 114260264494825500}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 224484263605829840}
   - component: {fileID: 222001171806898206}
   - component: {fileID: 114061390543695310}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 224146149923453014}
   - component: {fileID: 222077973549785504}
   - component: {fileID: 114848801733297054}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Headline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224795003345761058}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 114736427944728940}
   - component: {fileID: 114802187560463248}
   - component: {fileID: 114617755102388372}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NewsitemTutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 224156598572505174}
   - component: {fileID: 222706669586233428}
   - component: {fileID: 114242652394158568}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 224325539815717382}
   - component: {fileID: 222429267710263498}
   - component: {fileID: 114821137054987302}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

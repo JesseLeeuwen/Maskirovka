@@ -91,22 +91,23 @@ namespace Maskirovka.UI
         {
             Color c = CatagorieSettings.GetColor(catagorie);
             c += Color.white;
-            subject.Highlight( (c)/2, true);
+            subject.Highlight((c) / 2, true);
 
             cache = new Dictionary<Connection, bool>();
-            foreach( Connection con in subject.GetConnections() )
+            foreach (Connection con in subject.GetConnections())
             {
-                cache.Add( con, con.IsActive() );
+                cache.Add(con, con.IsActive());
                 con.Activate(true);
             }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            subject.Highlight( Color.white, false);
-            
-            foreach( Connection con in cache.Keys )
-                con.Activate( cache[con] );
+            subject.Highlight(Color.white, false);
+
+            foreach (Connection con in cache.Keys)
+                con.Activate(cache[con]);
+
         }
     }
 }

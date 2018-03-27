@@ -22,13 +22,11 @@ namespace Maskirovka.UI
             news.ValueBar.color = CatagorieSettings.GetColor(whatYouWant);
             news.icon_L.sprite = CatagorieSettings.GetIconLeft(whatYouWant);
             news.icon_R.sprite = CatagorieSettings.GetIconRight(whatYouWant);
-        }
 
-        void Update()
-        {
             if (gameObject.GetComponent<NewsFeedItem>().subject.tag == "Baker")
             {
                 gameObject.layer = 8;
+                GetComponent<Image>().raycastTarget = true;
             }
         }
 
