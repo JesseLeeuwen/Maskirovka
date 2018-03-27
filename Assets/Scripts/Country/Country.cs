@@ -234,6 +234,8 @@ namespace Maskirovka
 
         public void Invaded(Russia russia)
         {       
+            if( invaded == true ) return;
+
             AudioManager.PlayClip("Conquere");     
             russia.AddNeighbours( neighbours );
             foreach( Neighbour n in neighbours )
