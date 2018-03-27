@@ -59,7 +59,7 @@ public class TutorialOverlays : MonoBehaviour {
 				clickBlockers[1].SetActive(true);
 				break;
 			case 11:
-				requiredAction(panelScript.currentValue>panelScript.startValue);
+				requiredAction(panelScript.currentValue>panelScript.startValue+10);
 				break;
 			case 12:
 				requiredAction(!newspanel.activeInHierarchy);
