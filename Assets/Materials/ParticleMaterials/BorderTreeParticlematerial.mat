@@ -83,4 +83,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.08445068, g: 0.07417819, b: 0.102941155, a: 0.5}
+    - _TintColor: {r: 0.096396156, g: 0.11764705, b: 0.03719723, a: 0.5}
