@@ -7,9 +7,8 @@ using Maskirovka;
 
 public class TutorialOverlays : MonoBehaviour {
 
-
-	public GameObject[] canvas;
-	
+    public float minSlide;
+    public GameObject[] canvas;
 	public UImanager invasion;
 	public GameObject endScreen;
 	public GameObject nextButton;
@@ -59,7 +58,7 @@ public class TutorialOverlays : MonoBehaviour {
 				clickBlockers[1].SetActive(true);
 				break;
 			case 11:
-				requiredAction(panelScript.currentValue>panelScript.startValue+10);
+                requiredAction(panelScript.currentValue > panelScript.startValue + minSlide);
 				break;
 			case 12:
 				requiredAction(!newspanel.activeInHierarchy);

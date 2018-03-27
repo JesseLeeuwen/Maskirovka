@@ -7793,6 +7793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b0f737f8a33b40a22fe342a1a4aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSlide: 20
   canvas:
   - {fileID: 1534909805}
   - {fileID: 707481220}

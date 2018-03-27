@@ -8,6 +8,6 @@ public class loadScene : MonoBehaviour {
     public Object nextScene;
 	
 	public void loadNext(){
-		SceneManager.LoadScene(nextScene.name);
+        SceneManager.LoadScene(+1);
 	}
 }
