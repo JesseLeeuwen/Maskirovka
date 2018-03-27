@@ -4924,7 +4924,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 083fa6083761cd447ac7129106ba430b, type: 3}
-  m_Color: {r: 0.434, g: 0.434, b: 0.434, a: 1}
+  m_Color: {r: 0.47058824, g: 0.14901961, b: 0.2, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6115,7 +6115,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8807f189f68af3c42af55be1e4af1c26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78b34c90ce3b6b04a9c407814b2a8477, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7795,7 +7795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b0f737f8a33b40a22fe342a1a4aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSlide: 17
+  minSlide: 15
   canvas:
   - {fileID: 1534909805}
   - {fileID: 707481220}
@@ -11408,7 +11408,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 083fa6083761cd447ac7129106ba430b, type: 3}
-  m_Color: {r: 0.60294116, g: 0.60294116, b: 0.60294116, a: 1}
+  m_Color: {r: 0.69803923, g: 0.21960784, b: 0.29803923, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14418,7 +14418,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 96d2fddb47a969f42a4c1d3e6208d43d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 648cca7f54f697e44978257eb703ea7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19682,7 +19682,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1259ce31f6904cf489a60bcc693e3986, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25f6b2c1ad9d2dc4f9fdc23e6b3302ba, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
