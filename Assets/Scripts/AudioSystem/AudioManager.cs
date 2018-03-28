@@ -68,6 +68,19 @@ namespace FMODCLONE
 			instance.sources.Enqueue(source);
 		}
 
+		public static void PlayClip(ref AudioEvent audioEvent)
+		{
+			AudioSource source = instance.sources.Dequeue();
+			source.clip = audioEvent.clip;
+			source.outputAudioMixerGroup = audioEvent.mixer;
+			source.volume = audioEvent.volume;
+			source.loop = audioEvent.loop;
+			source.Play();
+			audioEvent.source = source;	
+			instance.ongoingEvents.Add ( audioEvent );
+			instance.sources.Enqueue(source);	
+		}
+
 		public static void PlayClip(string eventIdentifier, ref AudioEvent audioEvent, Vector3 position)
 		{
 			audioEvent = instance.library.GetEvent( eventIdentifier ).Copy();

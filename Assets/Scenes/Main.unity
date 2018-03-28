@@ -3490,6 +3490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503881498}
   - component: {fileID: 503881497}
+  - component: {fileID: 503881499}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -3503,7 +3504,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 503881496}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243684724729731896, guid: 32437855e4fb32749917583acad6c6e2,
     type: 2}
@@ -3591,6 +3592,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503881499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503881496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddcf56b664fbe6848b31d34132ceb381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEvent:
+    identifier: 
+    clip: {fileID: 0}
+    mixer: {fileID: 0}
+    volume: 0
+    loop: 0
+    source: {fileID: 0}
+  identifier: Music
 --- !u!1 &508904053
 GameObject:
   m_ObjectHideFlags: 0
@@ -12834,7 +12854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   library: {fileID: 11400000, guid: 7881f4d481f7eac42949bba4f193022a, type: 2}
-  bufferSize: 5
+  bufferSize: 15
   ongoingEvents: []
   mixer: {fileID: 24100000, guid: 32437855e4fb32749917583acad6c6e2, type: 2}
 --- !u!114 &2086564430 stripped

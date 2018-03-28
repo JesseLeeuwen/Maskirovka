@@ -5,17 +5,20 @@ using UnityEngine;
 
 namespace FMODCLONE
 {
-
 	public class AudioEventEmitter : MonoBehaviour 
 	{
 		[SerializeField]
-		private string eventToPlay;		
-		[SerializeField]
 		private AudioEvent audioEvent;
+
+		[SerializeField]
+		private string identifier;
 
 		void Start () 
 		{
-			AudioManager.PlayClip( eventToPlay, ref audioEvent);
+			if( identifier == string.Empty )
+				AudioManager.PlayClip(ref audioEvent);
+			else			
+				AudioManager.PlayClip( identifier, ref audioEvent );
 		}		
 	}
 }

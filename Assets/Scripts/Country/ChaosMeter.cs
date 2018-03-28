@@ -65,16 +65,12 @@ namespace Maskirovka
 		private List<Cluster> clusters;
 		[SerializeField]
 		private List<Connection> connections;
-		private int maxConnections;
+		private int maxConnections = 17;
 
 		void Start()
 		{
 			print(null);
 			clusters = new List<Cluster>();
-
-			for(int i = 0; i < countries.Length; ++i)
-				maxConnections += countries[i].neighbours.Length;
-
 			GameManager.Instance.feed.SubToNewsEvents( OnReceiveChange );
 		}
 
